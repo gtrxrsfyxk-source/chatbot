@@ -200,11 +200,11 @@ app.get('/', (c) => {
       {/* Chat Header */}
       <div class="chat-header">
         <div class="logo">
-          <i class="fas fa-university"></i>
+          <i class="fas fa-piggy-bank"></i>
         </div>
         <div class="title">
-          <h1>צ'אטבוט בנק ישראל</h1>
-          <p>עוזר הידע הפנים-ארגוני החכם</p>
+          <h1>צ'אטבוט בנק דיסקונט</h1>
+          <p>עוזר הידע החכם • "בדיסקונט משקיעים בך!"</p>
         </div>
         <div class="user-info">
           <div class="user-badge">
@@ -229,11 +229,11 @@ app.get('/', (c) => {
           <div class="message-content">
             <p class="message-text">
               שלום {currentUser.name}! 👋<br/>
-              אני עוזר הידע הפנים-ארגוני של בנק ישראל. <br/>
+              אני עוזר הידע החכם של בנק דיסקונט. <br/>
               זיהיתי אותך כ<strong>{currentUser.employmentType === 'permanent' ? 'עובד קבוע' : 
               currentUser.employmentType === 'temporary' ? 'עובד זמני' : 'עובד שעתי'}</strong> ב{currentUser.department}.<br/>
-              התשובות שאתן יהיו מותאמות אישית לסטטוס ההעסקה ולזכויותיך הספציפיות.<br/>
-              <strong>איך אני יכול לעזור לך היום?</strong>
+              <strong>בדיסקונט משקיעים בך!</strong> התשובות שלי מותאמות אישית לסטטוס ההעסקה ולזכויותיך.<br/>
+              <strong>איך אני יכול לעזור לך היום? 💜</strong>
             </p>
             <div class="message-meta">
               <i class="fas fa-clock"></i>
@@ -505,11 +505,11 @@ app.get('/login', (c) => {
     <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--boi-navy), var(--boi-blue));">
       <div class="card" style="max-width: 500px; width: 100%; margin: 2rem;">
         <div class="card-header" style="text-align: center;">
-          <div style="font-size: 3rem; margin-bottom: 1rem;">
-            <i class="fas fa-university"></i>
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-piggy-bank" style="color: var(--discount-accent);"></i>
           </div>
-          <h1 style="margin: 0; font-size: 1.5rem; color: white;">בנק ישראל</h1>
-          <p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.9);">מערכת זיהוי פנים-ארגוני</p>
+          <h1 style="margin: 0; font-size: 1.75rem; color: white; font-weight: 700;">בנק דיסקונט</h1>
+          <p style="margin: 0.5rem 0 0 0; color: rgba(255,255,255,0.9); font-weight: 500;">מערכת זיהוי פנים-ארגוני • "בדיסקונט משקיעים בך!"</p>
         </div>
         <div class="card-body" style="text-align: center;">
           <h2 style="color: var(--boi-navy); margin-bottom: 1.5rem;">בחר את פרופיל המשתמש</h2>
