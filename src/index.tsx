@@ -120,7 +120,7 @@ const knowledgeBase = [
   }
 ];
 
-// User profiles simulation
+// User profiles simulation with employment status
 const userProfiles = {
   "call_center": {
     name: "רחל כהן",
@@ -128,7 +128,32 @@ const userProfiles = {
     department: "שירות לקוחות",
     accessLevel: "basic",
     avatar: "ר.כ",
-    permissions: ["basic", "customer_service"]
+    permissions: ["basic", "customer_service"],
+    employmentType: "hourly", // שעתי
+    seniority: 8, // חודשים
+    grade: 3
+  },
+  "call_center_permanent": {
+    name: "מיכל אברהם",
+    role: "נציגת מוקד בכירה",
+    department: "שירות לקוחות",
+    accessLevel: "basic",
+    avatar: "מ.א",
+    permissions: ["basic", "customer_service", "senior"],
+    employmentType: "permanent", // קבוע
+    seniority: 36, // חודשים
+    grade: 5
+  },
+  "call_center_temp": {
+    name: "אור ישראלי",
+    role: "נציג מוקד זמני",
+    department: "שירות לקוחות",
+    accessLevel: "basic",
+    avatar: "א.י",
+    permissions: ["basic", "customer_service"],
+    employmentType: "temporary", // זמני
+    seniority: 3, // חודשים
+    grade: 1
   },
   "branch": {
     name: "דוד לוי",
@@ -136,7 +161,21 @@ const userProfiles = {
     department: "סניף תל אביב",
     accessLevel: "branch",
     avatar: "ד.ל",
-    permissions: ["basic", "branch", "credit"]
+    permissions: ["basic", "branch", "credit"],
+    employmentType: "permanent", // קבוע
+    seniority: 84, // חודשים
+    grade: 8
+  },
+  "branch_temp": {
+    name: "נועה כהן",
+    role: "פקידת סניף זמנית",
+    department: "סניף חיפה",
+    accessLevel: "basic",
+    avatar: "נ.כ",
+    permissions: ["basic", "branch_basic"],
+    employmentType: "temporary", // זמני
+    seniority: 6, // חודשים
+    grade: 2
   },
   "tech": {
     name: "שרה גולדמן",
@@ -144,7 +183,10 @@ const userProfiles = {
     department: "חטיבת טכנולוגיות",
     accessLevel: "tech",
     avatar: "ש.ג",
-    permissions: ["basic", "tech", "systems"]
+    permissions: ["basic", "tech", "systems"],
+    employmentType: "permanent", // קבוע
+    seniority: 48, // חודשים
+    grade: 7
   }
 };
 
@@ -168,7 +210,13 @@ app.get('/', (c) => {
           <div class="user-badge">
             <div class="status-indicator"></div>
             <span>{currentUser.name}</span>
-            <span class="text-xs">({currentUser.role})</span>
+            <div style="font-size: 0.75rem; opacity: 0.9;">
+              {currentUser.role}<br/>
+              {currentUser.employmentType === 'permanent' ? '🟢 קבוע' : 
+               currentUser.employmentType === 'temporary' ? '🟡 זמני' : '🔵 שעתי'} • 
+              דרגה {currentUser.grade} • 
+              {Math.floor(currentUser.seniority / 12) > 0 ? `${Math.floor(currentUser.seniority / 12)} שנים` : `${currentUser.seniority} חודשים`}
+            </div>
           </div>
         </div>
       </div>
@@ -181,7 +229,10 @@ app.get('/', (c) => {
           <div class="message-content">
             <p class="message-text">
               שלום {currentUser.name}! 👋<br/>
-              אני עוזר הידע הפנים-ארגוני של בנק ישראל. אני כאן כדי לעזור לך למצוא מידע מקצועי מאושר ומעודכן.<br/>
+              אני עוזר הידע הפנים-ארגוני של בנק ישראל. <br/>
+              זיהיתי אותך כ<strong>{currentUser.employmentType === 'permanent' ? 'עובד קבוע' : 
+              currentUser.employmentType === 'temporary' ? 'עובד זמני' : 'עובד שעתי'}</strong> ב{currentUser.department}.<br/>
+              התשובות שאתן יהיו מותאמות אישית לסטטוס ההעסקה ולזכויותיך הספציפיות.<br/>
               <strong>איך אני יכול לעזור לך היום?</strong>
             </p>
             <div class="message-meta">
@@ -299,11 +350,21 @@ app.post('/api/chat', async (c) => {
       const hasAccess = currentUser.permissions.includes(matchedKnowledge.accessLevel);
       
       if (hasAccess) {
+        // Customize answer based on user's employment status
+        const customizedAnswer = customizeAnswerForUser(
+          matchedKnowledge.answer, 
+          currentUser, 
+          matchedKnowledge.id
+        );
+        
         response = {
-          text: matchedKnowledge.answer,
+          text: customizedAnswer,
           sources: matchedKnowledge.sources,
           lastUpdated: matchedKnowledge.lastUpdated,
-          confidence: 0.95
+          confidence: 0.95,
+          personalized: true,
+          userType: currentUser.employmentType,
+          userSeniority: `${Math.floor(currentUser.seniority / 12)} שנים, ${currentUser.seniority % 12} חודשים`
         };
       } else {
         response = {
@@ -336,6 +397,102 @@ function calculateSimilarity(text1: string, text2: string): number {
   return commonWords.length / Math.max(words1.length, words2.length);
 }
 
+// Function to customize answers based on employment status
+function customizeAnswerForUser(answer: string, user: any, questionId: number): string {
+  let customizedAnswer = answer;
+  
+  // Customize vacation/leave answers based on employment type
+  if (questionId === 6) { // חופשה שנתית
+    const vacationRights = getVacationRights(user);
+    customizedAnswer = `${answer}\n\n**🎯 זכויותיך האישיות:**\n${vacationRights}`;
+  } else if (questionId === 7) { // דיווח מחלה
+    const sickLeaveRights = getSickLeaveRights(user);
+    customizedAnswer = `${answer}\n\n**🎯 זכויותיך האישיות:**\n${sickLeaveRights}`;
+  } else if (questionId === 8) { // שעות נוספות
+    const overtimeRights = getOvertimeRights(user);
+    customizedAnswer = `${answer}\n\n**🎯 זכויותיך האישיות:**\n${overtimeRights}`;
+  } else if (questionId === 5) { // שעות עבודה
+    const workHours = getPersonalWorkHours(user);
+    customizedAnswer = `${answer}\n\n**🎯 משמרותיך:**\n${workHours}`;
+  }
+  
+  return customizedAnswer;
+}
+
+// Get vacation rights based on employment type and seniority
+function getVacationRights(user: any): string {
+  const seniorityYears = Math.floor(user.seniority / 12);
+  
+  switch (user.employmentType) {
+    case 'permanent':
+      if (seniorityYears < 1) return "**עובד קבוע חדש:** 12 ימי חופשה בשנה הראשונה, 18 ימים מהשנה השנייה.";
+      else if (seniorityYears < 5) return "**עובד קבוע (1-5 שנים):** 18 ימי חופשה בשנה + יום יומולדת.";
+      else if (seniorityYears < 10) return "**עובד קבוע ותיק (5-10 שנים):** 21 ימי חופשה בשנה + יום יומולדת + יום מתנה.";
+      else return "**עובד קבוע בכיר (10+ שנים):** 24 ימי חופשה בשנה + יום יומולדת + יום מתנה + חופשה נוספת.";
+      
+    case 'temporary':
+      const monthsWorked = user.seniority;
+      if (monthsWorked < 6) return "**עובד זמני:** אין זכאות לחופשה שנתית בחודשים הראשונים. זכאי לחופש ללא תשלום בתיאום.";
+      else if (monthsWorked < 12) return "**עובד זמני (6+ חודשים):** זכאי ל-1 יום חופשה לכל חודש עבודה (מקסימום 6 ימים).";
+      else return "**עובד זמני (שנה+):** זכאי ל-12 ימי חופשה בשנה (פרו-רטה לפי תקופת ההעסקה).";
+      
+    case 'hourly':
+      return "**עובד שעתי:** זכאי לחופש ללא תשלום בהתראה של 14 יום. אין זכאות לחופשה בתשלום.";
+      
+    default:
+      return "פנה למשאבי אנוש לבירור זכויותיך המדויקות.";
+  }
+}
+
+// Get sick leave rights based on employment type
+function getSickLeaveRights(user: any): string {
+  switch (user.employmentType) {
+    case 'permanent':
+      return "**עובד קבוע:** 18 ימי מחלה בשנה (מצטברים עד 90 יום) + 8 ימי מחלת ילד. תשלום 100% מהשכר.";
+    case 'temporary':
+      const monthsWorked = user.seniority;
+      if (monthsWorked < 6) return "**עובד זמני:** 6 ימי מחלה בשנה בלבד. תשלום 75% מהשכר היומי.";
+      else return "**עובד זמני (6+ חודשים):** 12 ימי מחלה בשנה + 4 ימי מחלת ילד. תשלום 85% מהשכר.";
+    case 'hourly':
+      return "**עובד שעתי:** אין זכאות לימי מחלה בתשלום. זכאי לאישור רופא לביטוח לאומי בלבד.";
+    default:
+      return "פנה למשאבי אנוש לבירור זכויותיך המדויקות.";
+  }
+}
+
+// Get overtime rights based on grade and employment type
+function getOvertimeRights(user: any): string {
+  if (user.employmentType === 'hourly') {
+    return "**עובד שעתי:** שעות נוספות מעבר ל-8 שעות יומיות בתוספת 25%. מעבר ל-10 שעות יומיות בתוספת 50%.";
+  }
+  
+  if (user.grade >= 7) {
+    return `**דרגה ${user.grade}:** פטור משעות נוספות. זכאי להפגה או פיצוי בהתאם לנהלי החברה.`;
+  } else {
+    const rate = user.employmentType === 'permanent' ? '125%-150%' : '110%-125%';
+    const maxHours = user.employmentType === 'permanent' ? '20 שעות' : '10 שעות';
+    return `**דרגה ${user.grade}:** תשלום ${rate} לפי יום השבוע. מגבלה חודשית: ${maxHours}.`;
+  }
+}
+
+// Get personal work hours based on role and employment type
+function getPersonalWorkHours(user: any): string {
+  if (user.role.includes('מוקד')) {
+    const shifts = user.employmentType === 'permanent' ? 
+      "משמרות קבועות: 07:00-15:00 או 13:00-21:00 (לפי בחירה)" :
+      "משמרות משתנות: 07:00-15:00, 13:00-21:00, 15:00-23:00 (לפי צורך)";
+    return shifts;
+  } else if (user.role.includes('סניף')) {
+    return user.employmentType === 'permanent' ? 
+      "שעות סניף קבועות + משמרות ערב לפי תורנות" :
+      "שעות סניף בלבד, ללא משמרות ערב";
+  } else {
+    return user.employmentType === 'permanent' ?
+      "שעות מטה: 08:00-17:00 עם גמישות מלאה" :
+      "שעות קבועות: 08:30-16:30 ללא גמישות";
+  }
+}
+
 // User switching endpoint
 app.get('/switch/:userType', (c) => {
   const userType = c.req.param('userType');
@@ -361,22 +518,53 @@ app.get('/login', (c) => {
           </p>
           
           <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <a href="/?user=call_center" class="btn btn-primary" style="text-decoration: none; padding: 1.25rem;">
-              <i class="fas fa-headset"></i>
-              רחל כהן - נציגת מוקד טלפוני
-              <small style="display: block; opacity: 0.8; font-weight: normal;">גישה למידע בסיסי ונהלי שירות לקוחות</small>
+            
+            <h3 style="color: var(--boi-navy); margin: 1.5rem 0 0.75rem 0; border-bottom: 2px solid var(--boi-gold); padding-bottom: 0.5rem;">
+              <i class="fas fa-headset"></i> עובדי מוקד טלפוני
+            </h3>
+            
+            <a href="/?user=call_center_temp" class="btn btn-secondary" style="text-decoration: none; padding: 1rem;">
+              <i class="fas fa-user-clock"></i>
+              אור ישראלי - נציג מוקד זמני
+              <small style="display: block; opacity: 0.8; font-weight: normal;">זמני • 3 חודשים • זכויות מוגבלות</small>
             </a>
             
-            <a href="/?user=branch" class="btn btn-primary" style="text-decoration: none; padding: 1.25rem;">
+            <a href="/?user=call_center" class="btn btn-primary" style="text-decoration: none; padding: 1rem;">
+              <i class="fas fa-headset"></i>
+              רחל כהן - נציגת מוקד שעתית
+              <small style="display: block; opacity: 0.8; font-weight: normal;">שעתי • 8 חודשים • ללא חופשה בתשלום</small>
+            </a>
+            
+            <a href="/?user=call_center_permanent" class="btn btn-primary" style="text-decoration: none; padding: 1rem;">
+              <i class="fas fa-user-tie"></i>
+              מיכל אברהם - נציגת מוקד בכירה
+              <small style="display: block; opacity: 0.8; font-weight: normal;">קבוע • 3 שנים • זכויות מלאות</small>
+            </a>
+            
+            <h3 style="color: var(--boi-navy); margin: 1.5rem 0 0.75rem 0; border-bottom: 2px solid var(--boi-gold); padding-bottom: 0.5rem;">
+              <i class="fas fa-building"></i> עובדי סניפים
+            </h3>
+            
+            <a href="/?user=branch_temp" class="btn btn-secondary" style="text-decoration: none; padding: 1rem;">
+              <i class="fas fa-user-clock"></i>
+              נועה כהן - פקידת סניף זמנית
+              <small style="display: block; opacity: 0.8; font-weight: normal;">זמני • 6 חודשים • הרשאות בסיסיות</small>
+            </a>
+            
+            <a href="/?user=branch" class="btn btn-primary" style="text-decoration: none; padding: 1rem;">
               <i class="fas fa-building"></i>
               דוד לוי - מנהל סניף
-              <small style="display: block; opacity: 0.8; font-weight: normal;">גישה למידע מתקדם ומדיניות אשראי</small>
+              <small style="display: block; opacity: 0.8; font-weight: normal;">קבוע • 7 שנים • הרשאות ניהול מלאות</small>
             </a>
             
-            <a href="/?user=tech" class="btn btn-primary" style="text-decoration: none; padding: 1.25rem;">
+            <h3 style="color: var(--boi-navy); margin: 1.5rem 0 0.75rem 0; border-bottom: 2px solid var(--boi-gold); padding-bottom: 0.5rem;">
+              <i class="fas fa-laptop-code"></i> צוות טכנולוגיות
+            </h3>
+            
+            <a href="/?user=tech" class="btn btn-primary" style="text-decoration: none; padding: 1rem;">
               <i class="fas fa-code"></i>
               שרה גולדמן - מפתחת תוכנה
-              <small style="display: block; opacity: 0.8; font-weight: normal;">גישה למידע טכני ומערכות פנימיות</small>
+              <small style="display: block; opacity: 0.8; font-weight: normal;">קבוע • 4 שנים • הרשאות טכניות מלאות</small>
             </a>
           </div>
           
