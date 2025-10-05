@@ -45,6 +45,78 @@ const knowledgeBase = [
     sources: ["לוח שירות IT", "נוהל תפעול מערכות"],
     lastUpdated: "2024-10-08",
     accessLevel: "basic"
+  },
+  {
+    id: 5,
+    category: "משאבי אנוש",
+    question: "מהן שעות העבודה הרגילות בבנק ישראל?",
+    answer: "על פי נוהל שעות עבודה (מס' HR-101.05): **משרדי הנהלה וחטיבות מטה:** ראשון-חמישי 08:00-17:00 (8.5 שעות עם הפסקת צהריים). **סניפים:** ראשון, שלישי, חמישי 08:30-13:15, שני, רביעי 08:30-13:15 + 16:00-19:00. **מוקד טלפוני:** משמרות: 07:00-15:00, 13:00-21:00, 15:00-23:00. **עבודה בשישי:** ערב חג/שישי רגיל עד 13:00. **גמישות:** אפשרות התחלה 07:30-09:00 בתיאום עם המנהל.",
+    sources: ["נוהל HR-101.05", "הסכם קיבוצי 2023", "חוזר הנהלה 15/2024"],
+    lastUpdated: "2024-09-30",
+    accessLevel: "basic"
+  },
+  {
+    id: 6,
+    category: "משאבי אנוש",
+    question: "איך מגישים בקשה לחופשה שנתית?",
+    answer: "תהליך אישור חופשה שנתית (נוהל HR-203.12): **1. הגשת בקשה:** מילוי טופס דיגיטלי במערכת 'עובד בנק' עד 14 יום מראש. **2. אישור ראשוני:** מנהל ישיר מאשר תוך 3 ימי עסקים. **3. אישור HR:** משאבי אנוש בודקים יתרת ימים ומאשרים. **4. הודעה:** הודעה אוטומטית נשלחת 24 שעות לפני החופשה. **זכאויות שנתיות:** עובד חדש: 12 יום, 1-5 שנים: 18 יום, 5+ שנים: 21 יום, 10+ שנים: 24 יום. **מגבלות:** מקסימום 10 ימים רצופים ללא אישור מיוחד.",
+    sources: ["נוהל HR-203.12", "מערכת עובד בנק", "זכויות עובדים 2024"],
+    lastUpdated: "2024-10-01",
+    accessLevel: "basic"
+  },
+  {
+    id: 7,
+    category: "משאבי אנוש",
+    question: "מה הנוהל לדיווח מחלה?",
+    answer: "נוהל דיווח מחלה ומחלת ילד (HR-204.08): **דיווח מיידי:** הודעה טלפונית למנהל ישיר + הודעה במערכת עד 09:30. **מסמכים נדרשים:** אישור רופא ליום אחד ומעלה, אישור רופא ילדים למחלת ילד. **זכאויות:** 18 ימי מחלה לשנה (מצטברים עד 90 יום), 8 ימי מחלת ילד לשנה. **החזר:** 100% מהשכר לימים 1-90, 75% לימים 91-180. **ביקורת רפואית:** מעל 3 ימים רצופים - בדיקת רופא בנק. **חזרה לעבודה:** אישור כושר עבודה מרופא מטפל לאחר מחלה מעל 7 ימים.",
+    sources: ["נוהל HR-204.08", "ביטוח לאומי - הוראות", "רופא הבנק"],
+    lastUpdated: "2024-09-25",
+    accessLevel: "basic"
+  },
+  {
+    id: 8,
+    category: "משאבי אנוש",
+    question: "איך מבקשים שעות נוספות?",
+    answer: "נוהל שעות נוספות ותגמולים (HR-105.20): **אישור מוקדם:** חובה לקבל אישור מנהל ישיר לפני ביצוע. **הגשה:** דיווח במערכת 'ציון שעות' תוך 3 ימי עסקים. **זכאויות לפי דרגה:** דרגות 1-6: תשלום 125% עד 150% לפי יום השבוע. דרגות 7+: פטור משעות נוספות, זכאים להפגה. **מגבלות:** עד 20 שעות חודשיות ללא אישור מיוחד, 40 שעות עם אישור מנכ\"ל. **תשלום:** תוספת לשכר החודש הבא. **חירום:** במצבי חירום - אישור למפרע תוך 24 שעות.",
+    sources: ["נוהל HR-105.20", "הסכם קיבוצי סעיף 12", "מערכת ציון שעות"],
+    lastUpdated: "2024-10-05",
+    accessLevel: "basic"
+  },
+  {
+    id: 9,
+    category: "משאבי אנוש",
+    question: "מה זכויות החופשת לידה והורות?",
+    answer: "זכויות הורות ולידה (HR-210.15): **חופשת לידה:** 15 שבועות לאם (3 לפני + 12 אחרי), 7 ימים לאב. **חופשת הורות:** עד 12 חודשים נוספים ללא תשלום (לחלק בין ההורים). **הודעה מוקדמת:** 30 יום לפני התחלת חופשה. **שכר:** 100% שכר לתקופה המלאה מביטוח לאומי + השלמה מהבנק. **שמירת מקום עבודה:** מובטחת לעד 12 חודשים. **זכויות נוספות:** ימי מחלת ילד נוספים, הנקה במקום העבודה, גמישות שעות. **חזרה הדרגתית:** אפשרות לחזרה הדרגתית במשרה חלקית.",
+    sources: ["נוהל HR-210.15", "חוק הגנת השכר", "זכויות הורים 2024"],
+    lastUpdated: "2024-09-20",
+    accessLevel: "basic"
+  },
+  {
+    id: 10,
+    category: "משאבי אנוש",
+    question: "איך מגישים תלונה או פנייה למשאבי אנוש?",
+    answer: "נוהל טיפול בפניות עובדים (HR-301.10): **דרכי פנייה:** 1. פנייה ישירה למנהל ישיר, 2. מערכת 'שירות עובדים' באינטרא-נט, 3. טלפון חם HR: 02-6552800, 4. פגישה אישית בתיאום. **סוגי פניות:** בעיות משמעת, הטרדות, בעיות שכר, קידום, תנאי עבודה, פגיעה בכבוד. **זמני טיפול:** פניות רגילות - 5 ימי עסקים, דחופות - 24 שעות, הטרדות - טיפול מיידי. **סודיות מובטחת:** כל הפניות מטופלות בדיסקרטיות מלאה. **זכות ערעור:** אפשרות ערעור לוועדת משמעת או מנכ\"ל.",
+    sources: ["נוהל HR-301.10", "טלפון חם HR", "ועדת משמעת"],
+    lastUpdated: "2024-10-03",
+    accessLevel: "basic"
+  },
+  {
+    id: 11,
+    category: "מנהלים",
+    question: "מה הנוהל לאישור חופשה לעובדים?",
+    answer: "נוהל מנהלים - אישור חופשות (MNG-105.30): **עקרונות אישור:** 1. שמירה על רציפות שירות, 2. חלוקה הוגנת לכל העובדים, 3. עדיפות לוותיקים בתאריכי שיא. **בדיקות נדרשות:** יתרת ימים במערכת, כיסוי תפקיד, עומס עבודה צפוי. **מגבלות:** לא יותר מ-30% מהצוות בחופשה יחד, מקסימום 10 ימים רצופים. **עדיפויות:** חגים - לפי ותק, קיץ - סבבים שנתיים, מקרי חירום - ענייני משפחה. **דחיית בקשה:** נדרשת הנמקה בכתב + הצעת תאריך חלופי. **תיעוד:** רישום אישורים ברבעון + דוח שנתי למשאבי אנוש.",
+    sources: ["נוהל MNG-105.30", "מערכת ניהול כוח אדם", "דוח חופשות רבעוני"],
+    lastUpdated: "2024-09-28",
+    accessLevel: "branch"
+  },
+  {
+    id: 12,
+    category: "IT ואבטחה",
+    question: "מה הנוהל לעבודה מרחוק (Work From Home)?",
+    answer: "נוהל עבודה מרחוק (IT-SEC-401.25): **זכאות:** עובדים בדרגה 4+ עם ותק מעל שנה. **תדירות:** עד 2 ימים בשבוع לאחר אישור מנהל. **אישורים נדרשים:** הסכמה דיגיטלית, הכשרת אבטחה, בדיקת תשתיות בית. **ציוד מאושר:** מחשב נייד בנק + VPN חובה, איסור על מחשבים אישיים. **שעות עבודה:** זהות למשרד, זמינות לפגישות ושיחות. **אבטחת מידע:** איסור הדפסה, איסור צילום מסך, נעילה אוטומטית אחרי 10 דק'. **ביקורת:** מעקב גישות למערכות + פגישת סטטוס שבועית. **ביטול הרשאה:** במקרה של הפרת נוהל או ירידה בביצועים.",
+    sources: ["נוהל IT-SEC-401.25", "מדיניות אבטחת מידע", "הסכם עבודה מרחוק"],
+    lastUpdated: "2024-10-12",
+    accessLevel: "tech"
   }
 ];
 
@@ -123,17 +195,23 @@ app.get('/', (c) => {
 
         {/* Quick Actions */}
         <div class="quick-actions">
-          <div class="quick-action" onclick="sendQuickMessage('מה שעות הפעילות של מערכות הבנק?')">
-            <i class="fas fa-clock"></i> שעות פעילות מערכות
+          <div class="quick-action" onclick="sendQuickMessage('מה שעות העבודה הרגילות?')">
+            <i class="fas fa-clock"></i> שעות עבודה
           </div>
-          <div class="quick-action" onclick="sendQuickMessage('נהלי שירות לקוחות')">
-            <i class="fas fa-users"></i> נהלי שירות לקוחות
+          <div class="quick-action" onclick="sendQuickMessage('איך מגישים בקשה לחופשה?')">
+            <i class="fas fa-calendar-alt"></i> חופשה שנתית
           </div>
-          <div class="quick-action" onclick="sendQuickMessage('מדיניות אשראי')">
-            <i class="fas fa-credit-card"></i> מדיניות אשראי
+          <div class="quick-action" onclick="sendQuickMessage('נוהל דיווח מחלה')">
+            <i class="fas fa-user-md"></i> דיווח מחלה
           </div>
-          <div class="quick-action" onclick="sendQuickMessage('בקשות IT')">
-            <i class="fas fa-laptop"></i> בקשות טכנולוגיות
+          <div class="quick-action" onclick="sendQuickMessage('איך מבקשים שעות נוספות?')">
+            <i class="fas fa-plus-circle"></i> שעות נוספות
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('זכויות הורות ולידה')">
+            <i class="fas fa-baby"></i> זכויות הורות
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('עבודה מרחוק')">
+            <i class="fas fa-home"></i> עבודה מהבית
           </div>
         </div>
       </div>
@@ -173,25 +251,45 @@ app.post('/api/chat', async (c) => {
     // Simulate processing delay
     await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
     
-    // Simple keyword matching for demo
+    // Enhanced keyword matching for demo
     const lowerMessage = message.toLowerCase();
     let matchedKnowledge = null;
     
-    // Find relevant knowledge
-    for (const kb of knowledgeBase) {
-      const keywords = kb.question.toLowerCase();
-      if (keywords.includes('עמלה') && lowerMessage.includes('עמלה')) {
-        matchedKnowledge = kb;
-        break;
-      } else if (keywords.includes('הלוואה') && lowerMessage.includes('הלוואה')) {
-        matchedKnowledge = kb;
-        break;
-      } else if (keywords.includes('גישה') && lowerMessage.includes('גישה')) {
-        matchedKnowledge = kb;
-        break;
-      } else if (keywords.includes('שעות') && lowerMessage.includes('שעות')) {
-        matchedKnowledge = kb;
-        break;
+    // Priority-based keyword matching - more specific first
+    if (lowerMessage.includes('חופשה') || lowerMessage.includes('חופש')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('חופשה'));
+    } else if (lowerMessage.includes('מחלה') || lowerMessage.includes('חולה')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('מחלה'));
+    } else if ((lowerMessage.includes('שעות') && lowerMessage.includes('נוספות')) || lowerMessage.includes('תגמול')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('שעות נוספות'));
+    } else if ((lowerMessage.includes('שעות') && lowerMessage.includes('עבודה')) || lowerMessage.includes('משמרת')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('שעות העבודה'));
+    } else if (lowerMessage.includes('לידה') || lowerMessage.includes('הורות') || lowerMessage.includes('הריון')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('הורות'));
+    } else if (lowerMessage.includes('תלונה') || lowerMessage.includes('פנייה') || lowerMessage.includes('בעיה')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('תלונה'));
+    } else if (lowerMessage.includes('מרחוק') || lowerMessage.includes('בית') || lowerMessage.includes('טלעבודה')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('מרחוק'));
+    } else if (lowerMessage.includes('אישור') && lowerMessage.includes('חופשה') && lowerMessage.includes('מנהל')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('אישור חופשה'));
+    } else if (lowerMessage.includes('עמלה') || lowerMessage.includes('חיוב') || lowerMessage.includes('זיכוי')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('עמלה'));
+    } else if (lowerMessage.includes('הלוואה') || lowerMessage.includes('אשראי') || lowerMessage.includes('מימון')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('הלוואה'));
+    } else if (lowerMessage.includes('גישה') || (lowerMessage.includes('מערכת') && (lowerMessage.includes('הרשאה') || lowerMessage.includes('ליבה')))) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('גישה למערכת'));
+    } else if (lowerMessage.includes('פעילות') && lowerMessage.includes('מערכות')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('שעות הפעילות'));
+    }
+    
+    // Fallback: try direct text similarity
+    if (!matchedKnowledge) {
+      for (const kb of knowledgeBase) {
+        const similarity = calculateSimilarity(lowerMessage, kb.question.toLowerCase());
+        if (similarity > 0.2) {
+          matchedKnowledge = kb;
+          break;
+        }
       }
     }
     
@@ -229,6 +327,14 @@ app.post('/api/chat', async (c) => {
     return c.json({ error: 'שגיאה בעיבוד הבקשה' }, 500)
   }
 })
+
+// Helper function for text similarity (simple word overlap)
+function calculateSimilarity(text1: string, text2: string): number {
+  const words1 = text1.split(' ').filter(w => w.length > 2);
+  const words2 = text2.split(' ').filter(w => w.length > 2);
+  const commonWords = words1.filter(w => words2.includes(w));
+  return commonWords.length / Math.max(words1.length, words2.length);
+}
 
 // User switching endpoint
 app.get('/switch/:userType', (c) => {
