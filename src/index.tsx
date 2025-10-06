@@ -117,12 +117,78 @@ const knowledgeBase = [
     sources: ["נוהל IT-SEC-401.25", "מדיניות אבטחת מידע", "הסכם עבודה מרחוק"],
     lastUpdated: "2024-10-12",
     accessLevel: "tech"
+  },
+  {
+    id: 13,
+    category: "משאבי אנוש - מערכות",
+    question: "איך מנוהל קובץ המשמרות במערכת HR?",
+    answer: "מערכת ניהול משמרות (HR-SYS-401.15): **נתוני עובד בקובץ:** ת\"ז, שם מלא, מחלקה, תפקיד. **פרטי משמרת:** תאריך, יום בשבוע, שעת התחלה וסיום, סוג משמרת (בוקר 07:00-15:00 / ערב 15:00-23:00 / לילה 23:00-07:00). **חישוב שעות:** המערכת מחשבת אוטומטית סה\"כ שעות בפועל כולל הפסקות. **עדכון נתונים:** המשמרות מעודכנות יומית במערכת 'זמנים ונוכחות'. **דוחות:** דוח חודשי לכל עובד + דוח מחלקתי למנהלים. **גישה:** עובדים רואים משמרות עצמיות, מנהלים רואים צוות, HR רואה הכל.",
+    sources: ["נוהל HR-SYS-401.15", "מערכת זמנים ונוכחות", "מדריך משתמש משמרות"],
+    lastUpdated: "2024-10-15",
+    accessLevel: "basic"
+  },
+  {
+    id: 14,
+    category: "משאבי אנוש - זכויות",
+    question: "איך עובד מערכת הזכאויות וניצול (חופשה, הבראה, ביגוד, מתנות)?",
+    answer: "מערכת זכאויות וניצול (HR-ENT-205.40): **סוגי זכאויות:** חופשה שנתית (18-24 ימים), הבראה (7 ימים), ביגוד (1,500₪ שנתי), מתנות לחגים (500₪). **מעקב יתרות:** יתרת זכאות שנתית מתעדכנת ב-1 בינואר, ניצול בפועל עד כה מתעדכן יומי. **יתרה נוכחית:** זכאות מינוס ניצול = יתרה זמינה. **התראות מערכת:** הודעה ב-90% ניצול, תזכורת לפני פקיעה. **העברת יתרות:** חופשה - עד 5 ימים לשנה הבאה, הבראה - לא מועברת. **אישורים:** חופשה למעלה מ-5 ימים דורשת אישור מנהל + HR.",
+    sources: ["נוהל HR-ENT-205.40", "מערכת זכאויות", "תקנון העברת יתרות"],
+    lastUpdated: "2024-10-10",
+    accessLevel: "basic"
+  },
+  {
+    id: 15,
+    category: "משאבי אנוש - מחלה",
+    question: "איך מנוהל מעקב ימי מחלה מול זכאות?",
+    answer: "מערכת ימי מחלה (HR-SICK-302.18): **זכאות שנתית:** 18 ימי מחלה בשנת כספים + 8 ימי מחלת ילד. **זכאות כללית מצטברת:** עד 90 ימי מחלה מקסימום (מצטבר משנים קודמות). **מעקב ניצול:** כל יום מחלה נרשם עם תאריך, סוג (מחלה עצמית/ילד), אישור רופא. **יתרה נוכחית:** המערכת מחשבת: זכאות כללית - ניצול השנה - יתרות שנים קודמות. **התראות:** הודעה ב-15 ימים, אזהרה ב-17 ימים, חסימה ב-18+ ימים. **אישורים רפואיים:** חובה מהיום הראשון, בדיקת רופא בנק מעל 7 ימים רצופים.",
+    sources: ["נוהל HR-SICK-302.18", "מערכת מחלות", "ביטוח לאומי - הנחיות"],
+    lastUpdated: "2024-10-08",
+    accessLevel: "basic"
+  },
+  {
+    id: 16,
+    category: "משאבי אנוש - טופס 101",
+    question: "מה זה טופס 101 ואיך מנוהלים נתוני משפחה?",
+    answer: "טופס 101 - נתוני משפחה (HR-FAM-150.25): **מטרה:** עדכון שנתי של נתוני משפחה לצרכי זכויות וביטוחים. **נתונים הנדרשים:** ת\"ז עובד, מספר ילדים, גילאי הילדים (עד 18), סטטוס משפחתי (רווק/נשוי/גרוש/אלמן). **עדכון שנתי:** חובת עדכון עד 31 בינואר כל שנה. **השפעה על זכויות:** מספר ילדים משפיע על: מתנות, ימי מחלת ילד, קצבת ילדים, ביטוח בריאות משלים. **מסמכים נדרשים:** תעודות לידה, אישור משפחתי עדכני מרשם האוכלוסין. **עדכונים חריגים:** לידה, אימוץ, גירושין - עדכון תוך 30 יום מהאירוע.",
+    sources: ["טופס 101 - הוראות", "מערכת נתוני משפחה", "זכויות לפי מצב משפחתי"],
+    lastUpdated: "2024-09-30",
+    accessLevel: "basic"
+  },
+  {
+    id: 17,
+    category: "משאבי אנוש - חופשות",
+    question: "איך מנוהל ניצול חופשה רציפה?",
+    answer: "ניצול חופשה רציפה (HR-VAC-280.33): **הגדרת חופשה רציפה:** 5+ ימי חופשה רצופים (לא כולל סופי שבוע וחגים). **רישום במערכת:** תאריך תחילה וסיום, מספר ימי עבודה בפועל, סוג חופשה (שנתית/מיוחדת/ללא תשלום). **אישורים נדרשים:** 5-10 ימים - מנהל ישיר, 10+ ימים - מנהל + HR, חופשה ללא תשלום - מנכ\"ל. **מגבלות שנתיות:** עד 15 ימים רצופים במקטע אחד, מקסימום 2 חופשות ארוכות בשנה. **תכנון מראש:** הגשת בקשה 30 יום מראש לחופשות מעל 7 ימים. **עדיפות בחופשות:** עובדים עם ילדים בחופשת קיץ, ותיקים בחגי תשרי.",
+    sources: ["נוהל HR-VAC-280.33", "מערכת חופשות", "לוח עדיפויות חופשות"],
+    lastUpdated: "2024-10-12",
+    accessLevel: "basic"
+  },
+  {
+    id: 18,
+    category: "משאבי אנוש - מתנות ילדים",
+    question: "מה זכאות המתנות לילדים וכיצד מנוהלת?",
+    answer: "זכאות מתנות לילדים (HR-GIFT-345.60): **זכאות לפי גיל:** גיל 0-12: מתנה + 200₪, גיל 13-18: 300₪ במזומן, מעל 18: לא זכאי. **תנאי זכאות:** ילד רשום בטופס 101, עובד במשרה מעל 50%, ותק מינימלי 6 חודשים. **מועדי חלוקה:** ראש השנה (ספטמבר), חנוכה (דצמבר), פסח (מרץ-אפריל). **סטטוס מימוש:** 'ממתין' - טרם הוגש, 'בטיפול' - HR בודק זכאות, 'אושר' - מתנה/כסף הועברו. **הגשת בקשה:** דרך מערכת HR עד 30 לחודש שלפני החג. **אישור אוטומטי:** עובדים קבועים עם נתונים מעודכנים בטופס 101.",
+    sources: ["נוהל HR-GIFT-345.60", "מערכת מתנות", "טבלת זכאויות לפי גיל"],
+    lastUpdated: "2024-10-05",
+    accessLevel: "basic"
+  },
+  {
+    id: 19,
+    category: "משאבי אנוש - שעות נוספות",
+    question: "איך מחושבת הזכאות החודשית לשעות נוספות?",
+    answer: "זכאות חודשית שעות נוספות (HR-OT-420.75): **בסיס חישוב:** 160 שעות חודשיות סטנדרטיות (משרה מלאה). **תעריפי שעות נוספות:** רגיל: 125%, ערב (אחרי 18:00): 150%, שישי-שבת: 200%, חג: 300%. **מגבלות חודשיות:** דרגות 1-5: עד 25 שעות נוספות, דרגות 6+: עד 15 שעות נוספות. **חישוב זכאות:** (שעות בפועל - 160) × תעריף × שכר שעתי בסיס. **אישור מנהל:** חובה לקבל אישור מראש, אישור למפרע רק במצבי חירום. **תשלום:** מתווסף לשכר החודש הבא, עם פירוט בתלוש השכר. **מעקב:** דוח חודשי לכל עובד + התראה בהגעה ל-80% מהמכסה.",
+    sources: ["נוהל HR-OT-420.75", "מערכת שעות נוספות", "תעריפון תגמולים 2024"],
+    lastUpdated: "2024-10-15",
+    accessLevel: "basic"
   }
 ];
 
 // User profiles simulation with employment status
-const userProfiles = {
+// מסד נתונים מקיף של עובדים עם כל הנתונים האישיים
+const employeeDatabase = {
   "call_center": {
+    // פרטים אישיים
+    id: "123456789",
     name: "רחל כהן",
     role: "נציגת מוקד טלפוני",
     department: "שירות לקוחות",
@@ -131,9 +197,83 @@ const userProfiles = {
     permissions: ["basic", "customer_service"],
     employmentType: "hourly", // שעתי
     seniority: 8, // חודשים
-    grade: 3
+    grade: 3,
+    hireDate: "2024-02-01",
+    
+    // נתוני משפחה (טופס 101)
+    familyData: {
+      maritalStatus: "נשואה",
+      numberOfChildren: 2,
+      childrenAges: [5, 8],
+      spouseDetails: { name: "יוסי כהן", birthYear: 1988 },
+      lastUpdated: "2024-01-15"
+    },
+    
+    // זכאויות שנתיות לפי ותק וסוג העסקה
+    annualEntitlements: {
+      vacation: 12, // ימי חופשה - עובד חדש
+      recovery: 0,  // אין זכאות להבראה לשעתי
+      clothing: 800, // ביגוד מופחת לשעתי
+      gifts: 300,   // מתנות לחגים מופחתות
+      sickDays: 12, // ימי מחלה מופחתים לשעתי
+      childSickDays: 6 // ימי מחלת ילד מופחתים
+    },
+    
+    // ניצול השנה 2024
+    currentYearUsage: {
+      vacation: {
+        used: 3,
+        dates: [
+          { startDate: "2024-03-15", endDate: "2024-03-17", days: 3, type: "חופשה שנתית" }
+        ]
+      },
+      recovery: { used: 0, dates: [] },
+      sickDays: {
+        used: 2,
+        dates: [
+          { date: "2024-04-10", type: "מחלה עצמית" },
+          { date: "2024-05-22", type: "מחלה עצמית" }
+        ]
+      },
+      childSickDays: {
+        used: 1,
+        dates: [
+          { date: "2024-06-03", childAge: 5, type: "מחלת ילד" }
+        ]
+      }
+    },
+    
+    // יתרות צבורות משנים קודמות
+    accumulatedBalance: {
+      sickDays: 8, // ימי מחלה מצטברים
+      vacation: 0  // חופשה לא מועברת לשעתי
+    },
+    
+    // זכאות מתנות לילדים
+    childrenGifts: {
+      eligibleChildren: 2,
+      giftStatus2024: {
+        "ראש השנה": "נמסר",
+        "חנוכה": "ממתין",
+        "פסח": "לא רלוונטי עדיין"
+      }
+    },
+    
+    // נתוני משמרות ושעות נוספות
+    workData: {
+      monthlyHours: 140, // שעות חודשיות ממוצעות (משרה חלקית)
+      overtimeThisMonth: 8,
+      overtimeDetails: [
+        { date: "2024-10-02", hours: 2, rate: "125%", approved: true },
+        { date: "2024-10-08", hours: 3, rate: "150%", approved: true },
+        { date: "2024-10-15", hours: 3, rate: "125%", approved: true }
+      ]
+    }
   },
+  
   "call_center_permanent": {
+    // פרטים אישיים  
+    id: "987654321",
     name: "מיכל אברהם",
     role: "נציגת מוקד בכירה",
     department: "שירות לקוחות",
@@ -142,9 +282,94 @@ const userProfiles = {
     permissions: ["basic", "customer_service", "senior"],
     employmentType: "permanent", // קבוע
     seniority: 36, // חודשים
-    grade: 5
+    grade: 5,
+    hireDate: "2021-10-01",
+    
+    // נתוני משפחה (טופס 101)
+    familyData: {
+      maritalStatus: "גרושה",
+      numberOfChildren: 1,
+      childrenAges: [12],
+      spouseDetails: null,
+      lastUpdated: "2024-01-20"
+    },
+    
+    // זכאויות שנתיות לפי ותק וסוג העסקה
+    annualEntitlements: {
+      vacation: 18, // ימי חופשה - 1-5 שנים
+      recovery: 7,  // זכאות להבראה מלאה
+      clothing: 1500, // ביגוד מלא
+      gifts: 500,   // מתנות לחגים מלאות
+      sickDays: 18, // ימי מחלה מלאים
+      childSickDays: 8 // ימי מחלת ילד מלאים
+    },
+    
+    // ניצול השנה 2024
+    currentYearUsage: {
+      vacation: {
+        used: 12,
+        dates: [
+          { startDate: "2024-01-08", endDate: "2024-01-12", days: 5, type: "חופשה שנתית" },
+          { startDate: "2024-07-15", endDate: "2024-07-21", days: 7, type: "חופשה רציפה" }
+        ]
+      },
+      recovery: {
+        used: 4,
+        dates: [
+          { startDate: "2024-09-02", endDate: "2024-09-05", days: 4, type: "הבראה" }
+        ]
+      },
+      sickDays: {
+        used: 5,
+        dates: [
+          { date: "2024-02-14", type: "מחלה עצמית" },
+          { date: "2024-02-15", type: "מחלה עצמית" },
+          { date: "2024-06-20", type: "מחלה עצמית" },
+          { date: "2024-08-12", type: "מחלה עצמית" },
+          { date: "2024-09-18", type: "מחלה עצמית" }
+        ]
+      },
+      childSickDays: {
+        used: 3,
+        dates: [
+          { date: "2024-03-25", childAge: 12, type: "מחלת ילד" },
+          { date: "2024-05-10", childAge: 12, type: "מחלת ילד" },
+          { date: "2024-09-05", childAge: 12, type: "מחלת ילד" }
+        ]
+      }
+    },
+    
+    // יתרות צבורות משנים קודמות
+    accumulatedBalance: {
+      sickDays: 25, // ימי מחלה מצטברים
+      vacation: 3   // חופשה מועברת משנה שעברה
+    },
+    
+    // זכאות מתנות לילדים
+    childrenGifts: {
+      eligibleChildren: 1,
+      giftStatus2024: {
+        "ראש השנה": "נמסר",
+        "חנוכה": "נמסר", 
+        "פסח": "לא רלוונטי עדיין"
+      }
+    },
+    
+    // נתוני משמרות ושעות נוספות
+    workData: {
+      monthlyHours: 160, // שעות חודשיות מלאות
+      overtimeThisMonth: 15,
+      overtimeDetails: [
+        { date: "2024-10-01", hours: 4, rate: "125%", approved: true },
+        { date: "2024-10-07", hours: 6, rate: "150%", approved: true },
+        { date: "2024-10-14", hours: 5, rate: "125%", approved: true }
+      ]
+    }
   },
+  
   "call_center_temp": {
+    // פרטים אישיים
+    id: "456789123",
     name: "אור ישראלי",
     role: "נציג מוקד זמני",
     department: "שירות לקוחות",
@@ -153,9 +378,66 @@ const userProfiles = {
     permissions: ["basic", "customer_service"],
     employmentType: "temporary", // זמני
     seniority: 3, // חודשים
-    grade: 1
+    grade: 1,
+    hireDate: "2024-07-01",
+    
+    // נתוני משפחה (טופס 101)
+    familyData: {
+      maritalStatus: "רווק",
+      numberOfChildren: 0,
+      childrenAges: [],
+      spouseDetails: null,
+      lastUpdated: "2024-07-15"
+    },
+    
+    // זכאויות שנתיות לפי ותק וסוג העסקה
+    annualEntitlements: {
+      vacation: 0, // אין זכאות לחופשה בחודשים הראשונים
+      recovery: 0, // אין זכאות להבראה  
+      clothing: 0, // אין זכאות לביגוד עדיין
+      gifts: 200, // מתנות מופחתות לזמני
+      sickDays: 12, // ימי מחלה בסיסיים
+      childSickDays: 0 // אין ילדים
+    },
+    
+    // ניצול השנה 2024
+    currentYearUsage: {
+      vacation: { used: 0, dates: [] },
+      recovery: { used: 0, dates: [] },
+      sickDays: {
+        used: 1,
+        dates: [
+          { date: "2024-09-12", type: "מחלה עצמית" }
+        ]
+      },
+      childSickDays: { used: 0, dates: [] }
+    },
+    
+    // יתרות צבורות משנים קודמות
+    accumulatedBalance: {
+      sickDays: 0, // עובד חדש
+      vacation: 0  // עובד חדש
+    },
+    
+    // זכאות מתנות לילדים
+    childrenGifts: {
+      eligibleChildren: 0,
+      giftStatus2024: {}
+    },
+    
+    // נתוני משמרות ושעות נוספות
+    workData: {
+      monthlyHours: 160, // שעות חודשיות מלאות
+      overtimeThisMonth: 3,
+      overtimeDetails: [
+        { date: "2024-10-09", hours: 3, rate: "125%", approved: true }
+      ]
+    }
   },
+  
   "branch": {
+    // פרטים אישיים
+    id: "789123456",
     name: "דוד לוי",
     role: "מנהל סניף",
     department: "סניף תל אביב",
@@ -163,10 +445,90 @@ const userProfiles = {
     avatar: "ד.ל",
     permissions: ["basic", "branch", "credit"],
     employmentType: "permanent", // קבוע
-    seniority: 84, // חודשים
-    grade: 8
+    seniority: 84, // חודשים (7 שנים)
+    grade: 8,
+    hireDate: "2017-10-01",
+    
+    // נתוני משפחה (טופס 101)
+    familyData: {
+      maritalStatus: "נשוי",
+      numberOfChildren: 3,
+      childrenAges: [15, 17, 20],
+      spouseDetails: { name: "רונית לוי", birthYear: 1985 },
+      lastUpdated: "2024-01-25"
+    },
+    
+    // זכאויות שנתיות לפי ותק וסוג העסקה
+    annualEntitlements: {
+      vacation: 21, // ימי חופשה - 5+ שנים
+      recovery: 7,  // זכאות להבראה מלאה
+      clothing: 2000, // ביגוד מנהלים
+      gifts: 800,   // מתנות מנהלים מוגברות
+      sickDays: 18, // ימי מחלה מלאים
+      childSickDays: 8 // ימי מחלת ילד מלאים
+    },
+    
+    // ניצול השנה 2024
+    currentYearUsage: {
+      vacation: {
+        used: 16,
+        dates: [
+          { startDate: "2024-02-12", endDate: "2024-02-16", days: 5, type: "חופשה שנתית" },
+          { startDate: "2024-08-05", endDate: "2024-08-16", days: 10, type: "חופשה רציפה" },
+          { startDate: "2024-09-30", endDate: "2024-09-30", days: 1, type: "יום יומולדת" }
+        ]
+      },
+      recovery: {
+        used: 7,
+        dates: [
+          { startDate: "2024-06-10", endDate: "2024-06-16", days: 7, type: "הבראה מלאה" }
+        ]
+      },
+      sickDays: {
+        used: 3,
+        dates: [
+          { date: "2024-01-22", type: "מחלה עצמית" },
+          { date: "2024-04-18", type: "מחלה עצמית" },
+          { date: "2024-07-30", type: "מחלה עצמית" }
+        ]
+      },
+      childSickDays: {
+        used: 2,
+        dates: [
+          { date: "2024-03-12", childAge: 15, type: "מחלת ילד" },
+          { date: "2024-05-28", childAge: 17, type: "מחלת ילד" }
+        ]
+      }
+    },
+    
+    // יתרות צבורות משנים קודמות
+    accumulatedBalance: {
+      sickDays: 45, // ימי מחלה מצטברים רבים
+      vacation: 5   // חופשה מועברת מקסימלית
+    },
+    
+    // זכאות מתנות לילדים
+    childrenGifts: {
+      eligibleChildren: 2, // רק עד גיל 18
+      giftStatus2024: {
+        "ראש השנה": "נמסר",
+        "חנוכה": "נמסר",
+        "פסח": "לא רלוונטי עדיין"
+      }
+    },
+    
+    // נתוני משמרות ושעות נוספות (מנהלים פטורים)
+    workData: {
+      monthlyHours: 160,
+      overtimeThisMonth: 0, // פטור משעות נוספות
+      overtimeDetails: [],
+      managementCompensation: true // זכאי להפגה במקום שעות נוספות
+    }
   },
+  
   "branch_temp": {
+    // פרטים אישיים
+    id: "321654987",
     name: "נועה כהן",
     role: "פקידת סניף זמנית",
     department: "סניף חיפה",
@@ -175,9 +537,85 @@ const userProfiles = {
     permissions: ["basic", "branch_basic"],
     employmentType: "temporary", // זמני
     seniority: 6, // חודשים
-    grade: 2
+    grade: 2,
+    hireDate: "2024-04-01",
+    
+    // נתוני משפחה (טופס 101)
+    familyData: {
+      maritalStatus: "נשואה",
+      numberOfChildren: 1,
+      childrenAges: [3],
+      spouseDetails: { name: "עמית כהן", birthYear: 1990 },
+      lastUpdated: "2024-04-15"
+    },
+    
+    // זכאויות שנתיות לפי ותק וסוג העסקה
+    annualEntitlements: {
+      vacation: 8, // ימי חופשה חלקיים לזמני עם ותק
+      recovery: 0, // אין זכאות להבראה
+      clothing: 600, // ביגוד חלקי
+      gifts: 300, // מתנות מופחתות
+      sickDays: 15, // ימי מחלה
+      childSickDays: 6 // ימי מחלת ילד חלקיים
+    },
+    
+    // ניצול השנה 2024
+    currentYearUsage: {
+      vacation: {
+        used: 3,
+        dates: [
+          { startDate: "2024-07-08", endDate: "2024-07-10", days: 3, type: "חופשה שנתית" }
+        ]
+      },
+      recovery: { used: 0, dates: [] },
+      sickDays: {
+        used: 4,
+        dates: [
+          { date: "2024-05-15", type: "מחלה עצמית" },
+          { date: "2024-06-22", type: "מחלה עצמית" },
+          { date: "2024-08-07", type: "מחלה עצמית" },
+          { date: "2024-09-19", type: "מחלה עצמית" }
+        ]
+      },
+      childSickDays: {
+        used: 2,
+        dates: [
+          { date: "2024-06-12", childAge: 3, type: "מחלת ילד" },
+          { date: "2024-08-25", childAge: 3, type: "מחלת ילד" }
+        ]
+      }
+    },
+    
+    // יתרות צבורות משנים קודמות
+    accumulatedBalance: {
+      sickDays: 0, // עובדת חדשה
+      vacation: 0  // עובדת חדשה
+    },
+    
+    // זכאות מתנות לילדים
+    childrenGifts: {
+      eligibleChildren: 1,
+      giftStatus2024: {
+        "ראש השנה": "נמסר",
+        "חנוכה": "ממתין",
+        "פסח": "לא רלוונטי עדיין"
+      }
+    },
+    
+    // נתוני משמרות ושעות נוספות
+    workData: {
+      monthlyHours: 160,
+      overtimeThisMonth: 5,
+      overtimeDetails: [
+        { date: "2024-10-03", hours: 2, rate: "125%", approved: true },
+        { date: "2024-10-11", hours: 3, rate: "125%", approved: true }
+      ]
+    }
   },
+  
   "tech": {
+    // פרטים אישיים
+    id: "654321789",
     name: "שרה גולדמן",
     role: "מפתחת תוכנה",
     department: "חטיבת טכנולוגיות",
@@ -185,10 +623,76 @@ const userProfiles = {
     avatar: "ש.ג",
     permissions: ["basic", "tech", "systems"],
     employmentType: "permanent", // קבוע
-    seniority: 48, // חודשים
-    grade: 7
+    seniority: 48, // חודשים (4 שנים)
+    grade: 7,
+    hireDate: "2020-10-01",
+    
+    // נתוני משפחה (טופס 101)
+    familyData: {
+      maritalStatus: "רווקה",
+      numberOfChildren: 0,
+      childrenAges: [],
+      spouseDetails: null,
+      lastUpdated: "2024-01-10"
+    },
+    
+    // זכאויות שנתיות לפי ותק וסוג העסקה
+    annualEntitlements: {
+      vacation: 18, // ימי חופשה - 1-5 שנים
+      recovery: 7,  // זכאות להבראה מלאה
+      clothing: 1800, // ביגוד מפתחים מוגבר
+      gifts: 600,   // מתנות טכנולוגיה
+      sickDays: 18, // ימי מחלה מלאים
+      childSickDays: 0 // אין ילדים
+    },
+    
+    // ניצול השנה 2024
+    currentYearUsage: {
+      vacation: {
+        used: 10,
+        dates: [
+          { startDate: "2024-01-15", endDate: "2024-01-19", days: 5, type: "חופשה שנתית" },
+          { startDate: "2024-05-20", endDate: "2024-05-24", days: 5, type: "חופשה שנתית" }
+        ]
+      },
+      recovery: {
+        used: 0,
+        dates: []
+      },
+      sickDays: {
+        used: 2,
+        dates: [
+          { date: "2024-03-18", type: "מחלה עצמית" },
+          { date: "2024-07-25", type: "מחלה עצמית" }
+        ]
+      },
+      childSickDays: { used: 0, dates: [] }
+    },
+    
+    // יתרות צבורות משנים קודמות
+    accumulatedBalance: {
+      sickDays: 32, // ימי מחלה מצטברים
+      vacation: 4   // חופשה מועברת
+    },
+    
+    // זכאות מתנות לילדים
+    childrenGifts: {
+      eligibleChildren: 0,
+      giftStatus2024: {}
+    },
+    
+    // נתוני משמרות ושעות נוספות (דרגה גבוהה - פטורה)
+    workData: {
+      monthlyHours: 160,
+      overtimeThisMonth: 0, // פטורה משעות נוספות
+      overtimeDetails: [],
+      managementCompensation: true // זכאית להפגה
+    }
   }
 };
+
+// Alias for backward compatibility
+const userProfiles = employeeDatabase;
 
 // Main chatbot page
 app.get('/', (c) => {
@@ -200,7 +704,9 @@ app.get('/', (c) => {
       {/* Chat Header */}
       <div class="chat-header">
         <div class="logo">
-          <i class="fas fa-piggy-bank"></i>
+          <img src="https://page.gensparksite.com/v1/base64_upload/1c2cbdf24b458a240d8a4f579cd06d4d" 
+               alt="לוגו בנק דיסקונט" 
+               style="width: 55px; height: 55px; object-fit: contain;" />
         </div>
         <div class="title">
           <h1>צ'אטבוט בנק דיסקונט</h1>
@@ -233,7 +739,7 @@ app.get('/', (c) => {
               זיהיתי אותך כ<strong>{currentUser.employmentType === 'permanent' ? 'עובד קבוע' : 
               currentUser.employmentType === 'temporary' ? 'עובד זמני' : 'עובד שעתי'}</strong> ב{currentUser.department}.<br/>
               <strong>בדיסקונט משקיעים בך!</strong> התשובות שלי מותאמות אישית לסטטוס ההעסקה ולזכויותיך.<br/>
-              <strong>איך אני יכול לעזור לך היום? 💜</strong>
+              <strong>איך אני יכול לעזור לך היום? 😊</strong>
             </p>
             <div class="message-meta">
               <i class="fas fa-clock"></i>
@@ -264,6 +770,27 @@ app.get('/', (c) => {
           <div class="quick-action" onclick="sendQuickMessage('עבודה מרחוק')">
             <i class="fas fa-home"></i> עבודה מהבית
           </div>
+          <div class="quick-action" onclick="sendQuickMessage('איך מנוהל קובץ המשמרות?')">
+            <i class="fas fa-calendar-week"></i> מערכת משמרות
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('מערכת זכאויות וניצול')">
+            <i class="fas fa-chart-line"></i> זכויות וניצול
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('מעקב ימי מחלה מול זכאות')">
+            <i class="fas fa-heartbeat"></i> ימי מחלה
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('טופס 101 נתוני משפחה')">
+            <i class="fas fa-users"></i> טופס 101
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('ניצול חופשה רציפה')">
+            <i class="fas fa-umbrella-beach"></i> חופשה רציפה
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('זכאות מתנות לילדים')">
+            <i class="fas fa-gift"></i> מתנות ילדים
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('זכאות חודשית שעות נוספות')">
+            <i class="fas fa-stopwatch"></i> שעות נוספות
+          </div>
         </div>
       </div>
 
@@ -293,6 +820,156 @@ app.get('/', (c) => {
   )
 })
 
+// פונקציות עזר לחישוב יתרות וזכאויות
+function calculateVacationBalance(employee) {
+  const entitled = employee.annualEntitlements.vacation + employee.accumulatedBalance.vacation;
+  const used = employee.currentYearUsage.vacation.used;
+  return {
+    entitled,
+    used, 
+    remaining: entitled - used,
+    details: employee.currentYearUsage.vacation.dates
+  };
+}
+
+function calculateSickDaysBalance(employee) {
+  const annualEntitlement = employee.annualEntitlements.sickDays;
+  const accumulated = employee.accumulatedBalance.sickDays;
+  const totalEntitled = Math.min(annualEntitlement + accumulated, 90); // מקסימום 90 ימים
+  const used = employee.currentYearUsage.sickDays.used;
+  
+  return {
+    annualEntitlement,
+    accumulated,
+    totalEntitled,
+    used,
+    remaining: totalEntitled - used,
+    details: employee.currentYearUsage.sickDays.dates
+  };
+}
+
+function calculateChildSickDaysBalance(employee) {
+  const entitled = employee.annualEntitlements.childSickDays;
+  const used = employee.currentYearUsage.childSickDays.used;
+  
+  return {
+    entitled,
+    used,
+    remaining: entitled - used,
+    details: employee.currentYearUsage.childSickDays.dates,
+    eligibleChildren: employee.familyData.numberOfChildren
+  };
+}
+
+function calculateRecoveryBalance(employee) {
+  const entitled = employee.annualEntitlements.recovery;
+  const used = employee.currentYearUsage.recovery.used;
+  
+  return {
+    entitled,
+    used,
+    remaining: entitled - used,
+    details: employee.currentYearUsage.recovery.dates
+  };
+}
+
+function calculateOvertimeStatus(employee) {
+  const currentMonth = employee.workData.overtimeThisMonth;
+  const maxMonthly = employee.grade <= 6 ? 25 : 15; // מגבלות לפי דרגה
+  const isExempt = employee.grade >= 7 || employee.workData.managementCompensation;
+  
+  return {
+    currentMonth,
+    maxMonthly: isExempt ? 0 : maxMonthly,
+    remaining: isExempt ? 0 : Math.max(0, maxMonthly - currentMonth),
+    isExempt,
+    details: employee.workData.overtimeDetails || []
+  };
+}
+
+function getChildrenGiftStatus(employee) {
+  return {
+    eligibleChildren: employee.childrenGifts.eligibleChildren,
+    childrenAges: employee.familyData.childrenAges,
+    status2024: employee.childrenGifts.giftStatus2024
+  };
+}
+
+function generatePersonalizedResponse(baseAnswer, employee, topic) {
+  let personalSection = "\n\n**📊 המידע האישי שלך:**\n";
+  
+  switch(topic) {
+    case 'vacation':
+      const vacBalance = calculateVacationBalance(employee);
+      personalSection += `**זכאות שנתית:** ${vacBalance.entitled} ימים\n`;
+      personalSection += `**ניצלת השנה:** ${vacBalance.used} ימים\n`;
+      personalSection += `**יתרה זמינה:** ${vacBalance.remaining} ימים\n`;
+      if (vacBalance.details.length > 0) {
+        personalSection += `**חופשות שנלקחו:** ${vacBalance.details.map(d => `${d.startDate} (${d.days} ימים)`).join(', ')}\n`;
+      }
+      break;
+      
+    case 'sick':
+      const sickBalance = calculateSickDaysBalance(employee);
+      personalSection += `**זכאות שנתית:** ${sickBalance.annualEntitlement} ימים\n`;
+      personalSection += `**יתרה מצטברת:** ${sickBalance.accumulated} ימים\n`;
+      personalSection += `**סה"כ זכאות:** ${sickBalance.totalEntitled} ימים\n`;
+      personalSection += `**ניצלת השנה:** ${sickBalance.used} ימים\n`;
+      personalSection += `**יתרה זמינה:** ${sickBalance.remaining} ימים\n`;
+      break;
+      
+    case 'childSick':
+      const childSickBalance = calculateChildSickDaysBalance(employee);
+      personalSection += `**מספר ילדים זכאים:** ${childSickBalance.eligibleChildren}\n`;
+      personalSection += `**זכאות שנתית:** ${childSickBalance.entitled} ימים\n`;
+      personalSection += `**ניצלת השנה:** ${childSickBalance.used} ימים\n`;
+      personalSection += `**יתרה זמינה:** ${childSickBalance.remaining} ימים\n`;
+      break;
+      
+    case 'overtime':
+      const overtimeStatus = calculateOvertimeStatus(employee);
+      if (overtimeStatus.isExempt) {
+        personalSection += `**דרגה ${employee.grade}:** פטור משעות נוספות, זכאי להפגה\n`;
+      } else {
+        personalSection += `**שעות נוספות החודש:** ${overtimeStatus.currentMonth} שעות\n`;
+        personalSection += `**מכסה חודשית:** ${overtimeStatus.maxMonthly} שעות\n`;
+        personalSection += `**יתרה זמינה:** ${overtimeStatus.remaining} שעות\n`;
+      }
+      break;
+      
+    case 'gifts':
+      const giftStatus = getChildrenGiftStatus(employee);
+      personalSection += `**ילדים זכאים:** ${giftStatus.eligibleChildren}\n`;
+      if (giftStatus.eligibleChildren > 0) {
+        personalSection += `**גילאי הילדים:** ${giftStatus.childrenAges.join(', ')}\n`;
+        personalSection += `**סטטוס מתנות 2024:**\n`;
+        Object.entries(giftStatus.status2024).forEach(([holiday, status]) => {
+          personalSection += `  • ${holiday}: ${status}\n`;
+        });
+      }
+      break;
+      
+    case 'family':
+      const family = employee.familyData;
+      personalSection += `**סטטוס משפחתי:** ${family.maritalStatus}\n`;
+      personalSection += `**מספר ילדים:** ${family.numberOfChildren}\n`;
+      if (family.numberOfChildren > 0) {
+        personalSection += `**גילאי ילדים:** ${family.childrenAges.join(', ')}\n`;
+      }
+      personalSection += `**עודכן לאחרונה:** ${family.lastUpdated}\n`;
+      break;
+      
+    default:
+      // תגובה כללית עם פרטי עובד
+      personalSection += `**סוג העסקה:** ${employee.employmentType === 'permanent' ? 'קבוע' : 
+                                          employee.employmentType === 'temporary' ? 'זמני' : 'שעתי'}\n`;
+      personalSection += `**ותק:** ${Math.floor(employee.seniority / 12)} שנים, ${employee.seniority % 12} חודשים\n`;
+      personalSection += `**דרגה:** ${employee.grade}\n`;
+  }
+  
+  return baseAnswer + personalSection;
+}
+
 // API endpoint for chat
 app.post('/api/chat', async (c) => {
   try {
@@ -302,9 +979,28 @@ app.post('/api/chat', async (c) => {
     // Simulate processing delay
     await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
     
-    // Enhanced keyword matching for demo
+    // Enhanced keyword matching for demo with personal data support
     const lowerMessage = message.toLowerCase();
     let matchedKnowledge = null;
+    let personalTopic = null;
+    
+    // זיהוי שאלות אישיות עם יתרות ומאגר מידע מותאם אישית
+    const personalQuestions = {
+      vacation: ['כמה חופשה נשארה', 'כמה ימי חופשה', 'יתרת חופשה', 'חופשה שלי', 'ימי החופשה שלי', 'יתרת ימי חופשה', 'כמה חופשה יש לי'],
+      sick: ['כמה ימי מחלה', 'יתרת מחלה', 'ימי מחלה שלי', 'כמה מחלה נשארה', 'יתרת ימי מחלה'],
+      childSick: ['מחלת ילד', 'ימי מחלת ילד שלי', 'כמה ימי מחלת ילד', 'יתרת מחלת ילד'],
+      overtime: ['שעות נוספות שלי', 'כמה שעות נוספות', 'יתרת שעות נוספות', 'מכסת שעות נוספות'],
+      gifts: ['מתנות לילדים שלי', 'מתנות הילדים', 'סטטוס מתנות', 'מתנות שלי'],
+      family: ['טופס 101 שלי', 'נתוני המשפחה שלי', 'פרטי משפחה', 'ילדים שלי', 'מצב משפחתי']
+    };
+    
+    // בדיקה אם זו שאלה אישית
+    for (const [topic, keywords] of Object.entries(personalQuestions)) {
+      if (keywords.some(keyword => lowerMessage.includes(keyword))) {
+        personalTopic = topic;
+        break;
+      }
+    }
     
     // Priority-based keyword matching - more specific first
     if (lowerMessage.includes('חופשה') || lowerMessage.includes('חופש')) {
@@ -331,6 +1027,18 @@ app.post('/api/chat', async (c) => {
       matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('גישה למערכת'));
     } else if (lowerMessage.includes('פעילות') && lowerMessage.includes('מערכות')) {
       matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('שעות הפעילות'));
+    } else if (lowerMessage.includes('משמרות') || lowerMessage.includes('קובץ משמרות') || (lowerMessage.includes('מערכת') && lowerMessage.includes('משמרות'))) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('קובץ המשמרות'));
+    } else if ((lowerMessage.includes('זכאויות') && lowerMessage.includes('ניצול')) || lowerMessage.includes('מערכת זכאויות')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('מערכת הזכאויות'));
+    } else if (lowerMessage.includes('טופס 101') || (lowerMessage.includes('נתוני') && lowerMessage.includes('משפחה'))) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('טופס 101'));
+    } else if ((lowerMessage.includes('חופשה') && lowerMessage.includes('רציפה')) || lowerMessage.includes('ניצול חופשה')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('חופשה רציפה'));
+    } else if ((lowerMessage.includes('מתנות') && lowerMessage.includes('ילדים')) || lowerMessage.includes('זכאות מתנות')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('מתנות לילדים'));
+    } else if ((lowerMessage.includes('זכאות') && lowerMessage.includes('חודשית')) || (lowerMessage.includes('חודשית') && lowerMessage.includes('שעות'))) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('זכאות חודשית'));
     }
     
     // Fallback: try direct text similarity
@@ -345,7 +1053,142 @@ app.post('/api/chat', async (c) => {
     }
     
     let response;
-    if (matchedKnowledge) {
+    
+    // טיפול בשאלות אישיות עם נתונים מהמאגר
+    if (personalTopic) {
+      let personalResponse = "";
+      let sources = ["מאגר נתוני עובדים", "מערכת HR"];
+      
+      switch (personalTopic) {
+        case 'vacation':
+          const vacBalance = calculateVacationBalance(currentUser);
+          personalResponse = `**🏖️ יתרת ימי החופשה שלך:**\n\n`;
+          personalResponse += `📅 **זכאות שנתית:** ${vacBalance.entitled} ימים\n`;
+          personalResponse += `✅ **ניצלת עד כה:** ${vacBalance.used} ימים\n`;
+          personalResponse += `🎯 **יתרה זמינה:** **${vacBalance.remaining} ימים**\n\n`;
+          
+          if (vacBalance.details.length > 0) {
+            personalResponse += `**📋 חופשות שנלקחו השנה:**\n`;
+            vacBalance.details.forEach(d => {
+              personalResponse += `• ${d.startDate} עד ${d.endDate} (${d.days} ימים) - ${d.type}\n`;
+            });
+          } else {
+            personalResponse += `💡 **עדיין לא נלקחו חופשות השנה!**\n`;
+          }
+          
+          if (currentUser.employmentType === 'temporary' && currentUser.seniority < 6) {
+            personalResponse += `\n⚠️ **שים לב:** כעובד זמני עם ותק מתחת ל-6 חודשים, ייתכן שאין לך זכאות מלאה לחופשה.`;
+          }
+          break;
+          
+        case 'sick':
+          const sickBalance = calculateSickDaysBalance(currentUser);
+          personalResponse = `**🏥 יתרת ימי המחלה שלך:**\n\n`;
+          personalResponse += `📅 **זכאות שנתית:** ${sickBalance.annualEntitlement} ימים\n`;
+          personalResponse += `💼 **יתרה מצטברת:** ${sickBalance.accumulated} ימים\n`;
+          personalResponse += `📊 **סה"כ זכאות:** ${sickBalance.totalEntitled} ימים\n`;
+          personalResponse += `✅ **ניצלת השנה:** ${sickBalance.used} ימים\n`;
+          personalResponse += `🎯 **יתרה זמינה:** **${sickBalance.remaining} ימים**\n\n`;
+          
+          if (sickBalance.details.length > 0) {
+            personalResponse += `**📋 ימי מחלה שנלקחו השנה:**\n`;
+            sickBalance.details.forEach(d => {
+              personalResponse += `• ${d.date} - ${d.type}\n`;
+            });
+          }
+          
+          if (sickBalance.remaining < 3) {
+            personalResponse += `\n⚠️ **אזהרה:** נותרו לך מעט ימי מחלה. שקול לשמור על הזכאות לחירום.`;
+          }
+          break;
+          
+        case 'childSick':
+          const childSickBalance = calculateChildSickDaysBalance(currentUser);
+          personalResponse = `**👶 יתרת ימי מחלת ילד שלך:**\n\n`;
+          personalResponse += `👨‍👩‍👧‍👦 **מספר ילדים זכאים:** ${childSickBalance.eligibleChildren}\n`;
+          if (childSickBalance.eligibleChildren > 0) {
+            personalResponse += `📅 **זכאות שנתית:** ${childSickBalance.entitled} ימים\n`;
+            personalResponse += `✅ **ניצלת השנה:** ${childSickBalance.used} ימים\n`;
+            personalResponse += `🎯 **יתרה זמינה:** **${childSickBalance.remaining} ימים**\n`;
+            personalResponse += `🎂 **גילאי הילדים:** ${currentUser.familyData.childrenAges.join(', ')}\n`;
+          } else {
+            personalResponse += `\n💡 **אין לך ילדים רשומים במערכת או שהם מעל גיל 18.**`;
+          }
+          break;
+          
+        case 'overtime':
+          const overtimeStatus = calculateOvertimeStatus(currentUser);
+          personalResponse = `**⏰ מצב שעות נוספות שלך:**\n\n`;
+          if (overtimeStatus.isExempt) {
+            personalResponse += `👔 **דרגה ${currentUser.grade}:** פטור משעות נוספות\n`;
+            personalResponse += `💰 **זכאות:** הפגה/תוספת ניהולית במקום שעות נוספות\n`;
+          } else {
+            personalResponse += `⏱️ **שעות נוספות החודש:** ${overtimeStatus.currentMonth} שעות\n`;
+            personalResponse += `📊 **מכסה חודשית מותרת:** ${overtimeStatus.maxMonthly} שעות\n`;
+            personalResponse += `🎯 **יתרה זמינה:** **${overtimeStatus.remaining} שעות**\n\n`;
+            
+            if (overtimeStatus.details.length > 0) {
+              personalResponse += `**📋 שעות נוספות החודש:**\n`;
+              overtimeStatus.details.forEach(d => {
+                personalResponse += `• ${d.date}: ${d.hours} שעות (${d.rate}) - ${d.approved ? '✅ מאושר' : '⏳ ממתין לאישור'}\n`;
+              });
+            }
+          }
+          break;
+          
+        case 'gifts':
+          const giftStatus = getChildrenGiftStatus(currentUser);
+          personalResponse = `**🎁 מצב מתנות לילדים שלך:**\n\n`;
+          personalResponse += `👨‍👩‍👧‍👦 **ילדים זכאים:** ${giftStatus.eligibleChildren}\n`;
+          
+          if (giftStatus.eligibleChildren > 0) {
+            personalResponse += `🎂 **גילאי הילדים:** ${giftStatus.childrenAges.join(', ')}\n\n`;
+            personalResponse += `**📅 סטטוס מתנות 2024:**\n`;
+            Object.entries(giftStatus.status2024).forEach(([holiday, status]) => {
+              const statusEmoji = status === 'נמסר' ? '✅' : status === 'ממתין' ? '⏳' : '❓';
+              personalResponse += `• ${holiday}: ${statusEmoji} ${status}\n`;
+            });
+          } else {
+            personalResponse += `\n💡 **אין לך ילדים זכאים למתנות (עד גיל 18).**`;
+          }
+          break;
+          
+        case 'family':
+          const family = currentUser.familyData;
+          personalResponse = `**👨‍👩‍👧‍👦 הטופס 101 - נתוני המשפחה שלך:**\n\n`;
+          personalResponse += `💑 **סטטוס משפחתי:** ${family.maritalStatus}\n`;
+          personalResponse += `👶 **מספר ילדים:** ${family.numberOfChildren}\n`;
+          
+          if (family.numberOfChildren > 0) {
+            personalResponse += `🎂 **גילאי ילדים:** ${family.childrenAges.join(', ')}\n`;
+            personalResponse += `🎁 **ילדים זכאים למתנות:** ${family.childrenAges.filter(age => age <= 18).length}\n`;
+            personalResponse += `🏥 **ילדים זכאים למחלת ילד:** ${family.childrenAges.filter(age => age <= 16).length}\n`;
+          }
+          
+          personalResponse += `📅 **עודכן לאחרונה:** ${family.lastUpdated}\n`;
+          
+          const nextUpdate = new Date('2025-01-31');
+          const today = new Date();
+          if (today > nextUpdate) {
+            personalResponse += `\n⚠️ **דרוש עדכון:** הטופס צריך עדכון עד 31.1 בכל שנה!`;
+          } else {
+            personalResponse += `\n✅ **הטופס עדכני** - העדכון הבא נדרש עד 31.1.2025`;
+          }
+          break;
+      }
+      
+      response = {
+        text: personalResponse,
+        sources: sources,
+        lastUpdated: new Date().toISOString().split('T')[0],
+        confidence: 1.0,
+        personalized: true,
+        personalData: true,
+        userType: currentUser.employmentType,
+        userSeniority: `${Math.floor(currentUser.seniority / 12)} שנים, ${currentUser.seniority % 12} חודשים`
+      };
+      
+    } else if (matchedKnowledge) {
       // Check access permissions
       const hasAccess = currentUser.permissions.includes(matchedKnowledge.accessLevel);
       
