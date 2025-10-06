@@ -268,6 +268,123 @@ const employeeDatabase = {
         { date: "2024-10-08", hours: 3, rate: "150%", approved: true },
         { date: "2024-10-15", hours: 3, rate: "125%", approved: true }
       ]
+    },
+    
+    // מערכת משמרות עובד זמני - מוקד טלפוני
+    shiftsData: {
+      isShiftWorker: true,
+      shiftType: "מוקד טלפוני זמני",
+      
+      // משמרות ספטמבר 2024 (חודש אחורה) - עובד חדש התחיל באמצע החודש
+      september2024: [
+        // עדיין לא התחיל לעבוד
+        { date: "2024-09-15", day: "ראשון", shift: "הכשרה", startTime: "08:00", endTime: "16:00", hours: 8, status: "הכשרה" },
+        { date: "2024-09-16", day: "שני", shift: "הכשרה", startTime: "08:00", endTime: "16:00", hours: 8, status: "הכשרה" },
+        { date: "2024-09-17", day: "שלישי", shift: "הכשרה", startTime: "08:00", endTime: "16:00", hours: 8, status: "הכשרה" },
+        { date: "2024-09-18", day: "רביעי", shift: "הכשרה", startTime: "08:00", endTime: "16:00", hours: 8, status: "הכשרה" },
+        { date: "2024-09-19", day: "חמישי", shift: "הכשרה", startTime: "08:00", endTime: "16:00", hours: 8, status: "הכשרה" },
+        { date: "2024-09-20", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-09-21", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        
+        // השבוע הראשון בעבודה עצמאית  
+        { date: "2024-09-22", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-23", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-24", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-25", day: "רביעי", shift: "כיפור", startTime: "", endTime: "", hours: 0, status: "חג" },
+        { date: "2024-09-26", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-27", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-09-28", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+
+        { date: "2024-09-29", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-30", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" }
+      ],
+      
+      // משמרות אוקטובר 2024 (חודש נוכחי)
+      october2024: [
+        { date: "2024-10-01", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" },
+        { date: "2024-10-02", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" },
+        { date: "2024-10-03", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "הושלם" },
+        { date: "2024-10-04", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-10-05", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+
+        { date: "2024-10-06", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "נוכחי" },
+        { date: "2024-10-07", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-08", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-09", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-10", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-11", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-10-12", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+
+        { date: "2024-10-13", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-14", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-15", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-16", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-17", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-18", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-10-19", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+
+        { date: "2024-10-20", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-21", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-22", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-23", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-24", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-25", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-10-26", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+
+        { date: "2024-10-27", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-28", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-29", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-30", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-31", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" }
+      ],
+
+      // משמרות נובמבר 2024 (חודש קדימה)
+      november2024: [
+        { date: "2024-11-01", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-11-02", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-11-03", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-04", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-05", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-06", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-07", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-08", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-11-09", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+
+        { date: "2024-11-10", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-11", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-12", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-13", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-14", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-15", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-11-16", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+
+        { date: "2024-11-17", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-18", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-19", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-20", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-21", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-22", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-11-23", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+
+        { date: "2024-11-24", day: "ראשון", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-25", day: "שני", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-26", day: "שלישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-27", day: "רביעי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-28", day: "חמישי", shift: "בוקר", startTime: "08:00", endTime: "16:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-29", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" },
+        { date: "2024-11-30", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש שבועי" }
+      ],
+      
+      // סטטיסטיקות משמרות  
+      shiftsStats: {
+        totalHoursThisMonth: 176, // כ-22 ימי עבודה * 8 שעות
+        morningShifts: 22,
+        eveningShifts: 0,
+        nightShifts: 0,
+        daysOff: 8,
+        holidays: 1,
+        trainingDays: 5
+      }
     }
   },
   
@@ -610,6 +727,136 @@ const employeeDatabase = {
         { date: "2024-10-03", hours: 2, rate: "125%", approved: true },
         { date: "2024-10-11", hours: 3, rate: "125%", approved: true }
       ]
+    },
+    
+    // מערכת משמרות עובדת שעתית - מוקד טלפוני
+    shiftsData: {
+      isShiftWorker: true,
+      shiftType: "מוקד טלפוני שעתי",
+      
+      // משמרות ספטמבר 2024 (חודש אחורה)
+      september2024: [
+        { date: "2024-09-01", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-02", day: "שני", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-09-03", day: "שלישי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-04", day: "רביעי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-05", day: "חמישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-06", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-09-07", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        
+        { date: "2024-09-08", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-09", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-10", day: "שלישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-09-11", day: "רביעי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-12", day: "חמישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-13", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-09-14", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-09-15", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-16", day: "שני", shift: "ראש השנה", startTime: "", endTime: "", hours: 0, status: "חג" },
+        { date: "2024-09-17", day: "שלישי", shift: "ראש השנה", startTime: "", endTime: "", hours: 0, status: "חג" },
+        { date: "2024-09-18", day: "רביעי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-19", day: "חמישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-20", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-09-21", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-09-22", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-23", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-24", day: "שלישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-09-25", day: "רביעי", shift: "כיפור", startTime: "", endTime: "", hours: 0, status: "חג" },
+        { date: "2024-09-26", day: "חמישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-27", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-09-28", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-09-29", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-09-30", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" }
+      ],
+      
+      // משמרות אוקטובר 2024 (חודש נוכחי)
+      october2024: [
+        { date: "2024-10-01", day: "שלישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "הושלם" },
+        { date: "2024-10-02", day: "רביעי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "הושלם" },
+        { date: "2024-10-03", day: "חמישי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "הושלם" },
+        { date: "2024-10-04", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-10-05", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-10-06", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "נוכחי" },
+        { date: "2024-10-07", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-08", day: "שלישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-10-09", day: "רביעי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-10", day: "חמישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-11", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-10-12", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-10-13", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-14", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-15", day: "שלישי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-16", day: "רביעי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-10-17", day: "חמישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-18", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-10-19", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-10-20", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-21", day: "שני", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-22", day: "שלישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-23", day: "רביעי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-24", day: "חמישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-10-25", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-10-26", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-10-27", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-28", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-29", day: "שלישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-30", day: "רביעי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-10-31", day: "חמישי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" }
+      ],
+
+      // משמרות נובמבר 2024 (חודש קדימה)
+      november2024: [
+        { date: "2024-11-01", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-02", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-03", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-04", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-05", day: "שלישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-06", day: "רביעי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-07", day: "חמישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-08", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-09", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-11-10", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-11", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-12", day: "שלישי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-13", day: "רביעי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-14", day: "חמישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-15", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-16", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-11-17", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-18", day: "שני", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-19", day: "שלישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-20", day: "רביעי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-21", day: "חמישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-22", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-23", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+
+        { date: "2024-11-24", day: "ראשון", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-25", day: "שני", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-26", day: "שלישי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-27", day: "רביעי", shift: "בוקר", startTime: "07:00", endTime: "15:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-28", day: "חמישי", shift: "ערב", startTime: "13:00", endTime: "21:00", hours: 8, status: "מתוכנן" },
+        { date: "2024-11-29", day: "שישי", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" },
+        { date: "2024-11-30", day: "שבת", shift: "חופש", startTime: "", endTime: "", hours: 0, status: "חופש" }
+      ],
+      
+      // סטטיסטיקות משמרות
+      shiftsStats: {
+        totalHoursThisMonth: 168, // כ-21 ימי עבודה * 8 שעות
+        morningShifts: 11,
+        eveningShifts: 10,
+        nightShifts: 0,
+        daysOff: 9,
+        holidays: 0
+      }
     }
   },
   
@@ -688,8 +935,14 @@ const employeeDatabase = {
       overtimeDetails: [],
       managementCompensation: true // זכאית להפגה
     }
-  }
+  },
+  
+  // רפרנס נוסף לרחל כהן בשם "hourly" לתאימות
+  "hourly": null // Will be set below
 };
+
+// Set the hourly reference to the same data as call_center (Rachel Cohen)
+employeeDatabase.hourly = employeeDatabase.call_center;
 
 // Alias for backward compatibility
 const userProfiles = employeeDatabase;
@@ -790,6 +1043,15 @@ app.get('/', (c) => {
           </div>
           <div class="quick-action" onclick="sendQuickMessage('זכאות חודשית שעות נוספות')">
             <i class="fas fa-stopwatch"></i> שעות נוספות
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('מה המשמרות שלי השבוע?')">
+            <i class="fas fa-calendar-check"></i> המשמרות השבוע
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('המשמרת שלי היום')">
+            <i class="fas fa-clock-o"></i> משמרת היום
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('המשמרות שלי החודש')">
+            <i class="fas fa-calendar"></i> משמרות החודש
           </div>
         </div>
       </div>
@@ -895,6 +1157,174 @@ function getChildrenGiftStatus(employee) {
   };
 }
 
+// פונקציות חישוב משמרות
+function getWeeklyShifts(employee, targetDate = null) {
+  // אם העובד לא עובד במשמרות
+  if (!employee.shiftsData || !employee.shiftsData.isShiftWorker) {
+    return {
+      isShiftWorker: false,
+      message: "העובד לא עובד במשמרות - עבודה בשעות קבועות"
+    };
+  }
+  
+  // For demo purposes, we'll simulate being in October 2024
+  const today = targetDate ? new Date(targetDate) : new Date('2024-10-06');
+  const currentMonth = today.getMonth() + 1; // JavaScript months are 0-based  
+  const currentYear = today.getFullYear();
+  
+  // מצא את השבוע הנוכחי (ראשון עד שבת)
+  const dayOfWeek = today.getDay(); // 0 = ראשון, 6 = שבת
+  const startOfWeek = new Date(today);
+  startOfWeek.setDate(today.getDate() - dayOfWeek);
+  
+  const weekShifts = [];
+  
+  // קבל את המשמרות לחודש הנוכחי
+  let monthlyShifts = [];
+  if (currentMonth === 9 && currentYear === 2024) {
+    monthlyShifts = employee.shiftsData.september2024 || [];
+  } else if (currentMonth === 10 && currentYear === 2024) {
+    monthlyShifts = employee.shiftsData.october2024 || [];
+  } else if (currentMonth === 11 && currentYear === 2024) {
+    monthlyShifts = employee.shiftsData.november2024 || [];
+  }
+  
+  // מצא משמרות לשבוע הנוכחי
+  for (let i = 0; i < 7; i++) {
+    const checkDate = new Date(startOfWeek);
+    checkDate.setDate(startOfWeek.getDate() + i);
+    const dateStr = checkDate.toISOString().split('T')[0];
+    
+    const shift = monthlyShifts.find(s => s.date === dateStr);
+    if (shift) {
+      weekShifts.push(shift);
+    }
+  }
+  
+  // סטטיסטיקות השבוע
+  const workDays = weekShifts.filter(s => s.hours > 0);
+  const totalHours = workDays.reduce((sum, s) => sum + s.hours, 0);
+  const daysOff = weekShifts.filter(s => s.hours === 0);
+  
+  return {
+    isShiftWorker: true,
+    shiftType: employee.shiftsData.shiftType,
+    weekShifts: weekShifts,
+    weekStats: {
+      totalHours: totalHours,
+      workDays: workDays.length,
+      daysOff: daysOff.length,
+      morningShifts: workDays.filter(s => s.shift === 'בוקר').length,
+      eveningShifts: workDays.filter(s => s.shift === 'ערב').length,
+      nightShifts: workDays.filter(s => s.shift === 'לילה').length
+    },
+    weekRange: {
+      start: startOfWeek.toISOString().split('T')[0],
+      end: new Date(startOfWeek.getTime() + 6 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+    }
+  };
+}
+
+function getMonthlyShifts(employee, targetMonth = null, targetYear = null) {
+  // אם העובד לא עובד במשמרות
+  if (!employee.shiftsData || !employee.shiftsData.isShiftWorker) {
+    return {
+      isShiftWorker: false,
+      message: "העובד לא עובד במשמרות - עבודה בשעות קבועות"
+    };
+  }
+  
+  // For demo purposes, we'll simulate being in October 2024
+  const today = new Date('2024-10-06');
+  const month = targetMonth || (today.getMonth() + 1);
+  const year = targetYear || today.getFullYear();
+  
+  // קבל את המשמרות לחודש המבוקש
+  let monthlyShifts = [];
+  let monthName = '';
+  
+  if (month === 9 && year === 2024) {
+    monthlyShifts = employee.shiftsData.september2024 || [];
+    monthName = 'ספטמבר 2024';
+  } else if (month === 10 && year === 2024) {
+    monthlyShifts = employee.shiftsData.october2024 || [];
+    monthName = 'אוקטובר 2024';
+  } else if (month === 11 && year === 2024) {
+    monthlyShifts = employee.shiftsData.november2024 || [];
+    monthName = 'נובמבר 2024';
+  }
+  
+  // חישוב סטטיסטיקות החודש
+  const workDays = monthlyShifts.filter(s => s.hours > 0);
+  const totalHours = workDays.reduce((sum, s) => sum + s.hours, 0);
+  const daysOff = monthlyShifts.filter(s => s.hours === 0);
+  const holidays = monthlyShifts.filter(s => s.status === 'חג');
+  
+  return {
+    isShiftWorker: true,
+    shiftType: employee.shiftsData.shiftType,
+    monthName: monthName,
+    monthlyShifts: monthlyShifts,
+    monthStats: {
+      totalHours: totalHours,
+      workDays: workDays.length,
+      daysOff: daysOff.length,
+      holidays: holidays.length,
+      morningShifts: workDays.filter(s => s.shift === 'בוקר').length,
+      eveningShifts: workDays.filter(s => s.shift === 'ערב').length,
+      nightShifts: workDays.filter(s => s.shift === 'לילה').length,
+      trainingDays: workDays.filter(s => s.shift === 'הכשרה').length
+    }
+  };
+}
+
+function getTodaysShift(employee) {
+  // אם העובד לא עובד במשמרות
+  if (!employee.shiftsData || !employee.shiftsData.isShiftWorker) {
+    return {
+      isShiftWorker: false,
+      message: "העובד לא עובד במשמרות - עבודה בשעות קבועות"
+    };
+  }
+  
+  // For demo purposes, we'll simulate being in October 6, 2024
+  const today = new Date('2024-10-06');
+  const dateStr = today.toISOString().split('T')[0];
+  const currentMonth = today.getMonth() + 1;
+  const currentYear = today.getFullYear();
+  
+  // קבל את המשמרות לחודש הנוכחי
+  let monthlyShifts = [];
+  if (currentMonth === 9 && currentYear === 2024) {
+    monthlyShifts = employee.shiftsData.september2024 || [];
+  } else if (currentMonth === 10 && currentYear === 2024) {
+    monthlyShifts = employee.shiftsData.october2024 || [];
+  } else if (currentMonth === 11 && currentYear === 2024) {
+    monthlyShifts = employee.shiftsData.november2024 || [];
+  }
+  
+  // מצא את המשמרת של היום
+  const todaysShift = monthlyShifts.find(s => s.date === dateStr);
+  
+  if (!todaysShift) {
+    return {
+      isShiftWorker: true,
+      hasShift: false,
+      message: "לא נמצאה משמרת להיום"
+    };
+  }
+  
+  return {
+    isShiftWorker: true,
+    hasShift: true,
+    shiftType: employee.shiftsData.shiftType,
+    todaysShift: todaysShift,
+    date: dateStr,
+    isWorkingDay: todaysShift.hours > 0,
+    shiftStatus: todaysShift.status
+  };
+}
+
 function generatePersonalizedResponse(baseAnswer, employee, topic) {
   let personalSection = "\n\n**📊 המידע האישי שלך:**\n";
   
@@ -991,7 +1421,11 @@ app.post('/api/chat', async (c) => {
       childSick: ['מחלת ילד', 'ימי מחלת ילד שלי', 'כמה ימי מחלת ילד', 'יתרת מחלת ילד'],
       overtime: ['שעות נוספות שלי', 'כמה שעות נוספות', 'יתרת שעות נוספות', 'מכסת שעות נוספות'],
       gifts: ['מתנות לילדים שלי', 'מתנות הילדים', 'סטטוס מתנות', 'מתנות שלי'],
-      family: ['טופס 101 שלי', 'נתוני המשפחה שלי', 'פרטי משפחה', 'ילדים שלי', 'מצב משפחתי']
+      family: ['טופס 101 שלי', 'נתוני המשפחה שלי', 'פרטי משפחה', 'ילדים שלי', 'מצב משפחתי'],
+      // משמרות - שאלות אישיות על משמרות
+      weeklyShifts: ['המשמרות שלי השבוע', 'משמרות השבוע', 'מה המשמרות שלי', 'לוח משמרות השבוע', 'איך המשמרות שלי השבוע', 'משמרות השבוע שלי'],
+      monthlyShifts: ['המשמרות שלי החודש', 'משמרות החודש', 'לוח משמרות החודש', 'משמרות החודש שלי', 'איך המשמרות החודש'],
+      todayShift: ['המשמרת שלי היום', 'משמרת היום', 'איזה משמרת היום', 'מה המשמרת שלי היום', 'באיזה משמרת אני היום', 'מתי המשמרת שלי היום']
     };
     
     // בדיקה אם זו שאלה אישית
@@ -1173,6 +1607,124 @@ app.post('/api/chat', async (c) => {
             personalResponse += `\n⚠️ **דרוש עדכון:** הטופס צריך עדכון עד 31.1 בכל שנה!`;
           } else {
             personalResponse += `\n✅ **הטופס עדכני** - העדכון הבא נדרש עד 31.1.2025`;
+          }
+          break;
+          
+        case 'weeklyShifts':
+          const weeklyShifts = getWeeklyShifts(currentUser);
+          if (!weeklyShifts.isShiftWorker) {
+            personalResponse = `**📋 משמרות השבוע שלך:**\n\n`;
+            personalResponse += `💼 **סוג העבודה:** עבודה בשעות קבועות\n`;
+            personalResponse += `⏰ **שעות עבודה:** ${currentUser.role.includes('מנהל') ? 'עבודה ניהולית ללא שעות קבועות' : 'ימים א\'-ה\' 08:00-17:00'}\n`;
+            personalResponse += `📅 **מערכת:** אין מערכת משמרות - עבודה בשגרה קבועה\n\n`;
+            personalResponse += `💡 **הערה:** עובדי משרד עובדים בשעות קבועות ולא במערכת משמרות.`;
+          } else {
+            personalResponse = `**📋 המשמרות שלך השבוע (${weeklyShifts.weekRange.start} עד ${weeklyShifts.weekRange.end}):**\n\n`;
+            personalResponse += `🏢 **סוג משמרות:** ${weeklyShifts.shiftType}\n`;
+            personalResponse += `⏰ **סה"כ שעות השבוע:** ${weeklyShifts.weekStats.totalHours} שעות\n`;
+            personalResponse += `📅 **ימי עבודה:** ${weeklyShifts.weekStats.workDays} ימים\n`;
+            personalResponse += `🏠 **ימי חופש:** ${weeklyShifts.weekStats.daysOff} ימים\n\n`;
+            
+            personalResponse += `**📅 פירוט משמרות השבוע:**\n`;
+            weeklyShifts.weekShifts.forEach(shift => {
+              const emoji = shift.hours > 0 ? '💼' : '🏠';
+              const timeStr = shift.hours > 0 ? `${shift.startTime}-${shift.endTime}` : 'חופש';
+              const statusEmoji = shift.status === 'הושלם' ? '✅' : shift.status === 'נוכחי' ? '🔄' : shift.status === 'מתוכנן' ? '📋' : '🏠';
+              personalResponse += `• **${shift.day} ${shift.date}:** ${emoji} ${shift.shift} ${timeStr} ${statusEmoji}\n`;
+            });
+            
+            if (weeklyShifts.weekStats.morningShifts > 0 || weeklyShifts.weekStats.eveningShifts > 0) {
+              personalResponse += `\n**📊 פירוט סוגי משמרות השבוע:**\n`;
+              if (weeklyShifts.weekStats.morningShifts > 0) {
+                personalResponse += `🌅 **בוקר:** ${weeklyShifts.weekStats.morningShifts} משמרות\n`;
+              }
+              if (weeklyShifts.weekStats.eveningShifts > 0) {
+                personalResponse += `🌆 **ערב:** ${weeklyShifts.weekStats.eveningShifts} משמרות\n`;
+              }
+              if (weeklyShifts.weekStats.nightShifts > 0) {
+                personalResponse += `🌙 **לילה:** ${weeklyShifts.weekStats.nightShifts} משמרות\n`;
+              }
+            }
+          }
+          break;
+          
+        case 'monthlyShifts':
+          const monthlyShifts = getMonthlyShifts(currentUser);
+          if (!monthlyShifts.isShiftWorker) {
+            personalResponse = `**📅 לוח העבודה החודשי שלך:**\n\n`;
+            personalResponse += `💼 **סוג העבודה:** עבודה בשעות קבועות\n`;
+            personalResponse += `⏰ **שעות חודשיות:** כ-${currentUser.workData.monthlyHours} שעות\n`;
+            personalResponse += `📋 **מערכת:** עבודת משרד רגילה ללא משמרות\n\n`;
+            personalResponse += `💡 **הערה:** עובדי משרד עובדים בשגרה קבועה ללא מערכת משמרות מתחלפות.`;
+          } else {
+            personalResponse = `**📅 המשמרות שלך ${monthlyShifts.monthName}:**\n\n`;
+            personalResponse += `🏢 **סוג משמרות:** ${monthlyShifts.shiftType}\n`;
+            personalResponse += `⏰ **סה"כ שעות החודש:** ${monthlyShifts.monthStats.totalHours} שעות\n`;
+            personalResponse += `📅 **ימי עבודה:** ${monthlyShifts.monthStats.workDays} ימים\n`;
+            personalResponse += `🏠 **ימי חופש:** ${monthlyShifts.monthStats.daysOff} ימים\n`;
+            if (monthlyShifts.monthStats.holidays > 0) {
+              personalResponse += `🎄 **חגים:** ${monthlyShifts.monthStats.holidays} ימים\n`;
+            }
+            if (monthlyShifts.monthStats.trainingDays > 0) {
+              personalResponse += `🎓 **ימי הכשרה:** ${monthlyShifts.monthStats.trainingDays} ימים\n`;
+            }
+            
+            personalResponse += `\n**📊 פירוט סוגי משמרות החודש:**\n`;
+            if (monthlyShifts.monthStats.morningShifts > 0) {
+              personalResponse += `🌅 **בוקר:** ${monthlyShifts.monthStats.morningShifts} משמרות\n`;
+            }
+            if (monthlyShifts.monthStats.eveningShifts > 0) {
+              personalResponse += `🌆 **ערב:** ${monthlyShifts.monthStats.eveningShifts} משמרות\n`;
+            }
+            if (monthlyShifts.monthStats.nightShifts > 0) {
+              personalResponse += `🌙 **לילה:** ${monthlyShifts.monthStats.nightShifts} משמרות\n`;
+            }
+            
+            personalResponse += `\n💡 **לצפייה בפירוט יומי מלא ניתן לגשת למערכת זמנים ונוכחות.**`;
+          }
+          break;
+          
+        case 'todayShift':
+          const todayShift = getTodaysShift(currentUser);
+          if (!todayShift.isShiftWorker) {
+            personalResponse = `**📋 המשמרת שלך היום:**\n\n`;
+            personalResponse += `💼 **סוג העבודה:** עבודה בשעות קבועות\n`;
+            personalResponse += `⏰ **שעות היום:** ${currentUser.role.includes('מנהל') ? 'עבודה ניהולית גמישה' : '08:00-17:00'}\n`;
+            personalResponse += `📍 **מיקום:** ${currentUser.department}\n\n`;
+            personalResponse += `💡 **הערה:** אין לך מערכת משמרות - עבודה בשעות משרד רגילות.`;
+          } else if (!todayShift.hasShift) {
+            personalResponse = `**📋 המשמרת שלך היום:**\n\n`;
+            personalResponse += `❓ **סטטוס:** לא נמצאה משמרת מוגדרת להיום\n`;
+            personalResponse += `📞 **המלצה:** פנה למנהל המשמרות לבירור\n\n`;
+            personalResponse += `💡 **הערה:** יתכן שהיום אינו יום עבודה או שיש עדכון במערכת המשמרות.`;
+          } else {
+            const shift = todayShift.todaysShift;
+            personalResponse = `**📋 המשמרת שלך היום (${todayShift.date}):**\n\n`;
+            personalResponse += `🏢 **סוג משמרת:** ${shift.shift}\n`;
+            
+            if (shift.hours > 0) {
+              personalResponse += `⏰ **שעות עבודה:** ${shift.startTime} - ${shift.endTime}\n`;
+              personalResponse += `⌚ **סה"כ שעות:** ${shift.hours} שעות\n`;
+              personalResponse += `📍 **מיקום:** ${currentUser.department}\n`;
+              
+              const statusEmoji = shift.status === 'הושלם' ? '✅' : shift.status === 'נוכחי' ? '🔄' : '📋';
+              personalResponse += `📊 **סטטוס:** ${statusEmoji} ${shift.status}\n`;
+              
+              if (shift.status === 'נוכחי') {
+                personalResponse += `\n🔔 **אתה כרגע במשמרת!**`;
+              } else if (shift.status === 'מתוכנן') {
+                personalResponse += `\n⏰ **המשמרת מתחילה בעוד מעט - הכן לעבודה!**`;
+              }
+            } else {
+              personalResponse += `🏠 **סטטוס:** ${shift.status}\n`;
+              personalResponse += `⏰ **היום:** יום חופש מעבודה\n`;
+              
+              if (shift.status === 'חג') {
+                personalResponse += `🎄 **סיבה:** יום חג\n`;
+              } else if (shift.status === 'חופש שבועי') {
+                personalResponse += `🏠 **סיבה:** חופש שבועי קבוע\n`;
+              }
+            }
           }
           break;
       }
