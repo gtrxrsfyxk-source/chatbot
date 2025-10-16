@@ -1,0 +1,179 @@
+{
+  "employees": {
+    "call_center": {
+      "personalInfo": {
+        "name": "רחל כהן",
+        "role": "נציגת מוקד טלפוני",
+        "accessLevel": "basic",
+        "avatar": "ר.כ",
+        "employeeId": "CC001"
+      },
+      "vacation": {
+        "annualEntitlement": 18,
+        "used": 8,
+        "remaining": 10,
+        "details": [
+          {
+            "date": "2024-03-15",
+            "days": 3,
+            "type": "חופשה קצרה"
+          },
+          {
+            "date": "2024-07-20", 
+            "days": 5,
+            "type": "חופשה קיצית"
+          }
+        ]
+      },
+      "childrenGifts": {
+        "numberOfChildren": 2,
+        "childrenAges": [5, 8],
+        "eligibleChildren": 2,
+        "giftStatus": {
+          "ראש השנה 2024": "נמסר ✅",
+          "חנוכה 2024": "ממתין להגעה ⏳",
+          "פורים 2025": "טרם הוזמן"
+        }
+      },
+      "shifts": {
+        "thisWeek": [
+          {"day": "ראשון", "hours": "07:00-15:00", "type": "בוקר"},
+          {"day": "שני", "hours": "13:00-21:00", "type": "אחר צהריים"}, 
+          {"day": "שלישי", "hours": "07:00-15:00", "type": "בוקר"},
+          {"day": "רביעי", "hours": "OFF", "type": "יום חופש"},
+          {"day": "חמישי", "hours": "15:00-23:00", "type": "ערב"}
+        ],
+        "totalHours": 32
+      }
+    },
+    
+    "branch": {
+      "personalInfo": {
+        "name": "דוד לוי",
+        "role": "מנהל סניף", 
+        "accessLevel": "branch",
+        "avatar": "ד.ל",
+        "employeeId": "BR001"
+      },
+      "vacation": {
+        "annualEntitlement": 25,
+        "used": 15,
+        "remaining": 10,
+        "details": [
+          {
+            "date": "2024-02-10",
+            "days": 7, 
+            "type": "חופשה חורפית"
+          },
+          {
+            "date": "2024-08-05",
+            "days": 8,
+            "type": "חופשה קיצית"
+          }
+        ]
+      },
+      "childrenGifts": {
+        "numberOfChildren": 3,
+        "childrenAges": [12, 16, 20],
+        "eligibleChildren": 2,
+        "giftStatus": {
+          "ראש השנה 2024": "נמסר ✅",
+          "חנוכה 2024": "נמסר ✅", 
+          "פורים 2025": "הוזמן, ממתין לאישור"
+        }
+      },
+      "shifts": {
+        "thisWeek": [
+          {"day": "ראשון", "hours": "08:00-17:00", "type": "ניהול"},
+          {"day": "שני", "hours": "08:00-17:00", "type": "ניהול"},
+          {"day": "שלישי", "hours": "08:00-17:00", "type": "ניהול"},
+          {"day": "רביעי", "hours": "08:00-17:00", "type": "ניהול"},
+          {"day": "חמישי", "hours": "08:00-16:00", "type": "ניהול קצר"}
+        ],
+        "totalHours": 44
+      }
+    },
+    
+    "tech": {
+      "personalInfo": {
+        "name": "שרה גולדמן",
+        "role": "מפתחת תוכנה",
+        "accessLevel": "tech",
+        "avatar": "ש.ג", 
+        "employeeId": "TK001"
+      },
+      "vacation": {
+        "annualEntitlement": 22,
+        "used": 12,
+        "remaining": 10,
+        "details": [
+          {
+            "date": "2024-01-20",
+            "days": 5,
+            "type": "חופשה טכנולוגית"
+          },
+          {
+            "date": "2024-06-15",
+            "days": 7,
+            "type": "חופשה קיצית"
+          }
+        ]
+      },
+      "childrenGifts": {
+        "numberOfChildren": 1,
+        "childrenAges": [3],
+        "eligibleChildren": 1,
+        "giftStatus": {
+          "ראש השנה 2024": "נמסר ✅",
+          "חנוכה 2024": "נמסר ✅",
+          "פורים 2025": "הוזמן"
+        }
+      },
+      "shifts": {
+        "thisWeek": [
+          {"day": "ראשון", "hours": "09:00-18:00", "type": "פיתוח"},
+          {"day": "שני", "hours": "10:00-19:00", "type": "פיתוח מאוחר"},
+          {"day": "שלישי", "hours": "עבודה מהבית", "type": "remote"},
+          {"day": "רביעי", "hours": "09:00-18:00", "type": "פיתוח"},
+          {"day": "חמישי", "hours": "09:00-15:00", "type": "יום קצר"}
+        ],
+        "totalHours": 40
+      }
+    }
+  },
+  
+  "knowledgeBase": [
+    {
+      "id": 1,
+      "topic": "vacation",
+      "question": "יתרת ימי חופשה", 
+      "answer": "על פי נוהל חופשות HR-205: זכאות שנתית נקבעת לפי ותק וסוג העסקה. ניתן לבדוק יתרה אישית במערכת HR או לשאול שאלה אישית.",
+      "sources": ["נוהל חופשות HR-205"]
+    },
+    {
+      "id": 2,
+      "topic": "gifts",
+      "question": "מתנות לילדים",
+      "answer": "זכאות מתנות לילדים (עד גיל 18): ראש השנה, חנוכה ופורים. המתנות נמסרות אוטומטית לפי נתוני טופס 101. ניתן לבדוק סטטוס אישי.",
+      "sources": ["נוהל מתנות HR-310", "טופס 101"]
+    },
+    {
+      "id": 3,
+      "topic": "shifts",
+      "question": "משמרות",
+      "answer": "שיבוץ משמרות נעשה שבועית. מוקד טלפוני: 3 סוגי משמרות, סניפים: שעות קבועות, טכנולוגיה: גמישות בשעות. ניתן לראות לוח אישי.",
+      "sources": ["מערכת שיבוץ", "נוהל משמרות OP-150"]
+    }
+  ],
+  
+  "metadata": {
+    "lastUpdated": "2024-10-11",
+    "version": "1.0.0",
+    "description": "נתוני עובדים לצ'אטבוט בנק דיסקונט",
+    "dataFields": {
+      "vacation": "נתוני חופשה וזכויות שנתיות",
+      "childrenGifts": "מתנות לילדים לפי גילאים", 
+      "shifts": "לוח משמרות שבועי"
+    }
+  }
+}
