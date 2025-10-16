@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "צ'אטבוט פנים-ארגוני לבנק דיסקונט עם תגובות מותאמות אישית",
   "type": "module",
-  "keywords": ["chatbot", "hono", "cloudflare", "typescript", "hebrew"],
+  "keywords": [
+    "chatbot",
+    "hono",
+    "cloudflare",
+    "typescript",
+    "hebrew"
+  ],
   "author": "בנק דיסקונט",
   "scripts": {
     "dev": "vite",
@@ -21,6 +27,7 @@
   },
   "devDependencies": {
     "@hono/vite-build": "^1.2.0",
+    "@hono/vite-cloudflare-pages": "^0.4.2",
     "@hono/vite-dev-server": "^0.18.2",
     "vite": "^6.3.5",
     "wrangler": "^4.4.0"

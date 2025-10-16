@@ -10,14 +10,107 @@ app.use('/api/*', cors())
 app.use('/static/*', serveStatic({ root: './public' }))
 app.use(renderer)
 
-// Focused knowledge base - 3 main topics
+// Enhanced knowledge base with comprehensive vacation policy
+const vacationPolicy = {
+  general: {
+    purpose: "נוהל זכאות, ניצול ותכנון ימי החופשה השנתיים עבור כל עובדי בנק דיסקונט",
+    policyNumber: "HR-205",
+    lastUpdated: "2024-10-11",
+    version: "3.2"
+  },
+  
+  entitlementsByType: {
+    permanent: {
+      "0-1": { days: 12, notes: "יחסי לתקופת העבודה" },
+      "1-5": { days: 18, notes: "זכאות מלאה" },
+      "5-10": { days: 21, notes: "תוספת ותק" },
+      "10-15": { days: 24, notes: "תוספת ותק מתקדמת" },
+      "15+": { days: 27, notes: "זכאות מקסימלית" }
+    },
+    temporary: {
+      "0-6months": { days: 0, notes: "פטור מחופשה" },
+      "6-12months": { days: 1.5, notes: "יום וחצי לכל חודש עבודה" },
+      "12+months": { days: 15, notes: "זכאות מוקטנת" }
+    },
+    callCenter: {
+      "0-6months": { days: 1, notes: "יום לחודש - הדרגתי" },
+      "6-12months": { days: 15, notes: "זכאות בסיסית" },
+      "12+months": { days: 18, notes: "זכאות מלאה" }
+    },
+    branch: {
+      clerk: "כעובדים קבועים",
+      manager: { days: 25, notes: "תוספת ניהול" },
+      areaManager: { days: 28, notes: "דרגה עליונה" }
+    },
+    tech: {
+      "0-2": { days: 20, notes: "מפתחים ואנליסטים" },
+      "2-5": { days: 22, notes: "תוספת ותק" },
+      "5+": { days: 25, notes: "ותק מתקדם" }
+    }
+  },
+  
+  requestProcess: {
+    submissionTime: {
+      singleDay: "48 שעות מראש",
+      shortVacation: "שבוע מראש (2-5 ימים)",
+      mediumVacation: "שבועיים מראש (6-13 ימים)",
+      longVacation: "חודש מראש (14+ ימים)"
+    },
+    approvalRequired: {
+      basic: "מנהל ישיר",
+      extended: "מנהל ישיר + HR",
+      long: "מנהל ישיר + HR + מנהל אגף"
+    }
+  },
+  
+  restrictions: {
+    december: "מוגבל ל-20% מהעובדים",
+    teamLimit: "מקסימום 25% מהצוות בו-זמנית",
+    mandatoryVacation: {
+      financial: "14 ימים רצופים (גישה למערכות כספיות)",
+      managers: "10 ימים רצופים (מנהלי סניפים)",
+      general: "7 ימים רצופים (מומלץ)"
+    }
+  },
+  
+  contact: {
+    hr: "03-514-5555",
+    email: "hr@discountbank.co.il",
+    portal: "portal.discountbank.co.il",
+    support: "1-599-500-500"
+  }
+}
+
 const knowledgeBase = [
   {
     id: 1,
     topic: "vacation",
     question: "יתרת ימי חופשה",
-    answer: "על פי נוהל חופשות HR-205: זכאות שנתית נקבעת לפי ותק וסוג העסקה. ניתן לבדוק יתרה אישית במערכת HR או לשאול שאלה אישית.",
-    sources: ["נוהל חופשות HR-205"]
+    answer: `**📋 נוהל החופשות - HR-205**\n\n` +
+            `**🎯 זכאות שנתית לפי סוג עובד:**\n` +
+            `• **עובדים קבועים:** 12-27 ימים (לפי ותק)\n` +
+            `  - 0-1 שנים: 12 ימים יחסי\n` +
+            `  - 1-5 שנים: 18 ימים\n` +
+            `  - 5-10 שנים: 21 ימים\n` +
+            `  - 10-15 שנים: 24 ימים\n` +
+            `  - 15+ שנים: 27 ימים\n\n` +
+            `• **עובדי מוקד:** 15-18 ימים\n` +
+            `• **עובדים זמניים:** 0-15 ימים (לפי תקופת העסקה)\n` +
+            `• **עובדי טכנולוגיות:** 20-25 ימים + 3 ימי השתלמות\n` +
+            `• **מנהלי סניפים:** 25 ימים + תוספת ניהול\n\n` +
+            `**⏰ זמני הגשת בקשה:**\n` +
+            `• יום בודד: 48 שעות מראש\n` +
+            `• 2-5 ימים: שבוע מראש\n` +
+            `• 6-13 ימים: שבועיים מראש\n` +
+            `• 14+ ימים: חודש מראש\n\n` +
+            `**🚫 הגבלות:**\n` +
+            `• דצמבר: מוגבל ל-20% מהעובדים\n` +
+            `• מקסימום 25% מהצוות בו-זמנית\n` +
+            `• חופשה חובה: 7-14 ימים רצופים (לפי תפקיד)\n\n` +
+            `📞 **פרטים:** HR 03-514-5555 | hr@discountbank.co.il\n` +
+            `💡 **לבדיקה אישית:** שאל "כמה ימי חופשה נשארו לי?"`,
+    sources: ["נוהל חופשות HR-205"],
+    policyRef: vacationPolicy
   },
   {
     id: 2,
@@ -320,17 +413,38 @@ app.post('/api/chat', async (c) => {
     // Check for personal questions first
     if (lowerMessage.includes('שלי') || lowerMessage.includes('נשאר') || lowerMessage.includes('כמה')) {
       
-      // Personal vacation balance
+      // Enhanced personal vacation balance with policy info
       if (lowerMessage.includes('חופשה') || lowerMessage.includes('ימי חופש')) {
         const vacation = currentUser.vacation
+        
+        // Get user category for policy context
+        let userCategory = "קבוע"
+        let policyInfo = ""
+        
+        if (currentUser.role.includes('מוקד')) {
+          userCategory = "מוקד טלפוני"
+          policyInfo = "לפי נוהל HR-205: עובדי מוקד - זכאות של 18 ימים לעובדים ותיקים (12+ חודשים)."
+        } else if (currentUser.role.includes('מנהל')) {
+          userCategory = "ניהול"
+          policyInfo = "לפי נוהל HR-205: מנהלי סניפים זכאים ל-25 ימים + חובת חופשה רציפה (10 ימים)."
+        } else if (currentUser.role.includes('מפתח')) {
+          userCategory = "טכנולוגיות"
+          policyInfo = "לפי נוהל HR-205: עובדי טכנולוגיות זכאים ל-20-25 ימים + 3 ימי השתלמות."
+        }
+        
         response = {
           text: `**📅 יתרת ימי החופשה שלך, ${currentUser.name}:**\n\n` +
-                `🎯 **זכאות שנתית:** ${vacation.annualEntitlement} ימים\n` +
+                `🎯 **זכאות שנתית:** ${vacation.annualEntitlement} ימים (${userCategory})\n` +
                 `✅ **ניצלת עד כה:** ${vacation.used} ימים\n` +
                 `🆓 **נותר לך:** **${vacation.remaining} ימים**\n\n` +
                 `**📋 חופשות שלקחת השנה:**\n` +
                 vacation.details.map(d => `• ${d.date} - ${d.days} ימים (${d.type})`).join('\n') +
-                `\n\n💡 **טיפ:** תוכל לקחת חופשה נוספת עד סוף השנה!`,
+                `\n\n📜 **מידע מהנוהל:**\n${policyInfo}\n\n` +
+                `⏰ **זמני הגשת בקשה:**\n` +
+                `• יום בודד: 48 שעות מראש\n` +
+                `• 2-5 ימים: שבוע מראש\n` +
+                `• 6+ ימים: שבועיים מראש\n\n` +
+                `📞 **לפרטים נוספים:** נוהל HR-205 או מח' משאבי אנוש 03-514-5555`,
           sources: ["מערכת HR אישית", "נוהל חופשות HR-205"],
           personalized: true
         }
