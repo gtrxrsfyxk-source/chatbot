@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Chat Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+        #output { border: 1px solid #ccc; padding: 10px; min-height: 100px; margin: 10px 0; }
+        textarea { width: 100%; height: 60px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h2>Final Chat Functionality Test</h2>
+    
+    <button onclick="testQuickMessage()">Test Quick Action</button>
+    <button onclick="testManualMessage()">Test Manual Message</button>
+    <button onclick="testFamilyQuery()">Test Family Query</button>
+    
+    <textarea id="manual-input" placeholder="Type your test message here..."></textarea>
+    <button onclick="sendManualInput()">Send Manual Input</button>
+    
+    <div id="output">Test results will appear here...</div>
+    
+    <script>
+        async function testQuickMessage() {
+            const output = document.getElementById('output');
+            output.innerHTML += '🧪 Testing Quick Action: "מה שעות העבודה הרגילות?"<br>';
+            
+            try {
+                const response = await axios.post('/api/chat', {
+                    message: 'מה שעות העבודה הרגילות?',
+                    userType: 'call_center',
+                    history: []
+                });
+                
+                output.innerHTML += '✅ SUCCESS: Quick action worked!<br>';
+                output.innerHTML += `📝 Response: ${response.data.response.substring(0, 100)}...<br><br>`;
+            } catch (error) {
+                output.innerHTML += `❌ ERROR: ${error.message}<br><br>`;
+            }
+        }
+        
+        async function testManualMessage() {
+            const output = document.getElementById('output');
+            output.innerHTML += '🧪 Testing Manual Message: "זכויות הורות ולידה"<br>';
+            
+            try {
+                const response = await axios.post('/api/chat', {
+                    message: 'זכויות הורות ולידה',
+                    userType: 'call_center',
+                    history: []
+                });
+                
+                output.innerHTML += '✅ SUCCESS: Manual message worked!<br>';
+                output.innerHTML += `📝 Response: ${response.data.response.substring(0, 100)}...<br><br>`;
+            } catch (error) {
+                output.innerHTML += `❌ ERROR: ${error.message}<br><br>`;
+            }
+        }
+        
+        async function testFamilyQuery() {
+            const output = document.getElementById('output');
+            output.innerHTML += '🧪 Testing Family-specific Query: "זכאות מתנות לילדים"<br>';
+            
+            try {
+                const response = await axios.post('/api/chat', {
+                    message: 'זכאות מתנות לילדים',
+                    userType: 'call_center',
+                    history: []
+                });
+                
+                output.innerHTML += '✅ SUCCESS: Family query worked!<br>';
+                output.innerHTML += `📝 Personalized Response: ${response.data.response.substring(0, 150)}...<br><br>`;
+            } catch (error) {
+                output.innerHTML += `❌ ERROR: ${error.message}<br><br>`;
+            }
+        }
+        
+        async function sendManualInput() {
+            const input = document.getElementById('manual-input');
+            const output = document.getElementById('output');
+            const message = input.value.trim();
+            
+            if (!message) {
+                output.innerHTML += '⚠️ Please enter a message first<br><br>';
+                return;
+            }
+            
+            output.innerHTML += `🧪 Testing Custom Message: "${message}"<br>`;
+            
+            try {
+                const response = await axios.post('/api/chat', {
+                    message: message,
+                    userType: 'call_center',
+                    history: []
+                });
+                
+                output.innerHTML += '✅ SUCCESS: Custom message worked!<br>';
+                output.innerHTML += `📝 Response: ${response.data.response.substring(0, 200)}...<br><br>`;
+                input.value = '';
+            } catch (error) {
+                output.innerHTML += `❌ ERROR: ${error.message}<br><br>`;
+            }
+        }
+        
+        console.log('🟢 Final test page loaded successfully');
+    </script>
+</body>
+</html>

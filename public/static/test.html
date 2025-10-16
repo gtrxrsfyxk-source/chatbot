@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Chat Functions</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.10/dayjs.min.js"></script>
+</head>
+<body>
+    <textarea id="chat-input" placeholder="Test input"></textarea>
+    <button id="send-button" onclick="sendMessage()">Send</button>
+    <button onclick="sendQuickMessage('test message')">Quick Action</button>
+    
+    <div id="chat-messages"></div>
+    
+    <script>
+        // Copy key functions from app.js for testing
+        let isTyping = false;
+        let messageHistory = [];
+        let currentUser = 'call_center';
+        
+        function sendQuickMessage(message) {
+            console.log('🚀 Quick message function called with:', message);
+            const textarea = document.getElementById('chat-input');
+            if (textarea) {
+                textarea.value = message;
+                console.log('✅ Message inserted to textarea');
+                sendMessage();
+            } else {
+                console.error('❌ Textarea not found');
+            }
+        }
+        
+        async function sendMessage() {
+            console.log('🔄 sendMessage called');
+            const textarea = document.getElementById('chat-input');
+            const sendButton = document.getElementById('send-button');
+            
+            console.log('🔍 textarea:', textarea ? '✅ Found' : '❌ Not found');
+            console.log('🔍 sendButton:', sendButton ? '✅ Found' : '❌ Not found');
+            
+            if (!textarea || isTyping) {
+                console.log('❌ Early exit from sendMessage');
+                return;
+            }
+            
+            const message = textarea.value.trim();
+            console.log('📝 Message:', message);
+            if (!message) {
+                console.log('❌ Empty message');
+                return;
+            }
+            
+            isTyping = true;
+            console.log('🌐 Sending request to server...');
+            
+            try {
+                const response = await axios.post('/api/chat', {
+                    message: message,
+                    userType: currentUser,
+                    history: messageHistory.slice(-5)
+                });
+                
+                console.log('✅ Response received:', response.status);
+                console.log('📦 Response data:', response.data);
+                alert('Success! Response: ' + JSON.stringify(response.data.response).substring(0, 100) + '...');
+                
+            } catch (error) {
+                console.error('❌ Error:', error);
+                alert('Error: ' + error.message);
+            } finally {
+                isTyping = false;
+                textarea.value = '';
+            }
+        }
+        
+        console.log('🟢 Test page loaded');
+    </script>
+</body>
+</html>

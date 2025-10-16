@@ -1,11 +1,19 @@
 {
-  "name": "webapp",
+  "name": "bank-discount-chatbot",
+  "version": "1.0.0",
+  "description": "צ'אטבוט פנים-ארגוני לבנק דיסקונט עם תגובות מותאמות אישית",
   "type": "module",
+  "keywords": ["chatbot", "hono", "cloudflare", "typescript", "hebrew"],
+  "author": "בנק דיסקונט",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "wrangler pages dev",
-    "deploy": "npm run build && wrangler pages deploy",
+    "preview": "wrangler pages dev dist --port 8788",
+    "start": "npm run build && npm run preview",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "test": "curl -s http://localhost:8788 | grep -o 'צ.*בוט' | head -1",
+    "clean": "rm -rf dist .wrangler node_modules",
+    "setup": "npm install && npm run build",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {

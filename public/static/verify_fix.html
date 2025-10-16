@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Chat Fix</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.0/dist/axios.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; direction: rtl; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; font-size: 16px; }
+        #result { border: 1px solid #ccc; padding: 10px; min-height: 100px; margin: 10px 0; background: #f9f9f9; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>בדיקת תיקון הצ'אט</h2>
+    
+    <button onclick="testChatFix()">בדוק תיקון הצ'אט</button>
+    <button onclick="clearResults()">נקה תוצאות</button>
+    
+    <div id="result">לחץ על הכפתור כדי לבדוק את התיקון...</div>
+    
+    <script>
+        async function testChatFix() {
+            const result = document.getElementById('result');
+            result.innerHTML = '🔄 שולח בקשת בדיקה...<br>';
+            
+            try {
+                const response = await axios.post('/api/chat', {
+                    message: 'בדיקת תיקון הצ\'אט',
+                    userType: 'call_center',
+                    history: []
+                });
+                
+                console.log('תגובת השרת:', response.data);
+                
+                if (response.data && response.data.response) {
+                    result.innerHTML = `
+                        <div class="success">✅ התיקון עובד בהצלחה!</div>
+                        <br><strong>תגובת הצ'אטבוט:</strong><br>
+                        <div style="background: white; padding: 10px; border: 1px solid #ddd; margin: 10px 0;">
+                            ${response.data.response.substring(0, 300)}...
+                        </div>
+                        <br><strong>פרטים טכניים:</strong><br>
+                        סטטוס: ${response.status}<br>
+                        סוג משתמש: ${response.data.userType}<br>
+                        זמן: ${response.data.timestamp}
+                    `;
+                } else {
+                    result.innerHTML = `
+                        <div class="error">❌ תגובה לא תקינה מהשרת</div>
+                        <br>התגובה: ${JSON.stringify(response.data)}
+                    `;
+                }
+                
+            } catch (error) {
+                console.error('שגיאה:', error);
+                result.innerHTML = `
+                    <div class="error">❌ שגיאה בבדיקה: ${error.message}</div>
+                    <br>פרטי השגיאה: ${error.response ? error.response.status + ' - ' + error.response.statusText : 'שגיאת רשת'}
+                `;
+            }
+        }
+        
+        function clearResults() {
+            document.getElementById('result').innerHTML = 'התוצאות נוקו. לחץ על הכפתור כדי לבדוק שוב...';
+        }
+        
+        console.log('🟢 עמוד בדיקת התיקון נטען בהצלחה');
+    </script>
+</body>
+</html>
