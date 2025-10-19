@@ -712,7 +712,11 @@ app.post('/api/chat', async (c) => {
             (lowerMessage.includes('נוהל משמרות') && item.topic === 'shifts') ||
             (lowerMessage.includes('ארנק') && item.topic === 'digitalWallet') ||
             (lowerMessage.includes('דיגיטלי') && item.topic === 'digitalWallet') ||
-            (lowerMessage.includes('נוהל ארנק') && item.topic === 'digitalWallet')) {
+            (lowerMessage.includes('נוהל ארנק') && item.topic === 'digitalWallet') ||
+            (lowerMessage.includes('זכאות') && lowerMessage.includes('ועד') && item.topic === 'digitalWallet') ||
+            (lowerMessage.includes('זכאות') && lowerMessage.includes('חודשית') && item.topic === 'digitalWallet') ||
+            (lowerMessage.includes('הטבות') && lowerMessage.includes('ועד') && item.topic === 'digitalWallet') ||
+            (lowerMessage.includes('ועד עובדים') && item.topic === 'digitalWallet')) {
           response = {
             text: item.answer,
             sources: item.sources || [],
