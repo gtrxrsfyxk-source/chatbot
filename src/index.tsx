@@ -242,6 +242,35 @@ const knowledgeBase = [
             `💡 **לבדיקה אישית:** שאל "מה יתרת הארנק הדיגיטלי שלי?"`,
     sources: ["נוהל ארנק דיגיטלי HR-420", "מזכירות ועד עובדים"],
     policyRef: digitalWalletPolicy
+  },
+  {
+    id: 5,
+    topic: "sickLeave",
+    question: "ימי מחלה",
+    answer: `**🏥 נוהל ימי מחלה - HR-310**\n\n` +
+            `**📊 צבירת ימי מחלה:**\n` +
+            `• **צבירה חודשית:** 1.5 ימים לכל חודש עבודה מלא\n` +
+            `• **צבירה שנתית:** עד 18 ימי מחלה בשנה\n` +
+            `• **צבירה מקסימלית:** עד 90 ימים (בדרך כלל)\n\n` +
+            `**💰 זכאות לתשלום:**\n` +
+            `• **יום ראשון:** אין זכאות לתשלום (0%)\n` +
+            `• **יום שני ושלישי:** זכאות ל-50% מהשכר\n` +
+            `• **יום רביעי ואילך:** זכאות ל-100% מהשכר\n\n` +
+            `**🏥 תנאים מיוחדים:**\n` +
+            `• **חולי סרטן או דיאליזה:** תשלום מלא מהיום הראשון\n` +
+            `• **הסכמים מיוחדים:** תנאים טובים יותר אפשריים\n\n` +
+            `**📋 חובות העובד:**\n` +
+            `• הודעה למעסיק בהקדם האפשרי\n` +
+            `• אישור רפואי מהיום הרביעי\n` +
+            `• אישור דיגיטלי זמין דרך קופת החולים (עד 7 ימים)\n\n` +
+            `**👨‍👩‍👧‍👦 זכויות מיוחדות:**\n` +
+            `• טיפול בבן משפחה חולה (בתנאים מסוימים)\n` +
+            `• החלפת ימי חופשה במקרה של מחלה בחופשה\n` +
+            `• ימי הצהרה (במקומות עבודה מסוימים)\n\n` +
+            `**⚖️ בהתאם לחוק:** חוק דמי מחלה תשל"ו-1976\n\n` +
+            `📞 **פרטים:** HR 03-514-5555 | portal.discountbank.co.il/sick-leave\n` +
+            `💡 **לבדיקה אישית:** שאל "כמה ימי מחלה נשארו לי?"`,
+    sources: ["נוהל ימי מחלה HR-310", "חוק דמי מחלה 1976"]
   }
 ]
 
@@ -288,6 +317,24 @@ const userProfiles = {
         { day: "חמישי", hours: "15:00-23:00", type: "ערב" }
       ],
       totalHours: 32 // סה"כ שעות השבוע
+    },
+    
+    // ימי מחלה - נוסף חדש
+    sickLeave: {
+      annualAccrual: 18, // 1.5 ימים x 12 חודשים = 18 ימים בשנה
+      monthlyAccrual: 1.5, // צבירה חודשית
+      totalAccrued: 45, // סה"כ נצבר (2.5 שנות עבודה)
+      used: 8, // ימים שנוצלו השנה
+      remaining: 37, // נותר לשימוש
+      maxAllowed: 90, // תקרת צבירה
+      details: [
+        { date: "2024-02-05", days: 3, type: "שפעת", paymentRate: "50% ימים 1-2, 100% יום 3" },
+        { date: "2024-06-12", days: 2, type: "כאב בטן", paymentRate: "50% שני ימים ראשונים" },
+        { date: "2024-09-20", days: 3, type: "מיגרנה", paymentRate: "50% ימים 1-2, 100% יום 3" }
+      ],
+      hasDeclarationDays: true, // זכאות לימי הצהרה
+      declarationDaysUsed: 2, // ימי הצהרה שנוצלו השנה
+      declarationDaysAllowed: 4 // מקסימום ימי הצהרה בשנה
     },
     
     // ארנק דיגיטלי (לא חברת ועד)
@@ -343,6 +390,24 @@ const userProfiles = {
         { day: "חמישי", hours: "08:00-16:00", type: "ניהול קצר" }
       ],
       totalHours: 44 // שעות מלאות
+    },
+    
+    // ימי מחלה - נוסף חדש
+    sickLeave: {
+      annualAccrual: 18, // 1.5 ימים x 12 חודשים = 18 ימים בשנה
+      monthlyAccrual: 1.5, // צבירה חודשית
+      totalAccrued: 72, // סה"כ נצבר (4 שנות עבודה)
+      used: 5, // ימים שנוצלו השנה
+      remaining: 67, // נותר לשימוש
+      maxAllowed: 90, // תקרת צבירה
+      details: [
+        { date: "2024-04-10", days: 2, type: "בדיקות רפואיות", paymentRate: "50% ימים 1-2" },
+        { date: "2024-08-25", days: 3, type: "כאבי גב", paymentRate: "50% ימים 1-2, 100% יום 3" }
+      ],
+      hasDeclarationDays: true, // זכאות לימי הצהרה במנהלים
+      declarationDaysUsed: 1, // ימי הצהרה שנוצלו השנה
+      declarationDaysAllowed: 6, // מקסימום ימי הצהרה בשנה למנהלים
+      managerialBenefits: true // הטבות מנהל
     },
     
     // ארנק דיגיטלי (חבר הנהלת הוועד)
@@ -409,6 +474,25 @@ const userProfiles = {
         { day: "חמישי", hours: "09:00-15:00", type: "יום קצר" }
       ],
       totalHours: 40 // שעות תקן
+    },
+    
+    // ימי מחלה - נוסף חדש
+    sickLeave: {
+      annualAccrual: 18, // 1.5 ימים x 12 חודשים = 18 ימים בשנה
+      monthlyAccrual: 1.5, // צבירה חודשית
+      totalAccrued: 54, // סה"כ נצבר (3 שנות עבודה)
+      used: 6, // ימים שנוצלו השנה
+      remaining: 48, // נותר לשימוש
+      maxAllowed: 90, // תקרת צבירה
+      details: [
+        { date: "2024-01-15", days: 1, type: "כאב ראש", paymentRate: "0% יום ראשון" },
+        { date: "2024-05-22", days: 4, type: "דלקת גרון", paymentRate: "0% יום 1, 50% ימים 2-3, 100% יום 4" },
+        { date: "2024-07-08", days: 1, type: "ימי הצהרה - מחילות", paymentRate: "100% (הצהרה)" }
+      ],
+      hasDeclarationDays: true, // זכאות לימי הצהרה
+      declarationDaysUsed: 3, // ימי הצהרה שנוצלו השנה
+      declarationDaysAllowed: 5, // מקסימום ימי הצהרה בשנה לטכנולוגיה
+      techBenefits: true // הטבות עובדי טכנולוגיה
     },
     
     // ארנק דיגיטלי (חברת ועד רגילה)
@@ -544,7 +628,7 @@ app.get('/users', (c) => {
               <i class="fas fa-headset"></i> רחל כהן - נציגת מוקד טלפוני
             </div>
             <div style="font-size: 0.875rem; opacity: 0.9;">
-              📅 חופשה: 10/14 ימים (מעודכן) • 🎁 ילדים: 2 (גיל 5,8) • 📊 שעות השבוע: 32
+              📅 חופשה: 10/14 ימים • 🏥 מחלה: 37 ימים • 🎁 ילדים: 2 • 📊 שעות: 32
             </div>
           </a>
           <a href="/?user=branch" style="display: block; padding: 1.5rem; background: #059669; color: white; text-decoration: none; border-radius: 0.5rem; text-align: right;">
@@ -552,7 +636,7 @@ app.get('/users', (c) => {
               <i class="fas fa-building"></i> דוד לוי - מנהל סניף
             </div>
             <div style="font-size: 0.875rem; opacity: 0.9;">
-              📅 חופשה: 10/21 ימים (מעודכן) • 🎁 ילדים: 2 זכאים מתוך 3 • 📊 שעות השבוע: 44
+              📅 חופשה: 10/21 ימים • 🏥 מחלה: 67 ימים • 🎁 ילדים: 2/3 • 📊 שעות: 44
             </div>
           </a>
           <a href="/?user=tech" style="display: block; padding: 1.5rem; background: #7c3aed; color: white; text-decoration: none; border-radius: 0.5rem; text-align: right;">
@@ -560,7 +644,7 @@ app.get('/users', (c) => {
               <i class="fas fa-code"></i> שרה גולדמן - מפתחת תוכנה
             </div>
             <div style="font-size: 0.875rem; opacity: 0.9;">
-              📅 חופשה: 10/18 ימים (מעודכן) • 🎁 ילדים: 1 (גיל 3) • 📊 שעות השבוע: 40
+              📅 חופשה: 10/18 ימים • 🏥 מחלה: 48 ימים • 🎁 ילדים: 1 • 📊 שעות: 40
             </div>
           </a>
         </div>
@@ -569,8 +653,9 @@ app.get('/users', (c) => {
           <h4 style="color: #1e3a8a; margin: 0 0 0.5rem 0;">💡 טיפים לדמו:</h4>
           <ul style="margin: 0; padding-right: 1rem; font-size: 0.875rem; color: #374151;">
             <li>כל עובד רואה נתונים אישיים שונים</li>
-            <li>נסה שאלות אישיות: "כמה חופשה נשארה לי?"</li>
-            <li>או שאלות כלליות: "נוהל חופשות"</li>
+            <li>נסה שאלות אישיות: "כמה ימי חופשה/מחלה נשארו לי?"</li>
+            <li>או שאלות כלליות: "נוהל חופשות" / "נוהל ימי מחלה"</li>
+            <li>🆕 חדש: מידע על ימי מחלה בהתאם לחוק דמי מחלה 1976</li>
           </ul>
         </div>
       </div>
@@ -714,6 +799,35 @@ app.post('/api/chat', async (c) => {
           }
         }
       }
+      
+      // Personal sick leave status
+      else if (lowerMessage.includes('מחלה') || lowerMessage.includes('ימי מחלה') || lowerMessage.includes('חולה')) {
+        const sickLeave = currentUser.sickLeave
+        
+        response = {
+          text: `**🏥 ימי המחלה שלך, ${currentUser.name}:**\n\n` +
+                `📊 **מצב נוכחי:**\n` +
+                `• **צבירה שנתית:** ${sickLeave.annualAccrual} ימים\n` +
+                `• **סה"כ נצבר:** ${sickLeave.totalAccrued} ימים\n` +
+                `• **נוצל השנה:** ${sickLeave.used} ימים\n` +
+                `• **נותר לשימוש:** **${sickLeave.remaining} ימים**\n\n` +
+                `📈 **צבירה חודשית:** ${sickLeave.monthlyAccrual} ימים לחודש\n` +
+                `🏦 **תקרת צבירה:** ${sickLeave.maxAllowed} ימים\n\n` +
+                `**📋 היעדרויות השנה:**\n` +
+                sickLeave.details.map(d => 
+                  `• ${d.date}: ${d.days} ימים (${d.type}) - ${d.paymentRate}`
+                ).join('\n') +
+                (sickLeave.hasDeclarationDays ? 
+                  `\n\n**📝 ימי הצהרה:**\n• נוצלו: ${sickLeave.declarationDaysUsed}/${sickLeave.declarationDaysAllowed} ימים` : '') +
+                `\n\n📜 **לפי נוהל HR-310:**\n` +
+                `• יום ראשון: ללא תשלום\n` +
+                `• ימים 2-3: 50% שכר\n` +
+                `• יום 4 ואילך: 100% שכר\n\n` +
+                `📞 **פרטים:** HR 03-514-5555 | portal.discountbank.co.il/sick-leave`,
+          sources: ["מערכת HR אישית", "נוהל ימי מחלה HR-310"],
+          personalized: true
+        }
+      }
     }
 
     // General knowledge base search if no personal answer
@@ -731,7 +845,12 @@ app.post('/api/chat', async (c) => {
             (lowerMessage.includes('זכאות') && lowerMessage.includes('ועד') && item.topic === 'digitalWallet') ||
             (lowerMessage.includes('זכאות') && lowerMessage.includes('חודשית') && item.topic === 'digitalWallet') ||
             (lowerMessage.includes('הטבות') && lowerMessage.includes('ועד') && item.topic === 'digitalWallet') ||
-            (lowerMessage.includes('ועד עובדים') && item.topic === 'digitalWallet')) {
+            (lowerMessage.includes('ועד עובדים') && item.topic === 'digitalWallet') ||
+            (lowerMessage.includes('מחלה') && item.topic === 'sickLeave') ||
+            (lowerMessage.includes('ימי מחלה') && item.topic === 'sickLeave') ||
+            (lowerMessage.includes('נוהל מחלה') && item.topic === 'sickLeave') ||
+            (lowerMessage.includes('דמי מחלה') && item.topic === 'sickLeave') ||
+            (lowerMessage.includes('חולה') && !lowerMessage.includes('שלי') && item.topic === 'sickLeave')) {
           response = {
             text: item.answer,
             sources: item.sources || [],
