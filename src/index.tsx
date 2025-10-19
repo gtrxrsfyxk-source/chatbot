@@ -337,6 +337,22 @@ const userProfiles = {
       declarationDaysAllowed: 4 // מקסימום ימי הצהרה בשנה
     },
     
+    // ימי מחלת ילד - נוסף חדש
+    childSickLeave: {
+      annualEntitlement: 8, // 4 ימים לכל ילד עד גיל 16, יש לה 2 ילדים גיל 5 ו-8
+      maxPerChild: 4, // מקסימום 4 ימים לילד
+      childrenEligible: 2, // 2 ילדים עד גיל 16
+      childrenAges: [5, 8], // גילאי הילדים
+      used: 3, // ימים שנוצלו השנה
+      remaining: 5, // נותר לשימוש
+      details: [
+        { date: "2024-03-15", days: 1, childAge: 8, type: "שפעת", paymentRate: "100% מהיום הראשון" },
+        { date: "2024-07-22", days: 2, childAge: 5, type: "וירוס קיץ", paymentRate: "100% מהיום הראשון" }
+      ],
+      paymentRate: "100%", // תשלום מלא מהיום הראשון לימי מחלת ילד
+      ageLimitNote: "עד גיל 16 (בחלק מהמקרים עד 18)"
+    },
+    
     // ארנק דיגיטלי (לא חברת ועד)
     digitalWallet: {
       membershipStatus: "לא חבר ועד",
@@ -408,6 +424,22 @@ const userProfiles = {
       declarationDaysUsed: 1, // ימי הצהרה שנוצלו השנה
       declarationDaysAllowed: 6, // מקסימום ימי הצהרה בשנה למנהלים
       managerialBenefits: true // הטבות מנהל
+    },
+    
+    // ימי מחלת ילד - נוסף חדש
+    childSickLeave: {
+      annualEntitlement: 8, // 4 ימים לכל ילד עד גיל 16, יש לו 3 ילדים אבל רק 2 עד גיל 16
+      maxPerChild: 4, // מקסימום 4 ימים לילד
+      childrenEligible: 2, // 2 ילדים עד גיל 16 (הבן בן 20 לא זכאי)
+      childrenAges: [12, 16], // גילאי הילדים הזכאים (בן 20 לא כלול)
+      used: 2, // ימים שנוצלו השנה
+      remaining: 6, // נותר לשימוש
+      details: [
+        { date: "2024-05-20", days: 2, childAge: 12, type: "דלקת אוזניים", paymentRate: "100% מהיום הראשון" }
+      ],
+      paymentRate: "100%", // תשלום מלא מהיום הראשון לימי מחלת ילד
+      ageLimitNote: "עד גיל 16 (בן 20 לא זכאי)",
+      managerialNote: "כמנהל - גמישות נוספת בזמני היעדרות"
     },
     
     // ארנק דיגיטלי (חבר הנהלת הוועד)
@@ -495,6 +527,22 @@ const userProfiles = {
       techBenefits: true // הטבות עובדי טכנולוגיה
     },
     
+    // ימי מחלת ילד - נוסף חדש
+    childSickLeave: {
+      annualEntitlement: 4, // 4 ימים לכל ילד עד גיל 16, יש לה 1 ילד בגיל 3
+      maxPerChild: 4, // מקסימום 4 ימים לילד
+      childrenEligible: 1, // 1 ילד עד גיל 16
+      childrenAges: [3], // גילאי הילדים הזכאים
+      used: 1, // ימים שנוצלו השנה
+      remaining: 3, // נותר לשימוש
+      details: [
+        { date: "2024-06-10", days: 1, childAge: 3, type: "וירוס קיץ", paymentRate: "100% מהיום הראשון" }
+      ],
+      paymentRate: "100%", // תשלום מלא מהיום הראשון לימי מחלת ילד
+      ageLimitNote: "עד גיל 16",
+      techBenefits: "גמישות בעבודה מהבית בזמן מחלת ילד"
+    },
+    
     // ארנק דיגיטלי (חברת ועד רגילה)
     digitalWallet: {
       membershipStatus: "חברת ועד רגילה",
@@ -573,6 +621,9 @@ app.get('/', (c) => {
           </div>
           <div class="quick-action" onclick="sendQuickMessage('מה המשמרות שלי השבוע?')">
             <i class="fas fa-clock"></i> המשמרות שלי השבוע
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('כמה ימי מחלת ילד נשארו לי?')">
+            <i class="fas fa-baby"></i> ימי מחלת ילד שלי
           </div>
           <div class="quick-action" onclick="sendQuickMessage('יתרת ימי חופשה')">
             <i class="fas fa-info-circle"></i> נוהל חופשות
@@ -654,6 +705,7 @@ app.get('/users', (c) => {
           <ul style="margin: 0; padding-right: 1rem; font-size: 0.875rem; color: #374151;">
             <li>כל עובד רואה נתונים אישיים שונים</li>
             <li>נסה שאלות אישיות: "כמה ימי חופשה/מחלה נשארו לי?"</li>
+            <li>🆕 שאל על ימי מחלת ילד: "כמה ימי מחלת ילד נשארו לי?"</li>
             <li>או שאלות כלליות: "נוהל חופשות" / "נוהל ימי מחלה"</li>
             <li>🆕 חדש: מידע על ימי מחלה בהתאם לחוק דמי מחלה 1976</li>
           </ul>
@@ -800,7 +852,60 @@ app.post('/api/chat', async (c) => {
         }
       }
       
-      // Personal sick leave status
+      // Personal child sick leave status - MUST BE BEFORE general sick leave
+      else if (lowerMessage.includes('מחלת ילד') || 
+               lowerMessage.includes('ימי מחלת ילד') || 
+               lowerMessage.includes('מחלה ילד') ||
+               lowerMessage.includes('ימי מחלה ילד') ||
+               lowerMessage.includes('מחלת הילד') ||
+               lowerMessage.includes('מחלת הילדים') ||
+               lowerMessage.includes('ילד חולה') ||
+               lowerMessage.includes('ילדים חולים') ||
+               (lowerMessage.includes('מחלה') && lowerMessage.includes('ילד') && lowerMessage.includes('שלי')) ||
+               (lowerMessage.includes('חולה') && lowerMessage.includes('ילד') && lowerMessage.includes('שלי')) ||
+               (lowerMessage.includes('ימי') && lowerMessage.includes('מחלה') && lowerMessage.includes('ילד'))) {
+        
+        const childSick = currentUser.childSickLeave
+        const children = currentUser.childrenGifts
+        
+        if (children.numberOfChildren === 0 || !childSick || childSick.childrenEligible === 0) {
+          response = {
+            text: `**👶 ימי מחלת ילד - ${currentUser.name}:**\n\n` +
+                  `❌ **אין זכאות לימי מחלת ילד**\n\n` +
+                  `📋 **סיבה:** אין לך ילדים רשומים במערכת או שהם מעל הגיל המזכה\n\n` +
+                  `📝 **לעדכון נתוני ילדים:** יש לפנות למחלקת משאבי אנוש עם טופס 101 מעודכן\n` +
+                  `📞 **פרטים:** HR 03-514-5555 | portal.discountbank.co.il/family-data`,
+            sources: ["מערכת HR אישית", "נוהל ימי מחלה HR-310", "טופס 101"],
+            personalized: true
+          }
+        } else {
+          response = {
+            text: `**👶 ימי מחלת ילד שלך, ${currentUser.name}:**\n\n` +
+                  `👨‍👩‍👧‍👦 **ילדים זכאים:** ${childSick.childrenEligible} ילדים\n` +
+                  `🎂 **גילאים:** ${childSick.childrenAges.join(', ')} שנים\n` +
+                  `📊 **זכאות שנתית:** ${childSick.annualEntitlement} ימים (${childSick.maxPerChild} ימים לכל ילד)\n\n` +
+                  `📈 **מצב נוכחי:**\n` +
+                  `• **נוצל השנה:** ${childSick.used} ימים\n` +
+                  `• **נותר לשימוש:** **${childSick.remaining} ימים**\n\n` +
+                  `**📋 היעדרויות השנה:**\n` +
+                  (childSick.details.length > 0 ? 
+                    childSick.details.map(d => 
+                      `• ${d.date}: ${d.days} ימים (ילד גיל ${d.childAge}, ${d.type}) - ${d.paymentRate}`
+                    ).join('\n') : 
+                    `• אין היעדרויות השנה`) +
+                  `\n\n💰 **תשלום:** ${childSick.paymentRate} מהיום הראשון\n` +
+                  `⚖️ **גיל זכאות:** ${childSick.ageLimitNote}\n\n` +
+                  (childSick.managerialNote ? `🔹 **הערה מיוחדת:** ${childSick.managerialNote}\n` : '') +
+                  (childSick.techBenefits ? `💻 **הטבת טכנולוגיה:** ${childSick.techBenefits}\n` : '') +
+                  `📜 **לפי נוהל HR-310:** זכאות לטיפול בילד חולה עד גיל 16\n` +
+                  `📞 **פרטים:** HR 03-514-5555 | portal.discountbank.co.il/child-sick-leave`,
+            sources: ["מערכת HR אישית", "נוהל ימי מחלה HR-310", "זכויות הורים"],
+            personalized: true
+          }
+        }
+      }
+      
+      // Personal sick leave status (general)
       else if (lowerMessage.includes('מחלה') || lowerMessage.includes('ימי מחלה') || lowerMessage.includes('חולה')) {
         const sickLeave = currentUser.sickLeave
         
@@ -875,6 +980,7 @@ app.post('/api/chat', async (c) => {
         text: `שלום ${currentUser.name}! לא מצאתי מידע ספציפי לשאלתך.\n\n` +
               `💡 **נסה לשאול על:**\n` +
               `• "כמה ימי חופשה נשארו לי?"\n` +
+              `• "כמה ימי מחלת ילד נשארו לי?"\n` +
               `• "מה סטטוס מתנות הילדים שלי?"\n` +
               `• "מה המשמרות שלי השבוע?"\n\n` +
               `או שאל שאלות כלליות על נהלים.`,
