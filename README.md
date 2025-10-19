@@ -186,7 +186,7 @@ npx wrangler --version
 ## URLs בסביבת הפיתוח הנוכחית
 - **Development Server**: https://3000-i4s2x6a12yu7zyyipuy7g-6532622b.e2b.dev
 - **בחירת משתמש**: https://3000-i4s2x6a12yu7zyyipuy7g-6532622b.e2b.dev/users
-- **GitHub**: [ממתין להגדרה]
+- **GitHub**: https://github.com/gtrxrsfyxk-source/chatbot
 
 ## מאפיינים מתקדמים - נוהל HR-205 מעודכן
 
