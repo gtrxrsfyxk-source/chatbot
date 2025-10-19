@@ -1,0 +1,670 @@
+/* צ'אטבוט בנק דיסקונט - עיצוב מותאם */
+
+/* משתני CSS - צבעי בנק דיסקונט בירוק */
+:root {
+  --discount-green: #2E7D32;
+  --discount-green-light: #4CAF50;
+  --discount-green-dark: #1B5E20;
+  --discount-teal: #00897B;
+  --discount-lime: #689F38;
+  --discount-accent: #FF9800;
+  --discount-success: #4CAF50;
+  --discount-warning: #FFC107;
+  --discount-danger: #F44336;
+  --discount-gray-50: #f8f9fa;
+  --discount-gray-100: #f1f3f4;
+  --discount-gray-200: #e9ecef;
+  --discount-gray-300: #dee2e6;
+  --discount-gray-400: #ced4da;
+  --discount-gray-500: #adb5bd;
+  --discount-gray-600: #6c757d;
+  --discount-gray-700: #495057;
+  --discount-gray-800: #343a40;
+  --discount-gray-900: #212529;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* פונטים מותאמים לעברית - סגנון דיסקונט */
+.font-heebo {
+  font-family: 'Heebo', 'Assistant', 'Noto Sans Hebrew', 'Segoe UI', sans-serif;
+}
+
+.font-assistant {
+  font-family: 'Assistant', 'Heebo', 'Noto Sans Hebrew', 'Segoe UI', sans-serif;
+}
+
+/* ברירת מחדל לגוף הדף */
+body {
+  font-family: 'Heebo', 'Assistant', 'Noto Sans Hebrew', 'Segoe UI', sans-serif;
+  color: var(--discount-gray-800);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* כותרות - סגנון דיסקונט */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Heebo', 'Assistant', 'Noto Sans Hebrew', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: var(--discount-green-dark);
+  letter-spacing: -0.02em;
+}
+
+/* כפתורים - סגנון דיסקונט */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  gap: 0.75rem;
+  letter-spacing: 0.02em;
+  min-height: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--discount-green), var(--discount-green-light));
+  color: white;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--discount-green-dark), var(--discount-green));
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(27, 94, 32, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--discount-green);
+  border: 2px solid var(--discount-green);
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.1);
+}
+
+.btn-secondary:hover {
+  background: var(--discount-green);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--discount-accent), #FF8C00);
+  color: white;
+  box-shadow: 0 6px 20px rgba(255, 180, 0, 0.3);
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 180, 0, 0.4);
+}
+
+.btn-success {
+  background: var(--discount-success);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--discount-danger);
+  color: white;
+}
+
+/* כרטיסים - סגנון דיסקונט */
+.card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(46, 125, 50, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0 20px 60px rgba(46, 125, 50, 0.15);
+  transform: translateY(-4px);
+  border-color: rgba(46, 125, 50, 0.2);
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
+  color: white;
+  padding: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.card-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+/* ממשק הצ'אטבוט */
+.chat-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.chat-header {
+  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
+  color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: between;
+  gap: 1.5rem;
+  box-shadow: 0 4px 25px rgba(46, 125, 50, 0.2);
+  position: relative;
+}
+
+.chat-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.chat-header .logo {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
+  padding: 8px;
+}
+
+.chat-header .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0.75rem;
+}
+
+.chat-header .title {
+  flex: 1;
+}
+
+.chat-header .title h1 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.chat-header .title p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background: var(--discount-gray-50);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-width: 80%;
+}
+
+.message-user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message-assistant {
+  align-self: flex-start;
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.message-user .message-avatar {
+  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
+  color: white;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.message-assistant .message-avatar {
+  background: linear-gradient(135deg, var(--discount-accent), #FF8C00);
+  color: white;
+  border: 3px solid rgba(255, 180, 0, 0.3);
+}
+
+.message-content {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--discount-gray-200);
+  position: relative;
+}
+
+.message-user .message-content {
+  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
+  color: white;
+  border: none;
+}
+
+.message-content .message-text {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.message-content .message-meta {
+  font-size: 0.75rem;
+  color: var(--discount-gray-500);
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.message-user .message-meta {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.message-content .source-links {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--discount-gray-200);
+}
+
+.message-user .message-content .source-links {
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.source-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--discount-teal);
+  text-decoration: none;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 137, 123, 0.1);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.source-link:hover {
+  background: var(--discount-teal);
+  color: white;
+}
+
+.message-user .source-link {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.message-user .source-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.chat-input {
+  border-top: 1px solid var(--discount-gray-200);
+  padding: 1.5rem;
+  background: white;
+}
+
+.input-container {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.chat-textarea {
+  width: 100%;
+  padding: 1.25rem 4rem 1.25rem 1.5rem;
+  border: 2px solid var(--discount-gray-300);
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+  min-height: 65px;
+  max-height: 130px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--discount-gray-50);
+  font-weight: 400;
+}
+
+.chat-textarea:focus {
+  outline: none;
+  border-color: var(--discount-green);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+  transform: translateY(-1px);
+}
+
+.chat-textarea::placeholder {
+  color: var(--discount-gray-500);
+  font-weight: 400;
+}
+
+.send-button {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+}
+
+.send-button:hover {
+  background: linear-gradient(135deg, var(--discount-green-dark), var(--discount-green));
+  transform: scale(1.1) translateY(-1px);
+  box-shadow: 0 8px 25px rgba(27, 94, 32, 0.4);
+}
+
+.send-button:disabled {
+  background: var(--discount-gray-400);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* רקע הדף - גרדיאנט דיסקונט */
+body {
+  background: linear-gradient(135deg, 
+    var(--discount-green) 0%, 
+    var(--discount-teal) 35%, 
+    var(--discount-lime) 70%, 
+    #F8F9FA 100%);
+  min-height: 100vh;
+}
+
+/* שיפורים נוספים לסגנון דיסקונט */
+.chat-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(46, 125, 50, 0.1);
+}
+
+/* אנימציות */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: var(--discount-gray-500);
+  font-style: italic;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--discount-gray-400);
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* רכיבי UI נוספים */
+.user-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: 48px;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  background: var(--discount-accent);
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.quick-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.quick-action {
+  padding: 0.75rem 1.25rem;
+  background: white;
+  border: 2px solid var(--discount-gray-300);
+  border-radius: 2rem;
+  color: var(--discount-gray-700);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quick-action:hover {
+  background: var(--discount-green);
+  border-color: var(--discount-green);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 125, 50, 0.2);
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .chat-container {
+    border-radius: 0;
+    height: 100vh;
+  }
+  
+  .chat-header {
+    padding: 1rem;
+  }
+  
+  .chat-header .title h1 {
+    font-size: 1.25rem;
+  }
+  
+  .chat-messages {
+    padding: 1rem;
+  }
+  
+  .message {
+    max-width: 90%;
+  }
+  
+  .chat-input {
+    padding: 1rem;
+  }
+}
+
+/* דירוג ופידבק */
+.feedback-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--discount-gray-200);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rating-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--discount-gray-300);
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: var(--discount-gray-400);
+}
+
+.rating-button:hover {
+  background: rgba(0, 137, 123, 0.1);
+  color: var(--discount-teal);
+  border-color: var(--discount-teal);
+}
+
+.rating-button.active-positive {
+  background: var(--discount-success);
+  color: white;
+  border-color: var(--discount-success);
+}
+
+.rating-button.active-negative {
+  background: var(--discount-danger);
+  color: white;
+  border-color: var(--discount-danger);
+}
+
+.feedback-text {
+  font-size: 0.75rem;
+  color: var(--discount-gray-600);
+}
+
+/* מצב טעינה */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--discount-gray-200);
+  border-top: 2px solid var(--discount-teal);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
