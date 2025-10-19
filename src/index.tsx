@@ -705,10 +705,14 @@ app.post('/api/chat', async (c) => {
     if (!response) {
       for (const item of knowledgeBase) {
         if ((lowerMessage.includes('חופשה') && item.topic === 'vacation') ||
+            (lowerMessage.includes('נוהל חופשות') && item.topic === 'vacation') ||
             (lowerMessage.includes('מתנות') && item.topic === 'gifts') ||
+            (lowerMessage.includes('נוהל מתנות') && item.topic === 'gifts') ||
             (lowerMessage.includes('משמרות') && item.topic === 'shifts') ||
+            (lowerMessage.includes('נוהל משמרות') && item.topic === 'shifts') ||
             (lowerMessage.includes('ארנק') && item.topic === 'digitalWallet') ||
-            (lowerMessage.includes('דיגיטלי') && item.topic === 'digitalWallet')) {
+            (lowerMessage.includes('דיגיטלי') && item.topic === 'digitalWallet') ||
+            (lowerMessage.includes('נוהל ארנק') && item.topic === 'digitalWallet')) {
           response = {
             text: item.answer,
             sources: item.sources || [],
