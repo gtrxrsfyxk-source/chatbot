@@ -180,6 +180,15 @@ const knowledgeBase = [
     sources: ["נוהל HR-OT-420.75", "מערכת שעות נוספות", "תעריפון תגמולים 2025"],
     lastUpdated: "2025-10-19",
     accessLevel: "basic"
+  },
+  {
+    id: 20,
+    category: "משאבי אנוש - משכנתאות",
+    question: "מהם תנאי המשכנתא לעובדי הבנק?",
+    answer: "נוהל מתן משכנתאות לעובדי בנק (HR-MORTGAGE-510.20): **הטבות לעובדים:** 1. ריביות נמוכות (0.5-1% מתחת לשוק) 2. מסלולים אטרקטיביים יותר מללקוחות רגילים 3. הלוואות נוספות לשיפוצים/הון עצמי בתנאים מיוחדים. **תהליך אישור מהיר:** 1. הגשת בקשה למחלקת משכנתאות או משאבי אנוש 2. איסוף מסמכים בסיסיים (שכר, אישור עבודה, הוכחת בעלות) 3. הערכת שמאי לנכס 4. אישור ועיצוב מסלול מותאם אישית. **גמישות:** תנאי אשראי מקלים יותר, אישור מהיר בזכות ההיכרות הקרובה עם העובד. **הרכבת מימון:** גמישות גדולה יותר במימון והטבות נוספות לפי הסכמים קיבוציים ומדיניות הבנק.",
+    sources: ["נוהל HR-MORTGAGE-510.20", "מחלקת משכנתאות", "הסכמים קיבוציים 2025"],
+    lastUpdated: "2025-10-19",
+    accessLevel: "basic"
   }
 ];
 
@@ -385,6 +394,25 @@ const employeeDatabase = {
         holidays: 1,
         trainingDays: 5
       }
+    },
+
+    // נתוני משכנתא אישיים
+    mortgageData: {
+      eligibility: "זכאי מוגבל", // עובד שעתי - זכאות מוגבלת
+      currentStatus: "אין משכנתא פעילה",
+      maxLoanAmount: "עד 70% מערך הנכס (מוגבל ע\"י הכנסה שעתית)",
+      interestRateDiscount: "0.3% הנחה מהריבית הבסיסית",
+      specialConditions: [
+        "דרוש ערב או ביטחונות נוספים",
+        "בדיקת יציבות הכנסה של 12 חודשים",
+        "מגבלה על סכום ההלוואה ע\"פ הכנסה שעתית"
+      ],
+      additionalLoans: {
+        renovationLoan: "זכאי עד 100,000 ₪ בריבית מועדפת",
+        equityLoan: "זכאי עד 50,000 ₪ להון עצמי"
+      },
+      applicationProcess: "הגשת בקשה דרך מחלקת משכנתאות + בדיקת יועץ משכנתאות מתמחה בעובדי בנק",
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -481,6 +509,32 @@ const employeeDatabase = {
         { date: "2025-10-07", hours: 6, rate: "150%", approved: true },
         { date: "2025-10-14", hours: 5, rate: "125%", approved: true }
       ]
+    },
+
+    // נתוני משכנתא אישיים
+    mortgageData: {
+      eligibility: "זכאי מלא", // עובד קבוע - זכאות מלאה
+      currentStatus: "משכנתא פעילה",
+      currentMortgage: {
+        loanAmount: "1,800,000 ₪",
+        monthlyPayment: "6,200 ₪", 
+        interestRate: "4.1% (הנחת עובדים 0.7%)",
+        startDate: "2023-06-01",
+        yearsRemaining: 18
+      },
+      maxLoanAmount: "עד 75% מערך הנכס",
+      interestRateDiscount: "0.7% הנחה מהריבית הבסיסית",
+      specialConditions: [
+        "אישור מהיר תוך 10 ימי עסקים",
+        "גמישות בתנאי האשראי",
+        "אפשרות למשכנתא נוספת"
+      ],
+      additionalLoans: {
+        renovationLoan: "זכאי עד 200,000 ₪ בריבית מועדפת",
+        equityLoan: "זכאי עד 150,000 ₪ להון עצמי"
+      },
+      applicationProcess: "הגשת בקשה פשוטה דרך מחלקת משכנתאות עם אישור מהיר",
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -566,6 +620,23 @@ const employeeDatabase = {
       overtimeDetails: [
         { date: "2025-10-09", hours: 3, rate: "125%", approved: true }
       ]
+    },
+
+    // נתוני משכנתא אישיים
+    mortgageData: {
+      eligibility: "לא זכאי", // עובד זמני - אין זכאות
+      currentStatus: "אין זכאות למשכנתא",
+      reason: "העסקה זמנית - דרוש ותק מינימלי של 12 חודשים כעובד קבוע",
+      futureEligibility: "יהיה זכאי לאחר קביעות בתפקיד",
+      alternativeOptions: [
+        "ייעוץ למשכנתא רגילה מהבנק ללא הטבות עובדים",
+        "חסכון להון עצמי עד לקבלת זכאות",
+        "בדיקת משכנתא בבנקים אחרים"
+      ],
+      maxLoanAmount: "לא רלוונטי - אין זכאות",
+      interestRateDiscount: "לא רלוונטי - אין זכאות", 
+      applicationProcess: "לא זמין - נדרש להמתין לקביעות בתפקיד",
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -657,6 +728,37 @@ const employeeDatabase = {
       overtimeThisMonth: 0, // פטור משעות נוספות
       overtimeDetails: [],
       managementCompensation: true // זכאי להפגה במקום שעות נוספות
+    },
+
+    // נתוני משכנתא אישיים
+    mortgageData: {
+      eligibility: "זכאי מלא VIP", // מנהל בכיר - זכאות מקסימלית
+      currentStatus: "משכנתא פעילה + הלוואה שיפוצים",
+      currentMortgage: {
+        loanAmount: "2,400,000 ₪",
+        monthlyPayment: "7,800 ₪",
+        interestRate: "3.8% (הנחת עובדים 1.0%)",
+        startDate: "2022-03-01", 
+        yearsRemaining: 16
+      },
+      additionalActiveLoans: {
+        renovationLoan: "180,000 ₪ (תשלום חודשי: 1,200 ₪)"
+      },
+      maxLoanAmount: "עד 80% מערך הנכס",
+      interestRateDiscount: "1.0% הנחה מהריבית הבסיסית (הנחה מקסימלית)",
+      specialConditions: [
+        "אישור מיידי תוך 5 ימי עסקים",
+        "גמישות מקסימלית בתנאי האשראי", 
+        "זכאות למשכנתא נוספת עד 70%",
+        "ייעוץ אישי ממומחי המשכנתאות"
+      ],
+      additionalLoans: {
+        renovationLoan: "זכאי עד 300,000 ₪ בריבית מועדפת",
+        equityLoan: "זכאי עד 250,000 ₪ להון עצמי",
+        investmentLoan: "זכאי להלוואה השקעות עד 200,000 ₪"
+      },
+      applicationProcess: "טיפול VIP דרך מנהל משכנתאות בכיר עם יועץ אישי",
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -951,6 +1053,35 @@ const employeeDatabase = {
       overtimeThisMonth: 0, // פטורה משעות נוספות
       overtimeDetails: [],
       managementCompensation: true // זכאית להפגה
+    },
+
+    // נתוני משכנתא אישיים
+    mortgageData: {
+      eligibility: "זכאי מלא Tech", // מפתחת - זכאות מלאה עם הטבות טכנולוגיה
+      currentStatus: "משכנתא פעילה",
+      currentMortgage: {
+        loanAmount: "2,200,000 ₪",
+        monthlyPayment: "7,100 ₪",
+        interestRate: "3.9% (הנחת עובדים 0.8%)",
+        startDate: "2022-12-01",
+        yearsRemaining: 17
+      },
+      maxLoanAmount: "עד 75% מערך הנכס + הטבה טכנולוגית",
+      interestRateDiscount: "0.8% הנחה מהריבית הבסיסית + הטבת היי-טק",
+      specialConditions: [
+        "אישור מהיר תוך 7 ימי עסקים",
+        "גמישות גבוהה בתנאי האשראי",
+        "הטבות מיוחדות לעובדי טכנולוגיה",
+        "זכאות למשכנתא נוספת להשקעות",
+        "ייעוץ מומחה למשכנתאות היי-טק"
+      ],
+      additionalLoans: {
+        renovationLoan: "זכאי עד 250,000 ₪ בריבית מועדפת",
+        equityLoan: "זכאי עד 200,000 ₪ להון עצמי",
+        techLoan: "זכאי להלוואת ציוד טכנולוגי עד 80,000 ₪"
+      },
+      applicationProcess: "טיפול מהיר דרך מחלקת משכנתאות היי-טק עם ייעוץ מתמחה",
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -1070,6 +1201,12 @@ app.get('/', (c) => {
           <div class="quick-action" onclick="sendQuickMessage('המשמרות שלי החודש')">
             <i class="fas fa-calendar"></i> משמרות החודש
           </div>
+          <div class="quick-action" onclick="sendQuickMessage('המשכנתא שלי')">
+            <i class="fas fa-home"></i> המשכנתא שלי
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('נוהל משכנתאות')">
+            <i class="fas fa-building"></i> נוהל משכנתאות
+          </div>
         </div>
       </div>
 
@@ -1171,6 +1308,36 @@ function getChildrenGiftStatus(employee) {
     eligibleChildren: employee.childrenGifts.eligibleChildren,
     childrenAges: employee.familyData.childrenAges,
     status2025: employee.childrenGifts.giftStatus2025
+  };
+}
+
+function getMortgageStatus(employee) {
+  const mortgageData = employee.mortgageData;
+  
+  // אם אין נתוני משכנתא - החזר ברירת מחדל
+  if (!mortgageData) {
+    return {
+      eligibility: "לא זמין",
+      currentStatus: "נתונים לא זמינים",
+      maxLoanAmount: "נתונים לא זמינים",
+      interestRateDiscount: "נתונים לא זמינים",
+      specialConditions: ["פנה למחלקת משכנתאות לקבלת פרטים מדויקים"],
+      additionalLoans: {},
+      applicationProcess: "פנה למחלקת משכנתאות",
+      lastUpdated: "2025-10-19"
+    };
+  }
+  
+  return {
+    eligibility: mortgageData.eligibility,
+    currentStatus: mortgageData.currentStatus,
+    currentMortgage: mortgageData.currentMortgage,
+    maxLoanAmount: mortgageData.maxLoanAmount,
+    interestRateDiscount: mortgageData.interestRateDiscount,
+    specialConditions: mortgageData.specialConditions,
+    additionalLoans: mortgageData.additionalLoans,
+    applicationProcess: mortgageData.applicationProcess,
+    lastUpdated: mortgageData.lastUpdated
   };
 }
 
@@ -1442,7 +1609,9 @@ app.post('/api/chat', async (c) => {
       // משמרות - שאלות אישיות על משמרות
       weeklyShifts: ['המשמרות שלי השבוע', 'משמרות השבוע', 'מה המשמרות שלי', 'לוח משמרות השבוע', 'איך המשמרות שלי השבוע', 'משמרות השבוע שלי', 'משמרות', 'המשמרות שלי'],
       monthlyShifts: ['המשמרות שלי החודש', 'משמרות החודש', 'לוח משמרות החודש', 'משמרות החודש שלי', 'איך המשמרות החודש'],
-      todayShift: ['המשמרת שלי היום', 'משמרת היום', 'איזה משמרת היום', 'מה המשמרת שלי היום', 'באיזה משמרת אני היום', 'מתי המשמרת שלי היום']
+      todayShift: ['המשמרת שלי היום', 'משמרת היום', 'איזה משמרת היום', 'מה המשמרת שלי היום', 'באיזה משמרת אני היום', 'מתי המשמרת שלי היום'],
+      // משכנתאות - שאלות אישיות על משכנתאות
+      mortgage: ['המשכנתא שלי', 'זכאות משכנתא שלי', 'תנאי המשכנתא שלי', 'סטטוס המשכנתא', 'כמה משכנתא אני יכול', 'איך לקבל משכנתא', 'משכנתא עובדים', 'הטבות משכנתא שלי']
     };
     
     // בדיקה אם זו שאלה אישית
@@ -1466,6 +1635,8 @@ app.post('/api/chat', async (c) => {
       matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('הורות'));
     } else if (lowerMessage.includes('תלונה') || lowerMessage.includes('פנייה') || lowerMessage.includes('בעיה')) {
       matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('תלונה'));
+    } else if (lowerMessage.includes('משכנתא') || lowerMessage.includes('הלוואת דיור') || lowerMessage.includes('מימון דירה')) {
+      matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('משכנתא'));
     } else if (lowerMessage.includes('מרחוק') || lowerMessage.includes('בית') || lowerMessage.includes('טלעבודה')) {
       matchedKnowledge = knowledgeBase.find(kb => kb.question.includes('מרחוק'));
     } else if (lowerMessage.includes('אישור') && lowerMessage.includes('חופשה') && lowerMessage.includes('מנהל')) {
@@ -1745,6 +1916,56 @@ app.post('/api/chat', async (c) => {
               }
             }
           }
+          break;
+          
+        case 'mortgage':
+          const mortgageStatus = getMortgageStatus(currentUser);
+          personalResponse = `**🏠 נתוני המשכנתא האישיים שלך:**\\n\\n`;
+          
+          personalResponse += `📊 **סטטוס זכאות:** ${mortgageStatus.eligibility}\\n`;
+          personalResponse += `🏦 **מצב נוכחי:** ${mortgageStatus.currentStatus}\\n\\n`;
+          
+          if (mortgageStatus.currentMortgage) {
+            personalResponse += `💰 **המשכנתא הפעילה שלך:**\\n`;
+            personalResponse += `• סכום הלוואה: ${mortgageStatus.currentMortgage.loanAmount}\\n`;
+            personalResponse += `• תשלום חודשי: ${mortgageStatus.currentMortgage.monthlyPayment}\\n`;
+            personalResponse += `• ריבית: ${mortgageStatus.currentMortgage.interestRate}\\n`;
+            personalResponse += `• תחילת הלוואה: ${mortgageStatus.currentMortgage.startDate}\\n`;
+            personalResponse += `• שנים נותרות: ${mortgageStatus.currentMortgage.yearsRemaining}\\n\\n`;
+          }
+          
+          personalResponse += `🎯 **זכאות מקסימלית:** ${mortgageStatus.maxLoanAmount}\\n`;
+          personalResponse += `💳 **הנחת ריבית:** ${mortgageStatus.interestRateDiscount}\\n\\n`;
+          
+          if (mortgageStatus.specialConditions && mortgageStatus.specialConditions.length > 0) {
+            personalResponse += `✨ **התנאים המיוחדים שלך:**\\n`;
+            mortgageStatus.specialConditions.forEach(condition => {
+              personalResponse += `• ${condition}\\n`;
+            });
+            personalResponse += `\\n`;
+          }
+          
+          if (mortgageStatus.additionalLoans) {
+            personalResponse += `🏗️ **הלוואות נוספות זמינות:**\\n`;
+            if (mortgageStatus.additionalLoans.renovationLoan) {
+              personalResponse += `• שיפוצים: ${mortgageStatus.additionalLoans.renovationLoan}\\n`;
+            }
+            if (mortgageStatus.additionalLoans.equityLoan) {
+              personalResponse += `• הון עצמי: ${mortgageStatus.additionalLoans.equityLoan}\\n`;
+            }
+            if (mortgageStatus.additionalLoans.techLoan) {
+              personalResponse += `• ציוד טכנולוגי: ${mortgageStatus.additionalLoans.techLoan}\\n`;
+            }
+            if (mortgageStatus.additionalLoans.investmentLoan) {
+              personalResponse += `• השקעות: ${mortgageStatus.additionalLoans.investmentLoan}\\n`;
+            }
+            personalResponse += `\\n`;
+          }
+          
+          personalResponse += `📋 **תהליך הגשת בקשה:** ${mortgageStatus.applicationProcess}\\n\\n`;
+          personalResponse += `💡 **טיפ:** לקבלת ייעוץ מקצועי והצעת מחיר מותאמת אישית, צור קשר עם מחלקת המשכנתאות.`;
+          
+          sources = ["נתוני עובד אישיים", "מחלקת משכנתאות", "נוהל HR-MORTGAGE-510.20"];
           break;
       }
       
