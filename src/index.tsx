@@ -575,8 +575,17 @@ app.get('/users', (c) => {
 // Chat API with personalized responses
 app.post('/api/chat', async (c) => {
   try {
-    const { message, userType } = await c.req.json()
-    const currentUser = userProfiles[userType] || userProfiles.call_center
+    const { message, userType, userId } = await c.req.json()
+    
+    // Map userId to userType for backward compatibility
+    const userMap = {
+      'rachel': 'call_center',
+      'david': 'branch', 
+      'sarah': 'tech'
+    }
+    
+    const actualUserType = userType || userMap[userId] || 'call_center'
+    const currentUser = userProfiles[actualUserType] || userProfiles.call_center
     
     if (!message?.trim()) {
       return c.json({ 
