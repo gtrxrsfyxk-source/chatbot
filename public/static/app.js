@@ -1,8 +1,10 @@
-// צ'אטבוט בנק דיסקונט - JavaScript גרסה יציבה
+// צ'אטבוט בנק דיסקונט - JavaScript גרסה יציבה עם היסטוריית שיחות
 
 let isTyping = false;
 let messageHistory = [];
 let currentUser = 'call_center';
+let chatSessions = {}; // Store multiple chat sessions
+let currentChatId = 'current';
 
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
@@ -92,7 +94,7 @@ function addMessage(text, type) {
     
     const avatar = document.createElement('div');
     avatar.className = 'message-avatar';
-    avatar.textContent = type === 'user' ? getUserAvatar() : 'בנק';
+    avatar.textContent = type === 'user' ? getUserAvatar() : 'DB';
     
     const content = document.createElement('div');
     content.className = 'message-content';
@@ -142,7 +144,7 @@ function showTypingIndicator() {
     
     const avatar = document.createElement('div');
     avatar.className = 'message-avatar';
-    avatar.textContent = 'בנק';
+    avatar.textContent = 'DB';
     
     const content = document.createElement('div');
     content.className = 'message-content';
@@ -162,4 +164,147 @@ function hideTypingIndicator() {
     }
 }
 
-console.log('✅ JavaScript נטען בהצלחה');
+// Chat History Management Functions
+function startNewChat() {
+    console.log('🆕 התחלת שיחה חדשה');
+    
+    // Clear current messages except welcome message
+    const messagesContainer = document.getElementById('chat-messages');
+    if (messagesContainer) {
+        // Keep only the first message (welcome) and quick actions
+        const children = messagesContainer.children;
+        // Remove all messages except the first two (welcome message + quick actions)
+        while (children.length > 2) {
+            children[children.length - 1].remove();
+        }
+    }
+    
+    // Create new chat session
+    const newChatId = 'chat_' + Date.now();
+    currentChatId = newChatId;
+    chatSessions[newChatId] = {
+        id: newChatId,
+        title: 'שיחה חדשה',
+        messages: [],
+        createdAt: new Date(),
+        lastMessage: 'התחלת שיחה חדשה'
+    };
+    
+    // Update chat history display
+    updateChatHistoryDisplay();
+    
+    // Clear input field
+    const textarea = document.getElementById('chat-input');
+    if (textarea) {
+        textarea.value = '';
+        textarea.focus();
+    }
+}
+
+function loadChatHistory(chatId) {
+    console.log('📜 טוען היסטוריית שיחה:', chatId);
+    
+    if (chatId === 'current') {
+        // This is the current session - just highlight it
+        highlightChatItem(chatId);
+        return;
+    }
+    
+    // Update active chat indicator
+    currentChatId = chatId;
+    highlightChatItem(chatId);
+    
+    // Here you could load actual chat history from storage
+    // For now, we'll just show a placeholder
+    const messagesContainer = document.getElementById('chat-messages');
+    if (messagesContainer) {
+        // For demo purposes, we'll just show that the chat was loaded
+        addMessage(`נטענה שיחה קודמת: ${chatId}`, 'assistant');
+    }
+}
+
+function highlightChatItem(chatId) {
+    // Remove active class from all chat items
+    const chatItems = document.querySelectorAll('.chat-item');
+    chatItems.forEach(item => item.classList.remove('active'));
+    
+    // Add active class to selected chat item
+    const activeItem = document.querySelector(`[onclick*="${chatId}"]`);
+    if (activeItem) {
+        activeItem.classList.add('active');
+    }
+}
+
+function updateChatHistoryDisplay() {
+    const historyContainer = document.getElementById('chat-history');
+    if (!historyContainer) return;
+    
+    // Clear current history except the current chat item
+    const currentChatItem = historyContainer.querySelector('.chat-item.active');
+    
+    // This function could be expanded to dynamically update the history
+    // For now, it's a placeholder for future enhancements
+    console.log('📊 מעדכן תצוגת היסטוריה');
+}
+
+// Save current chat session (could be expanded to use localStorage or API)
+function saveChatSession() {
+    if (messageHistory.length > 0 && currentChatId) {
+        chatSessions[currentChatId] = {
+            id: currentChatId,
+            title: generateChatTitle(messageHistory[0]),
+            messages: [...messageHistory],
+            createdAt: chatSessions[currentChatId]?.createdAt || new Date(),
+            lastMessage: messageHistory[messageHistory.length - 1]?.text || ''
+        };
+        console.log('💾 שמירת שיחה:', currentChatId);
+    }
+}
+
+function generateChatTitle(firstMessage) {
+    if (!firstMessage) return 'שיחה חדשה';
+    
+    const text = firstMessage.text || firstMessage;
+    // Extract the first meaningful words for title
+    const words = text.split(' ').slice(0, 4);
+    return words.join(' ') + (text.split(' ').length > 4 ? '...' : '');
+}
+
+// Enhanced message adding with chat session tracking
+function addMessageWithHistory(text, type) {
+    addMessage(text, type);
+    
+    // Add to message history
+    messageHistory.push({
+        text: text,
+        type: type,
+        timestamp: new Date()
+    });
+    
+    // Auto-save session
+    saveChatSession();
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', function(event) {
+    // Ctrl/Cmd + N for new chat
+    if ((event.ctrlKey || event.metaKey) && event.key === 'n') {
+        event.preventDefault();
+        startNewChat();
+    }
+});
+
+// Initialize chat sessions on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize current session
+    currentChatId = 'current';
+    chatSessions[currentChatId] = {
+        id: currentChatId,
+        title: 'שיחה נוכחית',
+        messages: [],
+        createdAt: new Date(),
+        lastMessage: 'התחלת שיחה'
+    };
+});
+
+console.log('✅ JavaScript עם היסטוריית שיחות נטען בהצלחה');

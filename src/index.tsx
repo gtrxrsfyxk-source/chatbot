@@ -413,6 +413,45 @@ const employeeDatabase = {
       },
       applicationProcess: "הגשת בקשה דרך מחלקת משכנתאות + בדיקת יועץ משכנתאות מתמחה בעובדי בנק",
       lastUpdated: "2025-10-19"
+    },
+
+    // נתוני ארנק דיגיטלי אישיים
+    digitalWalletData: {
+      currentBalance: "2,450 ₪",
+      monthlyAllocation: "800 ₪",
+      usedThisMonth: "350 ₪",
+      remainingThisMonth: "450 ₪",
+      lastTransaction: {
+        date: "2025-10-15",
+        amount: "120 ₪",
+        description: "ארוחת צהריים - קפטריה"
+      },
+      categories: {
+        meals: { budget: "400 ₪", used: "180 ₪", remaining: "220 ₪" },
+        transport: { budget: "200 ₪", used: "85 ₪", remaining: "115 ₪" },
+        wellness: { budget: "200 ₪", used: "85 ₪", remaining: "115 ₪" }
+      },
+      restrictions: [
+        "שעתיים - מגבלה על סכום יומי מקסימלי של 150 ₪",
+        "זכאות מופחתת בהשוואה לעובדים קבועים"
+      ]
+    },
+
+    // נתוני עבודה מהבית אישיים
+    workFromHomeData: {
+      eligibility: "זכאי מוגבל",
+      currentStatus: "לא מאושר",
+      maxDaysPerWeek: 1,
+      reason: "עובד שעתי - זכאות מוגבלת לעבודה מהבית",
+      requirements: [
+        "השלמת תקופת ניסיון של 6 חודשים",
+        "אישור מנהל ישיר",
+        "השלמת קורס אבטחת מידע לעבודה מרחוק"
+      ],
+      currentApproval: "ממתין לאישור מנהל לאחר השלמת 6 חודשי ותק",
+      equipmentProvided: "מחשב נייד בנק + VPN (לאחר אישור)",
+      workingHours: "חובה לשמור על שעות קבועות ונוכחות במשמרות",
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -535,6 +574,50 @@ const employeeDatabase = {
       },
       applicationProcess: "הגשת בקשה פשוטה דרך מחלקת משכנתאות עם אישור מהיר",
       lastUpdated: "2025-10-19"
+    },
+
+    // נתוני ארנק דיגיטלי אישיים
+    digitalWalletData: {
+      currentBalance: "3,200 ₪",
+      monthlyAllocation: "1,200 ₪",
+      usedThisMonth: "680 ₪",
+      remainingThisMonth: "520 ₪",
+      lastTransaction: {
+        date: "2025-10-18",
+        amount: "85 ₪",
+        description: "תחבורה ציבורית - חודשון"
+      },
+      categories: {
+        meals: { budget: "500 ₪", used: "320 ₪", remaining: "180 ₪" },
+        transport: { budget: "400 ₪", used: "240 ₪", remaining: "160 ₪" },
+        wellness: { budget: "300 ₪", used: "120 ₪", remaining: "180 ₪" }
+      },
+      restrictions: [
+        "עובד קבוע - זכאות מלאה לכל הקטגוריות",
+        "הנחות נוספות על ארוחות בקפטריה"
+      ]
+    },
+
+    // נתוני עבודה מהבית אישיים
+    workFromHomeData: {
+      eligibility: "זכאי מלא",
+      currentStatus: "מאושר",
+      maxDaysPerWeek: 2,
+      approvedDays: ["שלישי", "חמישי"],
+      reason: "עובד קבוע בכיר עם ותק מעל 3 שנים",
+      requirements: [
+        "✅ השלמת קורס אבטחת מידע",
+        "✅ אישור מנהל ישיר",
+        "✅ התקנת VPN ומערכות אבטחה"
+      ],
+      currentApproval: "מאושר עד סוף 2025",
+      equipmentProvided: "מחשב נייד בנק + VPN + נקודת גישה מאובטחת",
+      workingHours: "גמישות בשעות עבודה עם שמירה על זמינות לפגישות",
+      monthlyUsage: {
+        october: { planned: 8, used: 6, remaining: 2 },
+        lastMonth: { planned: 8, used: 8, remaining: 0 }
+      },
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -636,6 +719,47 @@ const employeeDatabase = {
       maxLoanAmount: "לא רלוונטי - אין זכאות",
       interestRateDiscount: "לא רלוונטי - אין זכאות", 
       applicationProcess: "לא זמין - נדרש להמתין לקביעות בתפקיד",
+      lastUpdated: "2025-10-19"
+    },
+
+    // נתוני ארנק דיגיטלי אישיים
+    digitalWalletData: {
+      currentBalance: "450 ₪",
+      monthlyAllocation: "400 ₪",
+      usedThisMonth: "125 ₪",
+      remainingThisMonth: "275 ₪",
+      lastTransaction: {
+        date: "2025-10-17",
+        amount: "35 ₪",
+        description: "ארוחת בוקר - קפטריה"
+      },
+      categories: {
+        meals: { budget: "200 ₪", used: "85 ₪", remaining: "115 ₪" },
+        transport: { budget: "150 ₪", used: "40 ₪", remaining: "110 ₪" },
+        wellness: { budget: "50 ₪", used: "0 ₪", remaining: "50 ₪" }
+      },
+      restrictions: [
+        "עובד זמני - הקצבה מופחתת",
+        "מגבלה יומית של 80 ₪",
+        "לא זכאי להטבות רווחה מלאות"
+      ]
+    },
+
+    // נתוני עבודה מהבית אישיים
+    workFromHomeData: {
+      eligibility: "לא זכאי",
+      currentStatus: "לא מאושר",
+      maxDaysPerWeek: 0,
+      reason: "עובד זמני - אין זכאות לעבודה מהבית בתקופת הניסיון",
+      requirements: [
+        "❌ נדרשת קביעות בתפקיד",
+        "❌ השלמת 12 חודשי ותק כעובד קבוע", 
+        "❌ אישור מנהל ישיר לאחר קביעות"
+      ],
+      currentApproval: "לא רלוונטי - עובד זמני",
+      equipmentProvided: "לא זמין",
+      workingHours: "חובה לעבוד במשרד - אין אפשרות עבודה מרחוק",
+      futureEligibility: "יהיה זכאי לאחר קביעות בתפקיד ו-12 חודשי ותק",
       lastUpdated: "2025-10-19"
     }
   },
@@ -758,6 +882,57 @@ const employeeDatabase = {
         investmentLoan: "זכאי להלוואה השקעות עד 200,000 ₪"
       },
       applicationProcess: "טיפול VIP דרך מנהל משכנתאות בכיר עם יועץ אישי",
+      lastUpdated: "2025-10-19"
+    },
+
+    // נתוני ארנק דיגיטלי אישיים  
+    digitalWalletData: {
+      currentBalance: "4,800 ₪",
+      monthlyAllocation: "2,000 ₪",
+      usedThisMonth: "1,250 ₪",
+      remainingThisMonth: "750 ₪",
+      lastTransaction: {
+        date: "2025-10-19",
+        amount: "150 ₪",
+        description: "ארוחת עסקים - מסעדה חיצונית"
+      },
+      categories: {
+        meals: { budget: "800 ₪", used: "480 ₪", remaining: "320 ₪" },
+        transport: { budget: "600 ₪", used: "420 ₪", remaining: "180 ₪" },
+        wellness: { budget: "400 ₪", used: "250 ₪", remaining: "150 ₪" },
+        business: { budget: "200 ₪", used: "100 ₪", remaining: "100 ₪" }
+      },
+      restrictions: [
+        "מנהל בכיר - זכאות מקסימלית",
+        "הנחות VIP במסעדות ובתי מלון",
+        "גמישות מלאה בקטגוריות השונות"
+      ]
+    },
+
+    // נתוני עבודה מהבית אישיים
+    workFromHomeData: {
+      eligibility: "זכאי מלא VIP",
+      currentStatus: "מאושר",
+      maxDaysPerWeek: 3,
+      approvedDays: ["שני", "רביעי", "חמישי"],
+      reason: "מנהל בכיר - גמישות מלאה לצורכי ניהול",
+      requirements: [
+        "✅ סמכויות ניהול מלאות",
+        "✅ גישה מרחוק לכל מערכות הבנק",
+        "✅ ציוד מתקדם לפגישות וידאו"
+      ],
+      currentApproval: "מאושר קבוע ללא הגבלת זמן",
+      equipmentProvided: "מחשב נייד מתקדם + VIP setup + ציוד וידאו קונפרנס",
+      workingHours: "גמישות מלאה בשעות עבודה - זמינות לצורכי הסניף",
+      monthlyUsage: {
+        october: { planned: 12, used: 9, remaining: 3 },
+        lastMonth: { planned: 12, used: 11, remaining: 1 }
+      },
+      specialPrivileges: [
+        "יכולת לאשר עבודה מהבית לעובדי הסניף",
+        "גישה לחדרי ישיבות וירטואליים מתקדמים", 
+        "עדיפות בתמיכה טכנית"
+      ],
       lastUpdated: "2025-10-19"
     }
   },
@@ -976,6 +1151,56 @@ const employeeDatabase = {
         daysOff: 9,
         holidays: 0
       }
+    },
+
+    // נתוני ארנק דיגיטלי אישיים
+    digitalWalletData: {
+      currentBalance: "1,200 ₪",
+      monthlyAllocation: "600 ₪",
+      usedThisMonth: "385 ₪",
+      remainingThisMonth: "215 ₪",
+      lastTransaction: {
+        date: "2025-10-16",
+        amount: "45 ₪",
+        description: "ארוחת צהריים עם הילד - קפטריה"
+      },
+      categories: {
+        meals: { budget: "300 ₪", used: "190 ₪", remaining: "110 ₪" },
+        transport: { budget: "200 ₪", used: "145 ₪", remaining: "55 ₪" },
+        wellness: { budget: "100 ₪", used: "50 ₪", remaining: "50 ₪" }
+      },
+      restrictions: [
+        "עובדת זמנית - הקצבה מופחתת",
+        "מגבלה יומית של 100 ₪",
+        "הטבות חלקיות עד לקביעות בתפקיד"
+      ]
+    },
+
+    // נתוני עבודה מהבית אישיים
+    workFromHomeData: {
+      eligibility: "זכאי מוגבל",
+      currentStatus: "מאושר חלקית",
+      maxDaysPerWeek: 1,
+      approvedDays: ["רביעי"],
+      reason: "עובדת זמנית עם ילד קטן - זכאות חלקית מטעמי רווחה",
+      requirements: [
+        "✅ אישור מנהל סניף",
+        "✅ השלמת 6 חודשי ותק",
+        "⏳ ממתינה לקורס אבטחת מידע"
+      ],
+      currentApproval: "מאושר זמנית עד סוף השנה",
+      equipmentProvided: "מחשב נייד בנק + VPN בסיסי",
+      workingHours: "שעות קבועות עם גמישות קלה לצורכי הילד",
+      monthlyUsage: {
+        october: { planned: 4, used: 3, remaining: 1 },
+        lastMonth: { planned: 4, used: 4, remaining: 0 }
+      },
+      familyAccommodations: [
+        "הקלות לאם עם ילד קטן",
+        "אפשרות להפסקות נוספות לטיפול בילד",
+        "גמישות בשעות התחלה וסיום"
+      ],
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -1082,6 +1307,58 @@ const employeeDatabase = {
       },
       applicationProcess: "טיפול מהיר דרך מחלקת משכנתאות היי-טק עם ייעוץ מתמחה",
       lastUpdated: "2025-10-19"
+    },
+
+    // נתוני ארנק דיגיטלי אישיים
+    digitalWalletData: {
+      currentBalance: "3,850 ₪",
+      monthlyAllocation: "1,500 ₪",
+      usedThisMonth: "890 ₪",
+      remainingThisMonth: "610 ₪",
+      lastTransaction: {
+        date: "2025-10-18",
+        amount: "95 ₪",
+        description: "קורס פיתוח און-ליין - השתלמות מקצועית"
+      },
+      categories: {
+        meals: { budget: "600 ₪", used: "280 ₪", remaining: "320 ₪" },
+        transport: { budget: "300 ₪", used: "180 ₪", remaining: "120 ₪" },
+        wellness: { budget: "400 ₪", used: "330 ₪", remaining: "70 ₪" },
+        professional: { budget: "200 ₪", used: "100 ₪", remaining: "100 ₪" }
+      },
+      restrictions: [
+        "עובדת טכנולוגיה - זכאות מקצועית מורחבת",
+        "הטבות נוספות על קורסים ושתמלמויות",
+        "גמישות בקטגוריית פיתוח מקצועי"
+      ]
+    },
+
+    // נתוני עבודה מהבית אישיים
+    workFromHomeData: {
+      eligibility: "זכאי מלא היי-טק",
+      currentStatus: "מאושר",
+      maxDaysPerWeek: 4,
+      approvedDays: ["שני", "שלישי", "רביעי", "חמישי"],
+      reason: "מפתחת בכירה - עבודה היברידית אידיאלית למתכנתים",
+      requirements: [
+        "✅ סביבת פיתוח מתקדמת בבית",
+        "✅ חיבור אינטרנט מהיר וביטוח גיבוי",
+        "✅ VPN מאובטח לגישה לסביבות פיתוח"
+      ],
+      currentApproval: "מאושר עד סוף 2025 עם אופציה להארכה",
+      equipmentProvided: "מחשב נייד פיתוח מתקדם + 2 מסכים + ציוד אבטחת מידע",
+      workingHours: "גמישות מלאה בשעות פיתוח עם availability לפגישות צוות",
+      monthlyUsage: {
+        october: { planned: 16, used: 14, remaining: 2 },
+        lastMonth: { planned: 16, used: 16, remaining: 0 }
+      },
+      techBenefits: [
+        "גישה מרחוק לכל סביבות הפיתוח",
+        "רשת VPN מתקדמת לטסטים ו-debugging",
+        "תמיכה טכנית 24/7 לבעיות פיתוח",
+        "אפשרות עבודה לילית עם אישור מוקדם"
+      ],
+      lastUpdated: "2025-10-19"
     }
   },
   
@@ -1101,134 +1378,144 @@ app.get('/', (c) => {
   const currentUser = userProfiles[userType] || userProfiles.call_center;
   
   return c.render(
-    <div class="chat-container">
-      {/* Chat Header */}
-      <div class="chat-header">
-        <div class="logo">
-          <img src="https://page.gensparksite.com/v1/base64_upload/1c2cbdf24b458a240d8a4f579cd06d4d" 
-               alt="לוגו בנק דיסקונט" 
-               style="width: 55px; height: 55px; object-fit: contain;" />
+    <div class="app-container">
+      {/* Main Chat Area */}
+      <div class="chat-container">
+        {/* Chat Header */}
+        <div class="chat-header">
+          <div class="logo">
+            <img src="https://page.gensparksite.com/v1/base64_upload/e17c2fb9f005af7e1ed1694d3a9f309d" 
+                 alt="DBRAIN - לוגו צ'אטבוט חכם" 
+                 style="height: 40px; object-fit: contain;" />
+          </div>
+          <div class="title">
+            <h1>DBRAIN - עוזר הידע החכם</h1>
+            <p>בינה מלאכותית לבנק דיסקונט • "בדיסקונט משקיעים בך!"</p>
+          </div>
+          <div class="user-info">
+            <div class="user-badge">
+              <div class="status-indicator"></div>
+              <span>{currentUser.name}</span>
+              <div style="font-size: 0.75rem; opacity: 0.9;">
+                {currentUser.role}<br/>
+                {currentUser.employmentType === 'permanent' ? '🟢 קבוע' : 
+                 currentUser.employmentType === 'temporary' ? '🟡 זמני' : '🔵 שעתי'} • 
+                דרגה {currentUser.grade} • 
+                {Math.floor(currentUser.seniority / 12) > 0 ? `${Math.floor(currentUser.seniority / 12)} שנים` : `${currentUser.seniority} חודשים`}
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="title">
-          <h1>צ'אטבוט בנק דיסקונט</h1>
-          <p>עוזר הידע החכם • "בדיסקונט משקיעים בך!"</p>
+
+        {/* Chat Messages */}
+        <div class="chat-messages" id="chat-messages">
+          {/* Welcome Message */}
+          <div class="message message-assistant">
+            <div class="message-avatar">DB</div>
+            <div class="message-content">
+              <p class="message-text">
+                שלום {currentUser.name}! 👋<br/>
+                אני <strong>DBRAIN</strong> - עוזר הידע החכם עם בינה מלאכותית של בנק דיסקונט. <br/>
+                זיהיתי אותך כ<strong>{currentUser.employmentType === 'permanent' ? 'עובד קבוע' : 
+                currentUser.employmentType === 'temporary' ? 'עובד זמני' : 'עובד שעתי'}</strong> ב{currentUser.department}.<br/>
+                <strong>בדיסקונט משקיעים בך!</strong> התשובות שלי מותאמות אישית לסטטוס ההעסקה ולזכויותיך.<br/>
+                <strong>איך אני יכול לעזור לך היום? 🤖</strong>
+              </p>
+              <div class="message-meta">
+                <i class="fas fa-clock"></i>
+                <span id="current-time"></span>
+                <span>•</span>
+                <span>מחובר כ{currentUser.role}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Actions */}
+          <div class="quick-actions">
+            <div class="quick-action" onclick="sendQuickMessage('ניצול ימי חופשה שלי')">
+              <i class="fas fa-calendar-alt"></i>
+              <span>ניצול ימי חופשה</span>
+            </div>
+            <div class="quick-action" onclick="sendQuickMessage('יתרת ארנק דיגיטלי שלי')">
+              <i class="fas fa-wallet"></i>
+              <span>יתרת ארנק דיגיטלי</span>
+            </div>
+            <div class="quick-action" onclick="sendQuickMessage('עבודה מהבית שלי')">
+              <i class="fas fa-laptop-house"></i>
+              <span>עבודה מהבית</span>
+            </div>
+          </div>
         </div>
-        <div class="user-info">
-          <div class="user-badge">
-            <div class="status-indicator"></div>
-            <span>{currentUser.name}</span>
-            <div style="font-size: 0.75rem; opacity: 0.9;">
-              {currentUser.role}<br/>
-              {currentUser.employmentType === 'permanent' ? '🟢 קבוע' : 
-               currentUser.employmentType === 'temporary' ? '🟡 זמני' : '🔵 שעתי'} • 
-              דרגה {currentUser.grade} • 
-              {Math.floor(currentUser.seniority / 12) > 0 ? `${Math.floor(currentUser.seniority / 12)} שנים` : `${currentUser.seniority} חודשים`}
+
+        {/* Chat Input */}
+        <div class="chat-input">
+          <div class="input-container">
+            <div class="input-wrapper">
+              <textarea 
+                id="chat-input"
+                class="chat-textarea"
+                placeholder="כתוב כאן את השאלה שלך..."
+                rows="1"
+                onkeydown="handleKeyDown(event)"
+              ></textarea>
+              <button 
+                id="send-button"
+                class="send-button"
+                onclick="sendMessage()"
+                type="button"
+              >
+                <i class="fas fa-paper-plane"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Chat Messages */}
-      <div class="chat-messages" id="chat-messages">
-        {/* Welcome Message */}
-        <div class="message message-assistant">
-          <div class="message-avatar">בנק</div>
-          <div class="message-content">
-            <p class="message-text">
-              שלום {currentUser.name}! 👋<br/>
-              אני עוזר הידע החכם של בנק דיסקונט. <br/>
-              זיהיתי אותך כ<strong>{currentUser.employmentType === 'permanent' ? 'עובד קבוע' : 
-              currentUser.employmentType === 'temporary' ? 'עובד זמני' : 'עובד שעתי'}</strong> ב{currentUser.department}.<br/>
-              <strong>בדיסקונט משקיעים בך!</strong> התשובות שלי מותאמות אישית לסטטוס ההעסקה ולזכויותיך.<br/>
-              <strong>איך אני יכול לעזור לך היום? 😊</strong>
-            </p>
-            <div class="message-meta">
-              <i class="fas fa-clock"></i>
-              <span id="current-time"></span>
-              <span>•</span>
-              <span>מחובר כ{currentUser.role}</span>
-            </div>
+      {/* Sidebar with Chat History */}
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-logo">
+            <img src="https://page.gensparksite.com/v1/base64_upload/e17c2fb9f005af7e1ed1694d3a9f309d" 
+                 alt="DBRAIN" 
+                 style="height: 24px; object-fit: contain;" />
           </div>
+          <h3 class="sidebar-title">היסטוריית שיחות</h3>
+          <button class="new-chat-btn" onclick="startNewChat()">
+            <i class="fas fa-plus"></i>
+            שיחה חדשה
+          </button>
         </div>
-
-        {/* Quick Actions */}
-        <div class="quick-actions">
-          <div class="quick-action" onclick="sendQuickMessage('מה שעות העבודה הרגילות?')">
-            <i class="fas fa-clock"></i> שעות עבודה
+        <div class="chat-history" id="chat-history">
+          {/* Example chat history items - will be populated by JavaScript */}
+          <div class="chat-item active" onclick="loadChatHistory('current')">
+            <div class="chat-item-title">שיחה נוכחית</div>
+            <div class="chat-item-preview">שלום {currentUser.name}! איך אני יכול לעזור...</div>
+            <div class="chat-item-time">עכשיו</div>
           </div>
-          <div class="quick-action" onclick="sendQuickMessage('איך מגישים בקשה לחופשה?')">
-            <i class="fas fa-calendar-alt"></i> חופשה שנתית
+          <div class="chat-item" onclick="loadChatHistory('1')">
+            <div class="chat-item-title">שאלות על ימי חופשה</div>
+            <div class="chat-item-preview">כמה ימי חופשה נשארו לי השנה?</div>
+            <div class="chat-item-time">אתמול</div>
           </div>
-          <div class="quick-action" onclick="sendQuickMessage('נוהל דיווח מחלה')">
-            <i class="fas fa-user-md"></i> דיווח מחלה
+          <div class="chat-item" onclick="loadChatHistory('2')">
+            <div class="chat-item-title">בירור זכויות ארנק דיגיטלי</div>
+            <div class="chat-item-preview">מה היתרה שלי בארנק הדיגיטלי?</div>
+            <div class="chat-item-time">לפני 3 ימים</div>
           </div>
-          <div class="quick-action" onclick="sendQuickMessage('איך מבקשים שעות נוספות?')">
-            <i class="fas fa-plus-circle"></i> שעות נוספות
+          <div class="chat-item" onclick="loadChatHistory('3')">
+            <div class="chat-item-title">עבודה מהבית</div>
+            <div class="chat-item-preview">איך אני יכול לקבל אישור לעבודה מהבית?</div>
+            <div class="chat-item-time">השבוע</div>
           </div>
-          <div class="quick-action" onclick="sendQuickMessage('זכויות הורות ולידה')">
-            <i class="fas fa-baby"></i> זכויות הורות
+          <div class="chat-item" onclick="loadChatHistory('4')">
+            <div class="chat-item-title">שאלות על משכנתא</div>
+            <div class="chat-item-preview">מה התנאים למשכנתא לעובדי הבנק?</div>
+            <div class="chat-item-time">השבוע</div>
           </div>
-          <div class="quick-action" onclick="sendQuickMessage('עבודה מרחוק')">
-            <i class="fas fa-home"></i> עבודה מהבית
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('איך מנוהל קובץ המשמרות?')">
-            <i class="fas fa-calendar-week"></i> מערכת משמרות
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('מערכת זכאויות וניצול')">
-            <i class="fas fa-chart-line"></i> זכויות וניצול
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('מעקב ימי מחלה מול זכאות')">
-            <i class="fas fa-heartbeat"></i> ימי מחלה
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('טופס 101 נתוני משפחה')">
-            <i class="fas fa-users"></i> טופס 101
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('ניצול חופשה רציפה')">
-            <i class="fas fa-umbrella-beach"></i> חופשה רציפה
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('זכאות מתנות לילדים')">
-            <i class="fas fa-gift"></i> מתנות ילדים
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('זכאות חודשית שעות נוספות')">
-            <i class="fas fa-stopwatch"></i> שעות נוספות
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('מה המשמרות שלי השבוע?')">
-            <i class="fas fa-calendar-check"></i> המשמרות השבוע
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('המשמרת שלי היום')">
-            <i class="fas fa-clock-o"></i> משמרת היום
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('המשמרות שלי החודש')">
-            <i class="fas fa-calendar"></i> משמרות החודש
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('המשכנתא שלי')">
-            <i class="fas fa-home"></i> המשכנתא שלי
-          </div>
-          <div class="quick-action" onclick="sendQuickMessage('נוהל משכנתאות')">
-            <i class="fas fa-building"></i> נוהל משכנתאות
-          </div>
-        </div>
-      </div>
-
-      {/* Chat Input */}
-      <div class="chat-input">
-        <div class="input-container">
-          <div class="input-wrapper">
-            <textarea 
-              id="chat-input"
-              class="chat-textarea"
-              placeholder="שאל אותי כל שאלה מקצועית..."
-              rows="1"
-              onkeydown="handleKeyDown(event)"
-            ></textarea>
-            <button 
-              id="send-button"
-              class="send-button"
-              onclick="sendMessage()"
-              type="button"
-            >
-              <i class="fas fa-paper-plane"></i>
-            </button>
+          <div class="chat-item" onclick="loadChatHistory('5')">
+            <div class="chat-item-title">ימי מחלה וזכויות</div>
+            <div class="chat-item-preview">כמה ימי מחלה צברתי השנה?</div>
+            <div class="chat-item-time">לפני שבוע</div>
           </div>
         </div>
       </div>
@@ -1509,6 +1796,66 @@ function getTodaysShift(employee) {
   };
 }
 
+function getDigitalWalletStatus(employee) {
+  const walletData = employee.digitalWalletData;
+  
+  // אם אין נתוני ארנק - החזר ברירת מחדל
+  if (!walletData) {
+    return {
+      currentBalance: "0 ₪",
+      monthlyAllocation: "0 ₪",
+      usedThisMonth: "0 ₪",
+      remainingThisMonth: "0 ₪",
+      categories: {},
+      restrictions: ["נתונים לא זמינים במערכת"],
+      lastTransaction: null
+    };
+  }
+  
+  return {
+    currentBalance: walletData.currentBalance,
+    monthlyAllocation: walletData.monthlyAllocation,
+    usedThisMonth: walletData.usedThisMonth,
+    remainingThisMonth: walletData.remainingThisMonth,
+    categories: walletData.categories || {},
+    restrictions: walletData.restrictions || [],
+    lastTransaction: walletData.lastTransaction
+  };
+}
+
+function getWorkFromHomeStatus(employee) {
+  const wfhData = employee.workFromHomeData;
+  
+  // אם אין נתוני עבודה מהבית - החזר ברירת מחדל
+  if (!wfhData) {
+    return {
+      eligibility: "לא זמין",
+      currentStatus: "נתונים לא זמינים",
+      maxDaysPerWeek: 0,
+      approvedDays: [],
+      reason: "נתונים לא זמינים במערכת",
+      requirements: ["פנה למחלקת משאבי אנוש לקבלת פרטים"],
+      currentApproval: "לא זמין",
+      equipmentProvided: "לא זמין",
+      workingHours: "לא זמין",
+      monthlyUsage: null
+    };
+  }
+  
+  return {
+    eligibility: wfhData.eligibility,
+    currentStatus: wfhData.currentStatus,
+    maxDaysPerWeek: wfhData.maxDaysPerWeek,
+    approvedDays: wfhData.approvedDays || [],
+    reason: wfhData.reason,
+    requirements: wfhData.requirements || [],
+    currentApproval: wfhData.currentApproval,
+    equipmentProvided: wfhData.equipmentProvided,
+    workingHours: wfhData.workingHours,
+    monthlyUsage: wfhData.monthlyUsage
+  };
+}
+
 function generatePersonalizedResponse(baseAnswer, employee, topic) {
   let personalSection = "\n\n**📊 המידע האישי שלך:**\n";
   
@@ -1600,12 +1947,16 @@ app.post('/api/chat', async (c) => {
     
     // זיהוי שאלות אישיות עם יתרות ומאגר מידע מותאם אישית
     const personalQuestions = {
-      vacation: ['כמה חופשה נשארה', 'כמה ימי חופשה', 'יתרת חופשה', 'חופשה שלי', 'ימי החופשה שלי', 'יתרת ימי חופשה', 'כמה חופשה יש לי'],
-      sick: ['כמה ימי מחלה', 'יתרת מחלה', 'ימי מחלה שלי', 'כמה מחלה נשארה', 'יתרת ימי מחלה'],
+      vacation: ['כמה חופשה נשארה', 'כמה ימי חופשה', 'יתרת חופשה', 'חופשה שלי', 'ימי החופשה שלי', 'יתרת ימי חופשה', 'כמה חופשה יש לי', 'ניצול ימי חופשה שלי'],
+      sick: ['כמה ימי מחלה', 'יתרת מחלה', 'ימי מחלה שלי', 'כמה מחלה נשארה', 'יתרת ימי מחלה', 'ניצול ימי מחלה שלי'],
       childSick: ['מחלת ילד', 'ימי מחלת ילד שלי', 'כמה ימי מחלת ילד', 'יתרת מחלת ילד'],
       overtime: ['שעות נוספות שלי', 'כמה שעות נוספות', 'יתרת שעות נוספות', 'מכסת שעות נוספות'],
-      gifts: ['מתנות לילדים שלי', 'מתנות הילדים', 'סטטוס מתנות', 'מתנות שלי'],
+      gifts: ['מתנות לילדים שלי', 'מתנות הילדים', 'סטטוס מתנות', 'מתנות שלי', 'מתנות ילדים שלי'],
       family: ['טופס 101 שלי', 'נתוני המשפחה שלי', 'פרטי משפחה', 'ילדים שלי', 'מצב משפחתי'],
+      // יתרת ארנק דיגיטלי - נושא חדש
+      digitalWallet: ['יתרת ארנק דיגיטלי', 'ארנק דיגיטלי שלי', 'יתרת הארנק', 'כמה כסף בארנק', 'ארנק דיגיטלי', 'יתרת הארנק הדיגיטלי'],
+      // עבודה מהבית - נושא חדש מותאם אישית
+      workFromHome: ['עבודה מהבית שלי', 'זכאות עבודה מהבית', 'מתי יכול לעבוד מהבית', 'ימי עבודה מהבית שלי', 'סטטוס עבודה מרחוק שלי', 'עבודה מרחוק שלי'],
       // משמרות - שאלות אישיות על משמרות
       weeklyShifts: ['המשמרות שלי השבוע', 'משמרות השבוע', 'מה המשמרות שלי', 'לוח משמרות השבוע', 'איך המשמרות שלי השבוע', 'משמרות השבוע שלי', 'משמרות', 'המשמרות שלי'],
       monthlyShifts: ['המשמרות שלי החודש', 'משמרות החודש', 'לוח משמרות החודש', 'משמרות החודש שלי', 'איך המשמרות החודש'],
@@ -1966,6 +2317,100 @@ app.post('/api/chat', async (c) => {
           personalResponse += `💡 **טיפ:** לקבלת ייעוץ מקצועי והצעת מחיר מותאמת אישית, צור קשר עם מחלקת המשכנתאות.`;
           
           sources = ["נתוני עובד אישיים", "מחלקת משכנתאות", "נוהל HR-MORTGAGE-510.20"];
+          break;
+          
+        case 'digitalWallet':
+          const walletData = currentUser.digitalWalletData || {
+            currentBalance: "0 ₪",
+            monthlyAllocation: "0 ₪",
+            usedThisMonth: "0 ₪",
+            remainingThisMonth: "0 ₪",
+            categories: {},
+            restrictions: ["נתונים לא זמינים"]
+          };
+          
+          personalResponse = `**💳 יתרת הארנק הדיגיטלי שלך:**\n\n`;
+          personalResponse += `💰 **יתרה נוכחית:** ${walletData.currentBalance}\n`;
+          personalResponse += `📊 **הקצבה חודשית:** ${walletData.monthlyAllocation}\n`;
+          personalResponse += `✅ **נוצל החודש:** ${walletData.usedThisMonth}\n`;
+          personalResponse += `🎯 **נותר החודש:** **${walletData.remainingThisMonth}**\n\n`;
+          
+          if (walletData.lastTransaction) {
+            personalResponse += `**💸 העסקה האחרונה:**\n`;
+            personalResponse += `• ${walletData.lastTransaction.date}: ${walletData.lastTransaction.amount} - ${walletData.lastTransaction.description}\n\n`;
+          }
+          
+          if (walletData.categories && Object.keys(walletData.categories).length > 0) {
+            personalResponse += `**📈 פירוט לפי קטגוריות:**\n`;
+            Object.entries(walletData.categories).forEach(([category, data]) => {
+              const categoryName = category === 'meals' ? 'ארוחות' : 
+                                   category === 'transport' ? 'תחבורה' : 
+                                   category === 'wellness' ? 'בריאות ורווחה' : category;
+              personalResponse += `• **${categoryName}:** ${data.used} / ${data.budget} (נותר: ${data.remaining})\n`;
+            });
+            personalResponse += `\n`;
+          }
+          
+          if (walletData.restrictions && walletData.restrictions.length > 0) {
+            personalResponse += `**ℹ️ הגבלות ותנאים:**\n`;
+            walletData.restrictions.forEach(restriction => {
+              personalResponse += `• ${restriction}\n`;
+            });
+          }
+          
+          personalResponse += `\n💡 **טיפ:** ניתן לטעון את הארנק או לבדוק היסטוריית עסקאות באפליקציית העובדים.`;
+          sources = ["מאגר נתוני עובדים", "מערכת ארנק דיגיטלי"];
+          break;
+          
+        case 'workFromHome':
+          const wfhData = currentUser.workFromHomeData || {
+            eligibility: "לא זמין",
+            currentStatus: "נתונים לא זמינים",
+            maxDaysPerWeek: 0,
+            reason: "נתונים לא זמינים במערכת",
+            requirements: [],
+            currentApproval: "לא זמין"
+          };
+          
+          personalResponse = `**🏠 מצב העבודה מהבית שלך:**\n\n`;
+          personalResponse += `✅ **סטטוס זכאות:** ${wfhData.eligibility}\n`;
+          personalResponse += `📋 **מצב נוכחי:** ${wfhData.currentStatus}\n`;
+          personalResponse += `📅 **מקסימום ימים בשבוע:** ${wfhData.maxDaysPerWeek}\n\n`;
+          
+          if (wfhData.approvedDays && wfhData.approvedDays.length > 0) {
+            personalResponse += `**📆 ימים מאושרים:** ${wfhData.approvedDays.join(', ')}\n\n`;
+          }
+          
+          personalResponse += `**💼 נימוק:** ${wfhData.reason}\n\n`;
+          
+          if (wfhData.requirements && wfhData.requirements.length > 0) {
+            personalResponse += `**📋 דרישות/סטטוס:**\n`;
+            wfhData.requirements.forEach(req => {
+              personalResponse += `• ${req}\n`;
+            });
+            personalResponse += `\n`;
+          }
+          
+          personalResponse += `**🔖 סטטוס אישור:** ${wfhData.currentApproval}\n`;
+          
+          if (wfhData.equipmentProvided) {
+            personalResponse += `**💻 ציוד מסופק:** ${wfhData.equipmentProvided}\n`;
+          }
+          
+          if (wfhData.workingHours) {
+            personalResponse += `**⏰ תנאי שעות עבודה:** ${wfhData.workingHours}\n`;
+          }
+          
+          if (wfhData.monthlyUsage) {
+            personalResponse += `\n**📊 ניצול חודשי (אוקטובר):**\n`;
+            const usage = wfhData.monthlyUsage.october;
+            personalResponse += `• מתוכנן: ${usage.planned} ימים\n`;
+            personalResponse += `• נוצל: ${usage.used} ימים\n`;
+            personalResponse += `• נותר: ${usage.remaining} ימים\n`;
+          }
+          
+          personalResponse += `\n💡 **הערה:** לשינוי סטטוס או הגדרות עבודה מהבית, פנה למנהל הישיר או למחלקת משאבי אנוש.`;
+          sources = ["מאגר נתוני עובדים", "מערכת עבודה מרחוק", "נוהל IT-SEC-401.25"];
           break;
       }
       

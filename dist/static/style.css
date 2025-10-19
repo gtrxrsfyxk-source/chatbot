@@ -1,271 +1,261 @@
-/* צ'אטבוט בנק דיסקונט - עיצוב מותאם */
+/* צ'אטבוט בנק דיסקונט - עיצוב מחשב עם היסטוריית שיחות */
 
-/* משתני CSS - צבעי בנק דיסקונט בירוק */
+/* משתני CSS - צבעי בנק דיסקונט */
 :root {
-  --discount-green: #2E7D32;
-  --discount-green-light: #4CAF50;
-  --discount-green-dark: #1B5E20;
-  --discount-teal: #00897B;
-  --discount-lime: #689F38;
-  --discount-accent: #FF9800;
-  --discount-success: #4CAF50;
-  --discount-warning: #FFC107;
-  --discount-danger: #F44336;
-  --discount-gray-50: #f8f9fa;
-  --discount-gray-100: #f1f3f4;
-  --discount-gray-200: #e9ecef;
-  --discount-gray-300: #dee2e6;
-  --discount-gray-400: #ced4da;
-  --discount-gray-500: #adb5bd;
-  --discount-gray-600: #6c757d;
-  --discount-gray-700: #495057;
-  --discount-gray-800: #343a40;
-  --discount-gray-900: #212529;
+  --discount-green: #4CAF50;
+  --discount-green-light: #81C784;
+  --discount-green-dark: #2E7D32;
+  --discount-green-soft: #E8F5E8;
+  --discount-cream: #F8F6F0;
+  --discount-white: #FFFFFF;
+  --discount-gray-50: #FAFAFA;
+  --discount-gray-100: #F5F5F5;
+  --discount-gray-200: #EEEEEE;
+  --discount-gray-300: #E0E0E0;
+  --discount-gray-400: #BDBDBD;
+  --discount-gray-500: #9E9E9E;
+  --discount-gray-600: #757575;
+  --discount-gray-700: #424242;
+  --discount-gray-800: #212121;
   
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* פונטים מותאמים לעברית - סגנון דיסקונט */
-.font-heebo {
-  font-family: 'Heebo', 'Assistant', 'Noto Sans Hebrew', 'Segoe UI', sans-serif;
-}
-
-.font-assistant {
-  font-family: 'Assistant', 'Heebo', 'Noto Sans Hebrew', 'Segoe UI', sans-serif;
-}
-
-/* ברירת מחדל לגוף הדף */
+/* פונטים מותאמים לעברית */
 body {
   font-family: 'Heebo', 'Assistant', 'Noto Sans Hebrew', 'Segoe UI', sans-serif;
-  color: var(--discount-gray-800);
-  line-height: 1.65;
+  color: var(--discount-gray-700);
+  line-height: 1.5;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #E8F5E8 0%, #F8F6F0 70%, #F5F5F5 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* כותרות - סגנון דיסקונט */
+/* כותרות */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Heebo', 'Assistant', 'Noto Sans Hebrew', 'Segoe UI', sans-serif;
-  font-weight: 700;
-  color: var(--discount-green-dark);
-  letter-spacing: -0.02em;
-}
-
-/* כפתורים - סגנון דיסקונט */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem;
-  font-size: 1rem;
   font-weight: 600;
-  border-radius: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
-  gap: 0.75rem;
-  letter-spacing: 0.02em;
-  min-height: 48px;
-  position: relative;
-  overflow: hidden;
+  color: var(--discount-gray-800);
+  margin: 0;
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.btn:hover::before {
-  opacity: 1;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--discount-green), var(--discount-green-light));
-  color: white;
-  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, var(--discount-green-dark), var(--discount-green));
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(27, 94, 32, 0.4);
-}
-
-.btn-secondary {
-  background: white;
-  color: var(--discount-green);
-  border: 2px solid var(--discount-green);
-  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.1);
-}
-
-.btn-secondary:hover {
-  background: var(--discount-green);
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
-}
-
-.btn-accent {
-  background: linear-gradient(135deg, var(--discount-accent), #FF8C00);
-  color: white;
-  box-shadow: 0 6px 20px rgba(255, 180, 0, 0.3);
-}
-
-.btn-accent:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 180, 0, 0.4);
-}
-
-.btn-success {
-  background: var(--discount-success);
-  color: white;
-}
-
-.btn-danger {
-  background: var(--discount-danger);
-  color: white;
-}
-
-/* כרטיסים - סגנון דיסקונט */
-.card {
-  background: white;
-  border-radius: 1.5rem;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(46, 125, 50, 0.1);
-}
-
-.card:hover {
-  box-shadow: 0 20px 60px rgba(46, 125, 50, 0.15);
-  transform: translateY(-4px);
-  border-color: rgba(46, 125, 50, 0.2);
-}
-
-.card-header {
-  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
-  color: white;
-  padding: 2rem;
-  font-weight: 700;
-  position: relative;
-}
-
-.card-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-}
-
-.card-body {
-  padding: 2rem;
-}
-
-/* ממשק הצ'אטבוט */
-.chat-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 100vh;
+/* Layout ראשי - שתי עמודות */
+.app-container {
   display: flex;
-  flex-direction: column;
-  background: white;
-  border-radius: 0;
-  overflow: hidden;
+  height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--discount-white);
   box-shadow: var(--shadow-xl);
 }
 
-.chat-header {
-  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
-  color: white;
-  padding: 2rem;
+/* סרגל צד - היסטוריית שיחות */
+.sidebar {
+  width: 300px;
+  background: var(--discount-gray-50);
+  border-left: 1px solid var(--discount-gray-200);
   display: flex;
-  align-items: center;
-  justify-content: between;
-  gap: 1.5rem;
-  box-shadow: 0 4px 25px rgba(46, 125, 50, 0.2);
+  flex-direction: column;
   position: relative;
 }
 
-.chat-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+.sidebar-header {
+  padding: 1.5rem;
+  background: var(--discount-white);
+  border-bottom: 1px solid var(--discount-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.chat-header .logo {
-  width: 70px;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 1.25rem;
+.sidebar-logo {
+  background: var(--discount-gray-800);
+  padding: 4px 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--discount-gray-800);
+}
+
+.new-chat-btn {
+  background: var(--discount-green);
   color: white;
-  font-size: 1.75rem;
-  font-weight: 700;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.new-chat-btn:hover {
+  background: var(--discount-green-dark);
+  transform: translateY(-1px);
+}
+
+.chat-history {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.chat-item {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.chat-item:hover {
+  background: var(--discount-gray-100);
+  border-color: var(--discount-gray-300);
+}
+
+.chat-item.active {
+  background: var(--discount-green-soft);
+  border-color: var(--discount-green-light);
+}
+
+.chat-item-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--discount-gray-800);
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chat-item-preview {
+  font-size: 0.75rem;
+  color: var(--discount-gray-500);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chat-item-time {
+  font-size: 0.75rem;
+  color: var(--discount-gray-400);
+  margin-top: 0.25rem;
+}
+
+/* אזור הצ'אט הראשי */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--discount-white);
   position: relative;
-  z-index: 1;
-  padding: 8px;
+}
+
+/* כותרת עליונה של הצ'אט */
+.chat-header {
+  background: var(--discount-green-light);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-header .logo {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .chat-header .logo img {
-  width: 100%;
-  height: 100%;
   object-fit: contain;
-  border-radius: 0.75rem;
+  filter: brightness(1.1);
 }
 
 .chat-header .title {
   flex: 1;
+  margin-right: 1rem;
+  text-align: right;
 }
 
 .chat-header .title h1 {
   color: white;
-  margin: 0;
   font-size: 1.5rem;
   font-weight: 700;
+  margin-bottom: 0.25rem;
 }
 
 .chat-header .title p {
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.875rem;
+  margin: 0;
 }
 
+.chat-header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: #00E676;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* אזור ההודעות */
 .chat-messages {
   flex: 1;
+  padding: 2rem;
   overflow-y: auto;
-  padding: 1.5rem;
-  background: var(--discount-gray-50);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+  background: var(--discount-gray-50);
 }
 
 .message {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  max-width: 80%;
+  gap: 1rem;
+  max-width: 70%;
 }
 
 .message-user {
@@ -277,6 +267,7 @@ h1, h2, h3, h4, h5, h6 {
   align-self: flex-start;
 }
 
+/* אווטארים */
 .message-avatar {
   width: 40px;
   height: 40px;
@@ -284,195 +275,208 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 600;
   flex-shrink: 0;
 }
 
 .message-user .message-avatar {
-  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
+  background: var(--discount-green);
   color: white;
-  border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 .message-assistant .message-avatar {
-  background: linear-gradient(135deg, var(--discount-accent), #FF8C00);
+  background: linear-gradient(135deg, #2E7D32, #4CAF50);
   color: white;
-  border: 3px solid rgba(255, 180, 0, 0.3);
+  font-weight: 700;
+  font-size: 0.75rem;
 }
 
+/* בועות ההודעות */
 .message-content {
-  background: white;
-  border-radius: 1.5rem;
+  background: var(--discount-white);
+  border-radius: 18px;
   padding: 1.25rem 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
   border: 1px solid var(--discount-gray-200);
   position: relative;
+  max-width: 100%;
 }
 
 .message-user .message-content {
-  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
-  color: white;
-  border: none;
+  background: var(--discount-green-soft);
+  border: 1px solid var(--discount-green-light);
 }
 
 .message-content .message-text {
   margin: 0;
   line-height: 1.5;
+  font-size: 0.95rem;
+  color: var(--discount-gray-700);
+}
+
+.message-user .message-content .message-text {
+  color: var(--discount-gray-800);
 }
 
 .message-content .message-meta {
   font-size: 0.75rem;
-  color: var(--discount-gray-500);
-  margin-top: 0.5rem;
+  color: var(--discount-gray-400);
+  margin-top: 0.75rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  direction: ltr;
+  text-align: left;
 }
 
 .message-user .message-meta {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--discount-gray-600);
 }
 
-.message-content .source-links {
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--discount-gray-200);
+/* כפתורים מהירים */
+.quick-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.message-user .message-content .source-links {
-  border-top-color: rgba(255, 255, 255, 0.3);
-}
-
-.source-link {
-  display: inline-flex;
+.quick-action {
+  display: flex;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.75rem;
-  color: var(--discount-teal);
-  text-decoration: none;
-  margin-left: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  background: rgba(0, 137, 123, 0.1);
-  border-radius: 0.5rem;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--discount-white);
+  border: 1px solid var(--discount-gray-300);
+  border-radius: 12px;
+  cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  font-size: 0.95rem;
+  color: var(--discount-gray-700);
+  font-weight: 500;
+  min-width: 160px;
+  justify-content: center;
 }
 
-.source-link:hover {
-  background: var(--discount-teal);
-  color: white;
+.quick-action:hover {
+  background: var(--discount-green-soft);
+  border-color: var(--discount-green-light);
+  transform: translateY(-1px);
+  color: var(--discount-green-dark);
+  box-shadow: var(--shadow-md);
 }
 
-.message-user .source-link {
-  color: white;
-  background: rgba(255, 255, 255, 0.2);
+.quick-action i {
+  font-size: 1.25rem;
+  color: var(--discount-green);
 }
 
-.message-user .source-link:hover {
-  background: rgba(255, 255, 255, 0.3);
+.quick-action span {
+  white-space: nowrap;
 }
 
+/* אזור הכתיבה */
 .chat-input {
+  padding: 1.5rem 2rem 2rem;
+  background: var(--discount-white);
   border-top: 1px solid var(--discount-gray-200);
-  padding: 1.5rem;
-  background: white;
 }
 
 .input-container {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-end;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .input-wrapper {
-  flex: 1;
   position: relative;
 }
 
 .chat-textarea {
   width: 100%;
-  padding: 1.25rem 4rem 1.25rem 1.5rem;
-  border: 2px solid var(--discount-gray-300);
-  border-radius: 2rem;
+  padding: 1.25rem 4.5rem 1.25rem 1.5rem;
+  border: 1px solid var(--discount-gray-300);
+  border-radius: 25px;
   font-size: 1rem;
   font-family: inherit;
   resize: none;
-  min-height: 65px;
-  max-height: 130px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 56px;
+  max-height: 120px;
+  transition: all 0.2s ease;
   background: var(--discount-gray-50);
-  font-weight: 400;
+  box-shadow: var(--shadow-sm);
+  direction: rtl;
+  text-align: right;
 }
 
 .chat-textarea:focus {
   outline: none;
   border-color: var(--discount-green);
-  background: white;
-  box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
-  transform: translateY(-1px);
+  background: var(--discount-white);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
 .chat-textarea::placeholder {
   color: var(--discount-gray-500);
-  font-weight: 400;
 }
 
+/* כפתור השליחה */
 .send-button {
   position: absolute;
-  left: 1.25rem;
-  bottom: 1.25rem;
-  width: 45px;
-  height: 45px;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--discount-green), var(--discount-teal));
+  background: var(--discount-green);
   color: white;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .send-button:hover {
-  background: linear-gradient(135deg, var(--discount-green-dark), var(--discount-green));
-  transform: scale(1.1) translateY(-1px);
-  box-shadow: 0 8px 25px rgba(27, 94, 32, 0.4);
+  background: var(--discount-green-dark);
+  transform: translateY(-50%) scale(1.05);
 }
 
 .send-button:disabled {
   background: var(--discount-gray-400);
   cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-/* רקע הדף - גרדיאנט דיסקונט */
-body {
-  background: linear-gradient(135deg, 
-    var(--discount-green) 0%, 
-    var(--discount-teal) 35%, 
-    var(--discount-lime) 70%, 
-    #F8F9FA 100%);
-  min-height: 100vh;
-}
-
-/* שיפורים נוספים לסגנון דיסקונט */
-.chat-container {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(46, 125, 50, 0.1);
+  transform: translateY(-50%);
 }
 
 /* אנימציות */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* אנימציית טיפים */
 .typing-indicator {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  color: var(--discount-gray-500);
-  font-style: italic;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: var(--discount-white);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--discount-gray-200);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--discount-gray-600);
 }
 
 .typing-dots {
@@ -498,7 +502,7 @@ body {
 
 @keyframes typing {
   0%, 80%, 100% {
-    transform: scale(0);
+    transform: scale(0.8);
     opacity: 0.5;
   }
   40% {
@@ -507,97 +511,32 @@ body {
   }
 }
 
-/* רכיבי UI נוספים */
-.user-badge {
+/* מקורות ודירוגים */
+.source-links {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--discount-gray-200);
+}
+
+.source-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  padding: 0.75rem 1.25rem;
-  border-radius: 2rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  min-height: 48px;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--discount-green);
+  text-decoration: none;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--discount-green-soft);
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-.status-indicator {
-  width: 10px;
-  height: 10px;
-  background: var(--discount-accent);
-  border-radius: 50%;
-  display: inline-block;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-.quick-actions {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.quick-action {
-  padding: 0.75rem 1.25rem;
-  background: white;
-  border: 2px solid var(--discount-gray-300);
-  border-radius: 2rem;
-  color: var(--discount-gray-700);
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.quick-action:hover {
+.source-link:hover {
   background: var(--discount-green);
-  border-color: var(--discount-green);
   color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(46, 125, 50, 0.2);
 }
 
-/* רספונסיביות */
-@media (max-width: 768px) {
-  .chat-container {
-    border-radius: 0;
-    height: 100vh;
-  }
-  
-  .chat-header {
-    padding: 1rem;
-  }
-  
-  .chat-header .title h1 {
-    font-size: 1.25rem;
-  }
-  
-  .chat-messages {
-    padding: 1rem;
-  }
-  
-  .message {
-    max-width: 90%;
-  }
-  
-  .chat-input {
-    padding: 1rem;
-  }
-}
-
-/* דירוג ופידבק */
 .feedback-section {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
@@ -627,26 +566,90 @@ body {
 }
 
 .rating-button:hover {
-  background: rgba(0, 137, 123, 0.1);
-  color: var(--discount-teal);
-  border-color: var(--discount-teal);
+  background: var(--discount-green-soft);
+  color: var(--discount-green);
+  border-color: var(--discount-green);
 }
 
 .rating-button.active-positive {
-  background: var(--discount-success);
+  background: var(--discount-green);
   color: white;
-  border-color: var(--discount-success);
+  border-color: var(--discount-green);
 }
 
 .rating-button.active-negative {
-  background: var(--discount-danger);
+  background: #f44336;
   color: white;
-  border-color: var(--discount-danger);
+  border-color: #f44336;
 }
 
 .feedback-text {
   font-size: 0.75rem;
   color: var(--discount-gray-600);
+}
+
+/* רספונסיביות */
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-bottom: 1px solid var(--discount-gray-200);
+  }
+  
+  .chat-history {
+    display: flex;
+    overflow-x: auto;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .chat-item {
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .chat-container {
+    border-radius: 0;
+  }
+  
+  .chat-header {
+    padding: 1rem;
+  }
+  
+  .chat-messages {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .message {
+    max-width: 85%;
+  }
+  
+  .quick-actions {
+    gap: 0.75rem;
+    margin: 1rem;
+    flex-direction: column;
+  }
+  
+  .quick-action {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .chat-input {
+    padding: 1rem;
+  }
 }
 
 /* מצב טעינה */
@@ -655,16 +658,24 @@ body {
   pointer-events: none;
 }
 
-.spinner {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--discount-gray-200);
-  border-top: 2px solid var(--discount-teal);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+/* סגנונות נוספים למחשב */
+.sidebar::-webkit-scrollbar,
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.sidebar::-webkit-scrollbar-track,
+.chat-messages::-webkit-scrollbar-track {
+  background: var(--discount-gray-100);
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--discount-gray-400);
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: var(--discount-gray-500);
 }

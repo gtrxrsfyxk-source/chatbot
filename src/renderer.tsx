@@ -6,7 +6,8 @@ export const renderer = jsxRenderer(({ children }) => {
       <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>צ'אטבוט בנק דיסקונט - עוזר הידע הפנים-ארגוני</title>
+        <title>DBRAIN - עוזר הידע החכם לבנק דיסקונט</title>
+        <link rel="icon" type="image/png" href="https://page.gensparksite.com/v1/base64_upload/e17c2fb9f005af7e1ed1694d3a9f309d" />
         <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&family=Assistant:wght@300;400;600;700&family=Noto+Sans+Hebrew:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
         <link href="/static/style.css" rel="stylesheet" />
