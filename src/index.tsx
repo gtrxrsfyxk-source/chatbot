@@ -81,6 +81,96 @@ const vacationPolicy = {
   }
 }
 
+// Digital Wallet Policy for Union Members
+const digitalWalletPolicy = {
+  general: {
+    purpose: "נוהל זכאות, הקצאה ושימוש בהטבות כספיות לחברי ועד עובדים באמצעות ארנק דיגיטלי",
+    policyNumber: "HR-420",
+    lastUpdated: "2024-10-16", 
+    version: "2.1"
+  },
+  
+  basicEntitlements: {
+    monthlyAllowance: 150, // ₪150 per month
+    currency: "₪",
+    eligibility: "חברי ועד עובדים פעילים",
+    format: "הטבות דיגיטליות (לא מזומן)"
+  },
+  
+  membershipCategories: {
+    regular: {
+      amount: 150,
+      title: "חבר ועד רגיל", 
+      notes: "זכאות בסיסית חודשית"
+    },
+    management: {
+      amount: 200,
+      title: "חבר הנהלת הוועד",
+      notes: "תוספת לתפקידי ניהול"
+    },
+    chairman: {
+      amount: 300,
+      title: "יו״ר הוועד",
+      notes: "הטבות מוגדלות"
+    },
+    subCommittee: {
+      amount: 100,
+      title: "חבר וועדת משנה",
+      notes: "הטבות חלקיות"
+    }
+  },
+  
+  eligibilityRequirements: {
+    basic: [
+      "חברות פעילה בוועד העובדים",
+      "מעמד עובד קבוע בבנק",
+      "תשלום דמי ועד שוטף"
+    ],
+    restrictions: [
+      "חופשה ללא תשלום - זכאות מושעית",
+      "עזיבה/פיטורים - ביטול מיידי",
+      "חובות לבנק - עלול להשפיע על זכאות"
+    ]
+  },
+  
+  approvedUses: [
+    "חופשות ונופש - מלונות, טיסות, חבילות",
+    "תרבות ובידור - מופעים, הצגות, קונצרטים",
+    "רכישות צרכניות - חשמל, אופנה, ספורט", 
+    "מסעדות וקייטרינג - ארוחות ואירועים",
+    "השתלמויות ולימודים - קורסים מאושרים"
+  ],
+  
+  prohibitedUses: [
+    "המרה למזומן או העברה לאחרים",
+    "רכישות לא חוקיות או לא מוסריות", 
+    "הימורים או השקעות סיכון"
+  ],
+  
+  managementRules: {
+    activation: "רישום במערכת HR + אישור מזכירות הוועד",
+    timeFrame: "הפעלה תוך 30 יום מאישור",
+    accumulation: "צבירה עד שנתיים",
+    autoReset: "איפוס אוטומטי בתום התקופה"
+  },
+  
+  terminationRules: {
+    endOfTerm: "סיום זכאות בתום חודש סיום הכהונה",
+    leaving: "ביטול מיידי + איפוס יתרה",
+    unpaidLeave: "השעיה עד חידוש תשלום דמי ועד",
+    violations: "ביטול זכאות לתקופה מוגדרת"
+  },
+  
+  contact: {
+    hr: "03-514-5555",
+    hrEmail: "hr@discountbank.co.il", 
+    unionSecretary: "03-514-6666",
+    unionEmail: "workers-committee@discountbank.co.il",
+    digitalWalletPortal: "portal.discountbank.co.il/digital-wallet",
+    techSupport: "1-599-500-600"
+  }
+}
+
 const knowledgeBase = [
   {
     id: 1,
@@ -125,6 +215,35 @@ const knowledgeBase = [
     question: "משמרות",
     answer: "שיבוץ משמרות נעשה שבועית. מוקד טלפוני: 3 סוגי משמרות, סניפים: שעות קבועות, טכנולוגיה: גמישות בשעות. ניתן לראות לוח אישי.",
     sources: ["מערכת שיבוץ", "נוהל משמרות OP-150"]
+  },
+  {
+    id: 4,
+    topic: "digitalWallet",
+    question: "ארנק דיגיטלי",
+    answer: `**💳 נוהל הארנק הדיגיטלי - HR-420**\n\n` +
+            `**🎯 זכאות חודשית לחברי ועד עובדים:**\n` +
+            `• **חבר ועד רגיל:** ₪150 לחודש\n` +
+            `• **חבר הנהלת הוועד:** ₪200 לחודש\n` +
+            `• **יו״ר הוועד:** ₪300 לחודש\n` +
+            `• **חבר וועדת משנה:** ₪100 לחודש\n\n` +
+            `**✅ תנאי זכאות:**\n` +
+            `• חברות פעילה בוועד העובדים\n` +
+            `• מעמד עובד קבוע בבנק\n` +
+            `• תשלום דמי ועד שוטף ומעודכן\n\n` +
+            `**🛍️ שימושים מאושרים:**\n` +
+            `• חופשות ונופש (מלונות, טיסות)\n` +
+            `• תרבות ובידור (מופעים, הצגות)\n` +
+            `• רכישות צרכניות (חשמל, אופנה)\n` +
+            `• מסעדות וקייטרינג\n` +
+            `• השתלמויות ולימודים מאושרים\n\n` +
+            `**📋 כללי ניהול:**\n` +
+            `• צבירה עד שנתיים מותרת\n` +
+            `• איפוס אוטומטי בתום התקופה\n` +
+            `• אסור: המרה למזומן או העברות\n\n` +
+            `📞 **פרטים:** HR 03-514-5555 | מזכירות ועד 03-514-6666\n` +
+            `💡 **לבדיקה אישית:** שאל "מה יתרת הארנק הדיגיטלי שלי?"`,
+    sources: ["נוהל ארנק דיגיטלי HR-420", "מזכירות ועד עובדים"],
+    policyRef: digitalWalletPolicy
   }
 ]
 
@@ -169,6 +288,16 @@ const userProfiles = {
         { day: "חמישי", hours: "15:00-23:00", type: "ערב" }
       ],
       totalHours: 32 // סה"כ שעות השבוע
+    },
+    
+    // ארנק דיגיטלי (לא חברת ועד)
+    digitalWallet: {
+      membershipStatus: "לא חבר ועד",
+      monthlyAllowance: 0,
+      currentBalance: 0,
+      isEligible: false,
+      reason: "רק חברי ועד עובדים זכאים לארנק דיגיטלי",
+      joinInstructions: "ניתן להצטרף לוועד העובדים במזכירות הוועד 03-514-6666"
     }
   },
   
@@ -211,6 +340,27 @@ const userProfiles = {
         { day: "חמישי", hours: "08:00-16:00", type: "ניהול קצר" }
       ],
       totalHours: 44 // שעות מלאות
+    },
+    
+    // ארנק דיגיטלי (חבר הנהלת הוועד)
+    digitalWallet: {
+      membershipStatus: "חבר הנהלת הוועד",
+      membershipStartDate: "2023-01-01",
+      monthlyAllowance: 200, // ₪200 כחבר הנהלה
+      currentBalance: 850, // יתרה נוכחית
+      totalEarned: 3600, // סה"כ נצבר
+      totalSpent: 2750, // סה"כ נוצל
+      isEligible: true,
+      recentTransactions: [
+        { date: "2024-09-15", amount: -450, description: "חבילת נופש - אילת", type: "הוצאה" },
+        { date: "2024-10-01", amount: 200, description: "זיכוי חודשי", type: "זיכוי" },
+        { date: "2024-09-28", amount: -120, description: "כרטיסי קונצרט", type: "הוצאה" }
+      ],
+      usageCategories: {
+        vacation: 60, // 60% חופשות
+        culture: 25, // 25% תרבות
+        shopping: 15 // 15% רכישות
+      }
     }
   },
   
@@ -253,6 +403,28 @@ const userProfiles = {
         { day: "חמישי", hours: "09:00-15:00", type: "יום קצר" }
       ],
       totalHours: 40 // שעות תקן
+    },
+    
+    // ארנק דיגיטלי (חברת ועד רגילה)
+    digitalWallet: {
+      membershipStatus: "חברת ועד רגילה",
+      membershipStartDate: "2024-03-01",
+      monthlyAllowance: 150, // ₪150 חברות רגילה
+      currentBalance: 420, // יתרה נוכחית
+      totalEarned: 1200, // 8 חודשים × 150
+      totalSpent: 780, // סה"כ נוצל
+      isEligible: true,
+      recentTransactions: [
+        { date: "2024-10-01", amount: 150, description: "זיכוי חודשי", type: "זיכוי" },
+        { date: "2024-09-25", amount: -180, description: "קורס פיתוח אונליין", type: "הוצאה" },
+        { date: "2024-09-15", amount: -200, description: "ציוד ספורט", type: "הוצאה" },
+        { date: "2024-09-01", amount: 150, description: "זיכוי חודשי", type: "זיכוי" }
+      ],
+      usageCategories: {
+        education: 45, // 45% השתלמויות
+        shopping: 35, // 35% רכישות
+        culture: 20 // 20% תרבות
+      }
     }
   }
 }
@@ -320,6 +492,12 @@ app.get('/', (c) => {
           </div>
           <div class="quick-action" onclick="sendQuickMessage('משמרות')">
             <i class="fas fa-calendar-week"></i> נוהל משמרות
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('מה יתרת הארנק הדיגיטלי שלי?')">
+            <i class="fas fa-wallet"></i> הארנק הדיגיטלי שלי
+          </div>
+          <div class="quick-action" onclick="sendQuickMessage('ארנק דיגיטלי')">
+            <i class="fas fa-credit-card"></i> נוהל ארנק דיגיטלי
           </div>
         </div>
       </div>
@@ -481,6 +659,46 @@ app.post('/api/chat', async (c) => {
           personalized: true
         }
       }
+      
+      // Personal digital wallet status
+      else if (lowerMessage.includes('ארנק') || lowerMessage.includes('דיגיטלי')) {
+        const wallet = currentUser.digitalWallet
+        
+        if (wallet.isEligible) {
+          const balanceStatus = wallet.currentBalance > 0 ? `**₪${wallet.currentBalance}**` : '₪0'
+          response = {
+            text: `**💳 הארנק הדיגיטלי שלך, ${currentUser.name}:**\n\n` +
+                  `👥 **סטטוס חברות:** ${wallet.membershipStatus}\n` +
+                  `💰 **יתרה נוכחית:** ${balanceStatus}\n` +
+                  `📅 **הקצבה חודשית:** ₪${wallet.monthlyAllowance}\n\n` +
+                  `📊 **סיכום כולל:**\n` +
+                  `• סה"כ נצבר: ₪${wallet.totalEarned}\n` +
+                  `• סה"כ נוצל: ₪${wallet.totalSpent}\n` +
+                  `• חבר מתאריך: ${wallet.membershipStartDate}\n\n` +
+                  `**📋 תנועות אחרונות:**\n` +
+                  wallet.recentTransactions.slice(0, 3).map(t => 
+                    `• ${t.date}: ${t.amount > 0 ? '+' : ''}${t.amount} - ${t.description}`
+                  ).join('\n') +
+                  `\n\n📜 **לפי נוהל HR-420:** שימוש מאושר לחופשות, תרבות, רכישות, מסעדות והשתלמויות\n` +
+                  `📞 **פרטים:** מזכירות ועד 03-514-6666 | פורטל: portal.discountbank.co.il/digital-wallet`,
+            sources: ["מערכת ארנק דיגיטלי", "נוהל HR-420", "מזכירות ועד עובדים"],
+            personalized: true
+          }
+        } else {
+          response = {
+            text: `**💳 ארנק דיגיטלי - ${currentUser.name}:**\n\n` +
+                  `❌ **סטטוס:** ${wallet.membershipStatus}\n` +
+                  `💰 **יתרה:** ₪${wallet.currentBalance}\n\n` +
+                  `📋 **סיבה:** ${wallet.reason}\n\n` +
+                  `✅ **רוצה להצטרף לוועד העובדים?**\n` +
+                  `${wallet.joinInstructions}\n\n` +
+                  `📜 **לפי נוהל HR-420:** רק חברי ועד עובדים פעילים זכאים להטבות של ₪150-300 לחודש\n` +
+                  `📞 **פרטים:** מזכירות ועד 03-514-6666`,
+            sources: ["נוהל HR-420", "מזכירות ועד עובדים"],
+            personalized: true
+          }
+        }
+      }
     }
 
     // General knowledge base search if no personal answer
@@ -488,7 +706,9 @@ app.post('/api/chat', async (c) => {
       for (const item of knowledgeBase) {
         if ((lowerMessage.includes('חופשה') && item.topic === 'vacation') ||
             (lowerMessage.includes('מתנות') && item.topic === 'gifts') ||
-            (lowerMessage.includes('משמרות') && item.topic === 'shifts')) {
+            (lowerMessage.includes('משמרות') && item.topic === 'shifts') ||
+            (lowerMessage.includes('ארנק') && item.topic === 'digitalWallet') ||
+            (lowerMessage.includes('דיגיטלי') && item.topic === 'digitalWallet')) {
           response = {
             text: item.answer,
             sources: item.sources || [],
